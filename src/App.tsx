@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import ComingSoon from './pages/ComingSoon';
+import Registration from './pages/Registration';
+import Committee from './pages/Committee';
 import './index.css';
 
 function App() {
@@ -23,12 +25,12 @@ function App() {
             <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
             
             {/* Committee Routes */}
-            <Route path="/committee/chief-patron" element={<ComingSoon title="Chief Patron" />} />
-            <Route path="/committee/patron" element={<ComingSoon title="Patron" />} />
-            <Route path="/committee/chair" element={<ComingSoon title="Conference Chair" />} />
-            <Route path="/committee/convenor" element={<ComingSoon title="Convenor & Co-Convenor" />} />
-            <Route path="/committee/advisory" element={<ComingSoon title="Advisory Committee" />} />
-            <Route path="/committee/organizing" element={<ComingSoon title="Organizing Committee" />} />
+            <Route path="/committee/chief-patron" element={<Committee />} />
+            <Route path="/committee/patron" element={<Committee />} />
+            <Route path="/committee/chair" element={<Committee />} />
+            <Route path="/committee/convenor" element={<Committee />} />
+            <Route path="/committee/advisory" element={<Committee />} />
+            <Route path="/committee/organizing" element={<Committee />} />
             
             {/* Call for Papers */}
             <Route path="/call-for-papers/tracks" element={<ComingSoon title="Conference Tracks" />} />
@@ -41,7 +43,7 @@ function App() {
             <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
 
             {/* Registration */}
-            <Route path="/registration" element={<ComingSoon title="Registration & Fees" />} />
+            <Route path="/registration" element={<Registration />} />
             
             {/* Other main routes */}
             <Route path="/dates" element={<ComingSoon title="Important Dates" />} />

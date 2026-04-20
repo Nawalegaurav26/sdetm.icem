@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="main-footer">
       <div className="container footer-grid">
         <div className="footer-col brand-col">
-          <img src="/sdetm-logo-white.png" alt="SDETM Logo" className="footer-logo" />
+          <img src="/icem-logo.png" alt="ICEM Logo" className="footer-logo" />
           <p className="footer-tagline">
-            Innovating Today for a Sustainable Tomorrow. Promoting excellence in NextGen Technology & AI.
+            Innovating Today for a Sustainable Tomorrow.
           </p>
           <div className="social-links">
             <a href="#"><Facebook size={20} /></a>
@@ -64,7 +64,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} SDETM ICEM Conference. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SDETM ICEM 2026. All Rights Reserved.</p>
           <div className="policy-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms & Conditions</a>

@@ -63,7 +63,7 @@ const Header = () => {
       <div className="top-tier">
         <div className="container header-container">
           <div className="institution-brand">
-            <img src="/sdetm-logo.png" alt="SDETM Logo" className="logo-sdetm" />
+            <img src="/icem-logo.png" alt="ICEM Logo" className="logo-sdetm" />
             <div className="institution-text">
               <span className="inst-name">Indira College of Engineering and Management</span>
               <span className="inst-status">An Autonomous Institute (AICTE Approved)</span>
@@ -71,7 +71,7 @@ const Header = () => {
           </div>
           <div className="logo-ntai-placeholder">
              {/* NTAI Logo will go here */}
-             <div className="ntai-badge">NTAI 2025</div>
+             <div className="ntai-badge">NTAI 2026</div>
           </div>
         </div>
       </div>

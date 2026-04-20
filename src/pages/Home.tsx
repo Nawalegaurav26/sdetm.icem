@@ -13,13 +13,13 @@ const Home = () => {
               NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
             </h1>
             <p className="hero-subtitle">
-              SDETM ICEM International Conference (NTAI 2025)
+              Sustainable Developments in Engineering, Technology & Management, 2026 (Second NTAI)
             </p>
             
             <div className="hero-info-pills">
               <div className="info-pill glass">
                 <Calendar size={18} />
-                <span>12th - 13th April 2025</span>
+                <span>4-5 November 2026</span>
               </div>
               <div className="info-pill glass">
                 <MapPin size={18} />
@@ -69,19 +69,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Conference Theme Summary */}
-      <section className="theme-summary section-padding">
-        <div className="container flex-split">
-          <div className="theme-text">
-            <h2 className="section-title">Conference Theme</h2>
-            <p>
-              The NTAI (Next Generation Technology and AI) conference aims to bring together leading academic scientists, researchers, and research scholars to exchange and share their experiences and research results on all aspects of Next Generation Technologies and Artificial Intelligence.
+      {/* About The Conference */}
+      <section className="about-section section-padding">
+        <div className="container">
+          <div className="glass-card p-4">
+            <h2 className="section-title">About The Conference</h2>
+            <p className="text-large">
+              The International Conference (ICSDETM, 2026) aims to bring together researchers, academicians, industry professionals, and students to exchange insights on emerging technologies and sustainable development. It provides a platform for knowledge sharing, innovation, and collaborative learning, enabling participants to explore the latest trends in the engineering and management domains.
             </p>
-            <button className="premium-btn premium-btn-secondary mt-2">Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Conference Tracks */}
+      <section className="tracks-section section-padding">
+        <div className="container">
+          <h2 className="section-title text-center mb-4">Conference Tracks</h2>
+          <div className="tracks-grid">
+            {[
+              { id: 1, title: 'Mechanical Engineering', desc: 'Emerging trends in thermal, design, and manufacturing.', icon: '🔧' },
+              { id: 2, title: 'AI & Machine Learning', desc: 'Revolutionizing industries with intelligent algorithms.', icon: '🤖' },
+              { id: 3, title: 'Information Technology', desc: 'Cloud, Cybersecurity, and Modern Dev Architectures.', icon: '💻' },
+              { id: 4, title: 'Electronics & Telecom', desc: '5G, IoT, and Next-Gen Signal Processing.', icon: '📡' },
+              { id: 5, title: 'Advanced Computing', desc: 'Quantum and High-Performance Computation.', icon: '⚡' },
+              { id: 6, title: 'Business Innovation', desc: 'Evolving management practices in the digital age.', icon: '📈' },
+              { id: 7, title: 'Sustainable Practices', desc: 'Green technology and eco-friendly engineering.', icon: '🌿' },
+            ].map(track => (
+              <div key={track.id} className="track-card glass-glow">
+                <div className="track-image-container">
+                  <img src={`/track-${track.id}.png`} alt={track.title} onError={(e) => e.target.src = '/icons.svg'} />
+                </div>
+                <div className="track-content">
+                  <span className="track-icon">{track.icon}</span>
+                  <h3>{track.title}</h3>
+                  <p>{track.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Institute (ICEM) */}
+      <section className="institute-section section-padding">
+        <div className="container flex-split">
+          <div className="institute-text">
+            <h2 className="section-title">Indira College of Engineering and Management (ICEM), Pune</h2>
+            <p>
+              Established in 2007 under the esteemed Indira Group of Institutes, ICEM is a premier autonomous institution recognized for its commitment to academic excellence, innovation, and holistic student development. Approved by AICTE, affiliated with SPPU, and NAAC-accredited.
+            </p>
+            <p>
+              Situated in the scenic surroundings of Parandwadi Village, ICEM hosts a diverse student body of over 1500 learners, serving as a catalyst for academic, economic, and social empowerment in the region.
+            </p>
+            <button className="premium-btn premium-btn-secondary mt-2">Visit ICEM Website</button>
           </div>
           <div className="theme-image glass">
-             {/* Dynamic Theme Image / Iconography */}
-             <div className="theme-icon-canvas">AI & Sustainability</div>
+             <div className="theme-icon-canvas">
+               <img src="/icem-logo.png" alt="ICEM Large" className="floating-logo" />
+             </div>
           </div>
         </div>
       </section>

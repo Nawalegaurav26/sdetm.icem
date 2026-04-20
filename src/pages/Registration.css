@@ -1,0 +1,165 @@
+.registration-container {
+  min-height: 90vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.registration-glass {
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(25px);
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.reg-step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reg-description {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.2rem;
+  color: var(--color-teal);
+  opacity: 0.7;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--color-teal);
+  background: rgba(0, 243, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.role-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.role-selector label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.role-options {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.3rem;
+  border-radius: 10px;
+}
+
+.role-options button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.role-options button.active {
+  background: var(--color-teal);
+  color: var(--color-navy);
+}
+
+.full-width {
+  width: 100% !important;
+  justify-content: center !important;
+  padding: 1.2rem !important;
+  font-size: 1rem !important;
+}
+
+/* OTP Specifics */
+.shield-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.shield-icon {
+  color: var(--color-teal);
+  filter: drop-shadow(0 0 15px var(--color-teal));
+}
+
+.otp-input-container {
+  justify-content: center;
+}
+
+.otp-input {
+  text-align: center;
+  letter-spacing: 1.5rem;
+  font-size: 2rem !important;
+  padding-left: 1.5rem !important;
+  font-weight: 700;
+  color: var(--color-teal) !important;
+}
+
+.secondary-link {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+}
+
+.success-step {
+  text-align: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.success-lottie-placeholder {
+  margin-bottom: 2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

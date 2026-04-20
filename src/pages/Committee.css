@@ -1,0 +1,133 @@
+.committee-page {
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.committee-section {
+  margin-bottom: 5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--primary-container);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.committee-grid.centered {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-container), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-container);
+}
+
+.profile-card:hover::before {
+  opacity: 1;
+}
+
+.profile-image-container {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--primary-container), var(--secondary-container));
+  position: relative;
+}
+
+.profile-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--surface);
+}
+
+.profile-info h3 {
+  font-size: 1.25rem;
+  color: var(--surface-bright);
+  margin-bottom: 0.25rem;
+}
+
+.profile-info .role {
+  font-size: 0.9rem;
+  color: var(--primary-container);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.profile-info .org {
+  font-size: 0.85rem;
+  color: var(--on-surface-variant);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.profile-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.profile-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  transition: all 0.2s;
+}
+
+.profile-social a:hover {
+  background: var(--primary-container);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .committee-grid {
+    grid-template-columns: 1fr;
+  }
+}
