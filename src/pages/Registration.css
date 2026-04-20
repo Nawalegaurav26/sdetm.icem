@@ -1,19 +1,135 @@
-.registration-container {
+.registration-page {
   min-height: 90vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8rem 2rem 4rem;
   position: relative;
   z-index: 1;
 }
 
+.registration-grid {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Info Section Styles */
+.registration-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.info-section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.info-section .section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-teal);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: 4px solid var(--color-teal);
+  padding-left: 1rem;
+}
+
+/* Fee Table */
+.fee-table-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.fee-table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--color-teal);
+  border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.fee-table td {
+  padding: 1rem;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+}
+
+.fee-note {
+  font-size: 0.85rem;
+  color: var(--color-teal);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Bank Details */
+.bank-card {
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.05) 0%, rgba(0, 0, 0, 0.2) 100%);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.bank-row span {
+  color: #94a3b8;
+}
+
+.bank-row strong {
+  color: white;
+  text-align: right;
+}
+
+/* Notes List */
+.notes-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notes-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.notes-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-teal);
+  font-weight: bold;
+}
+
+/* Form Styles Override */
 .registration-glass {
   background: var(--glass-surface);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(25px);
   width: 100%;
-  max-width: 500px;
   border-radius: 24px;
   padding: 3rem;
   position: relative;
@@ -29,7 +145,6 @@
 .reg-description {
   color: #94a3b8;
   line-height: 1.6;
-  margin-bottom: 0.5rem;
 }
 
 .reg-form {
@@ -111,6 +226,7 @@
   justify-content: center !important;
   padding: 1.2rem !important;
   font-size: 1rem !important;
+  font-weight: 600;
 }
 
 /* OTP Specifics */
@@ -130,11 +246,11 @@
 }
 
 .otp-input {
-  text-align: center;
-  letter-spacing: 1.5rem;
-  font-size: 2rem !important;
-  padding-left: 1.5rem !important;
-  font-weight: 700;
+  text-align: center !important;
+  letter-spacing: 0.5rem !important;
+  font-size: 1.8rem !important;
+  padding: 1.2rem !important;
+  font-weight: 700 !important;
   color: var(--color-teal) !important;
 }
 
@@ -154,12 +270,38 @@
   padding: 2rem 0;
 }
 
-.success-lottie-placeholder {
-  margin-bottom: 2rem;
-  animation: bounce 2s infinite;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Responsive */
+@media (max-width: 1024px) {
+  .registration-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .registration-form-wrapper {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-page {
+    padding: 6rem 1.5rem 3rem;
+  }
+  
+  .registration-glass {
+    padding: 2rem;
+  }
+  
+  .bank-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .bank-row strong {
+    text-align: left;
+  }
 }
