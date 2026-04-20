@@ -7,6 +7,9 @@ import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
 import SubmissionGuidelines from './pages/SubmissionGuidelines';
+import Contact from './pages/Contact';
+import ImportantDates from './pages/ImportantDates';
+import AboutConference from './pages/AboutConference';
 import './index.css';
 
 function App() {
@@ -20,7 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             
             {/* About Routes */}
-            <Route path="/about/conference" element={<ComingSoon title="About Conference" />} />
+            <Route path="/about/conference" element={<AboutConference />} />
             <Route path="/about/institute" element={<ComingSoon title="About ICEM" />} />
             <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
             <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
@@ -47,9 +50,9 @@ function App() {
             <Route path="/registration" element={<Registration />} />
             
             {/* Other main routes */}
-            <Route path="/dates" element={<ComingSoon title="Important Dates" />} />
+            <Route path="/dates" element={<ImportantDates />} />
             <Route path="/venue" element={<ComingSoon title="Venue & Location" />} />
-            <Route path="/contact" element={<ComingSoon title="Contact Us" />} />
+            <Route path="/contact" element={<Contact />} />
             
             {/* More / Misc */}
             <Route path="/program" element={<ComingSoon title="Conference Program" />} />
