@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Mail, Linkedin } from 'lucide-react';
 import './Committee.css';
 
@@ -28,11 +29,12 @@ const MemberCard: React.FC<MemberProps> = ({ name, role, org, email, linkedin })
 );
 
 const Committee = () => {
-  return (
-    <div className="committee-page">
-      <div className="container">
-        
-        {/* Chief Patron */}
+  const location = useLocation();
+  const path = location.pathname;
+
+  const renderSection = () => {
+    if (path.includes('/chief-patron')) {
+      return (
         <section className="committee-section">
           <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Chief Patron</h2>
@@ -40,13 +42,17 @@ const Committee = () => {
             <MemberCard 
               name="Dr. Tarita Shankar" 
               role="Chief Patron" 
-              org="Chairperson & Chief Mentor – Indira Group of Institutes" 
+              org="Chairperson & Chief Mentor – Indira Group of Institutions" 
             />
           </div>
         </section>
+      );
+    }
 
-        {/* Patrons */}
+    if (path.includes('/patron')) {
+      return (
         <section className="committee-section">
+          <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Patrons</h2>
           <div className="committee-grid">
             <MemberCard 
@@ -55,43 +61,64 @@ const Committee = () => {
               org="Chief Marketing Officer - IU & Managing Trustee - IGI" 
             />
             <MemberCard 
-              name="Mr. Sahil Tarita Shankar Aditya Mehendale" 
-              role="Patron" 
-              org="Joint Secretary - IU" 
+              name="Mr. Sahil Tarita Shankar" 
+              role="Joint Secretary - IU" 
+              org="Indira Group of Institutes" 
             />
             <MemberCard 
-              name="Mr. Shaan Tarita Shankar Aditya Mehendale" 
-              role="Patron" 
-              org="Trustee Member - IU" 
+              name="Mr. Shaan Tarita Shankar" 
+              role="Trustee Member - IU" 
+              org="Indira Group of Institutes" 
             />
           </div>
         </section>
+      );
+    }
 
-        {/* Conference Leadership */}
+    if (path.includes('/chair')) {
+      return (
         <section className="committee-section">
-          <h2 className="section-title text-center">Conference Leadership</h2>
-          <div className="committee-grid">
+          <span className="section-subtitle">Leadership</span>
+          <h2 className="section-title text-center">Conference Chair</h2>
+          <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Nilesh Uke" 
               role="Conference Chair" 
-              org="Principal, ICEM" 
+              org="Principal, Indira College of Engineering and Management" 
             />
+          </div>
+        </section>
+      );
+    }
+
+    if (path.includes('/convenor')) {
+      return (
+        <section className="committee-section">
+          <span className="section-subtitle">Leadership</span>
+          <h2 className="section-title text-center">Convenors</h2>
+          <div className="committee-grid">
             <MemberCard 
               name="Dr. Saurabh Gupta" 
               role="Convenor" 
               org="HOD Mechanical, ICEM" 
+              email="saurabhgupta@indiraicem.ac.in"
             />
             <MemberCard 
               name="Dr. Manjusha Tatiya" 
               role="Co-Convenor" 
               org="HOD AI-DS, ICEM" 
+              email="manjusha.tatiya@indiraicem.ac.in"
             />
           </div>
         </section>
+      );
+    }
 
-        {/* Advisory Committee */}
+    if (path.includes('/advisory')) {
+      return (
         <section className="committee-section">
-          <h2 className="section-title text-center">Conference Advisory Committee</h2>
+          <span className="section-subtitle">Academic</span>
+          <h2 className="section-title text-center">Advisory Committee</h2>
           <div className="committee-grid">
             {[
               { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans" },
@@ -114,7 +141,73 @@ const Committee = () => {
             ))}
           </div>
         </section>
+      );
+    }
 
+    if (path.includes('/organizing')) {
+      return (
+        <section className="committee-section">
+          <span className="section-subtitle">Execution</span>
+          <h2 className="section-title text-center">Organizing Committee</h2>
+          
+          <div className="dept-group">
+            <h3 className="dept-title">Mechanical Engineering</h3>
+            <div className="committee-grid">
+              {[
+                { name: "Dr. Mahesh Bhong", role: "Associate Professor" },
+                { name: "Mr. Hemant Darokarm", role: "Assistant Professor" },
+                { name: "Mr. Sushil Chopade", role: "Assistant Professor" },
+                { name: "Mr. Sagar Chirade", role: "Assistant Professor" },
+                { name: "Mr. Amit Narwade", role: "Assistant Professor" },
+                { name: "Mr. Pravin Charde", role: "Assistant Professor" },
+                { name: "Ms. Pranali Khatke", role: "Assistant Professor" },
+                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor" },
+                { name: "Ms. Ashwini Admane", role: "Assistant Professor" },
+                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor" }
+              ].map((member, idx) => (
+                <MemberCard 
+                  key={idx} 
+                  name={member.name} 
+                  role={member.role} 
+                  org="Mechanical Department, ICEM" 
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="dept-group" style={{ marginTop: '4rem' }}>
+            <h3 className="dept-title">AI & Data Science</h3>
+            <div className="committee-grid">
+              {[
+                { name: "Ms. Deepa Padwal", role: "Assistant Professor" },
+                { name: "Ms. Pallavi Chavan", role: "Assistant Professor" },
+                { name: "Ms. Monika Patil", role: "Assistant Professor" },
+                { name: "Ms. Kavita Sharma", role: "Assistant Professor" },
+                { name: "Mr. Vivek Kumar", role: "Assistant Professor" },
+                { name: "Ms. Vidya Dhoke", role: "Assistant Professor" },
+                { name: "Mr. Tushar Mahore", role: "Assistant Professor" },
+                { name: "Ms. Tanuja Pande", role: "Assistant Professor" }
+              ].map((member, idx) => (
+                <MemberCard 
+                  key={idx} 
+                  name={member.name} 
+                  role={member.role} 
+                  org="AI-DS Department, ICEM" 
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    return <div>Section not found</div>;
+  };
+
+  return (
+    <div className="committee-page">
+      <div className="container">
+        {renderSection()}
       </div>
     </div>
   );
