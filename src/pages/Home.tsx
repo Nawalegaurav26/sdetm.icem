@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight, Calendar, MapPin, Award } from 'lucide-react';
 import './Home.css';
 
@@ -97,7 +96,7 @@ const Home = () => {
             ].map(track => (
               <div key={track.id} className="track-card glass-glow">
                 <div className="track-image-container">
-                  <img src={`/track-${track.id}.png`} alt={track.title} onError={(e) => e.target.src = '/icons.svg'} />
+                  <img src={`/track-${track.id}.png`} alt={track.title} onError={(e) => (e.currentTarget as HTMLImageElement).src = '/icons.svg'} />
                 </div>
                 <div className="track-content">
                   <span className="track-icon">{track.icon}</span>
@@ -121,12 +120,82 @@ const Home = () => {
             <p>
               Situated in the scenic surroundings of Parandwadi Village, ICEM hosts a diverse student body of over 1500 learners, serving as a catalyst for academic, economic, and social empowerment in the region.
             </p>
-            <button className="premium-btn premium-btn-secondary mt-2">Visit ICEM Website</button>
+            <button 
+              className="premium-btn premium-btn-secondary mt-2"
+              onClick={() => window.open('https://indiraicem.ac.in', '_blank')}
+            >
+              Visit ICEM Website
+            </button>
           </div>
           <div className="theme-image glass">
              <div className="theme-icon-canvas">
                <img src="/icem-logo.png" alt="ICEM Large" className="floating-logo" />
              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Important Dates */}
+      <section className="dates-section section-padding">
+        <div className="container">
+          <h2 className="section-title text-center mb-4">Important Dates</h2>
+          <div className="timeline-grid">
+            <div className="timeline-item glass">
+              <div className="date-icon"><Calendar size={24} /></div>
+              <div className="date-content">
+                <h3>31st July, 2026</h3>
+                <p>Submission of Full Length Paper</p>
+              </div>
+            </div>
+            <div className="timeline-item glass highlight">
+              <div className="date-icon"><Calendar size={24} /></div>
+              <div className="date-content">
+                <h3>15th Sept, 2026</h3>
+                <p>Acceptance of Paper</p>
+              </div>
+            </div>
+            <div className="timeline-item glass">
+              <div className="date-icon"><Calendar size={24} /></div>
+              <div className="date-content">
+                <h3>30th Sept, 2026</h3>
+                <p>Conference Registration (Last Date)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="home-contact-section section-padding">
+        <div className="container">
+          <div className="glass-card contact-grid">
+            <div className="contact-info-main">
+              <h2 className="section-title">Contact Us</h2>
+              <p className="mb-2">For any queries regarding the conference, registration, or submission, please contact our convenors.</p>
+              <div className="contact-links">
+                 <div className="contact-card">
+                   <h4>Dr. Saurabh Gupta</h4>
+                   <p>Convenor | HOD Mechanical</p>
+                   <a href="mailto:saurabhgupta@indiraicem.ac.in">saurabhgupta@indiraicem.ac.in</a>
+                   <p>(+91-8380822479)</p>
+                 </div>
+                 <div className="contact-card">
+                   <h4>Dr. Manjusha Tatiya</h4>
+                   <p>Co-Convenor | HOD AI-DS</p>
+                   <a href="mailto:manjusha.tatiya@indiraicem.ac.in">manjusha.tatiya@indiraicem.ac.in</a>
+                   <p>(+91-9730019882)</p>
+                 </div>
+              </div>
+            </div>
+            <div className="contact-cta">
+               <h3>Quick Connect</h3>
+               <button 
+                 className="premium-btn premium-btn-primary full-width"
+                 onClick={() => window.location.href = '/contact'}
+               >
+                 Go to Help Desk
+               </button>
+            </div>
           </div>
         </div>
       </section>
