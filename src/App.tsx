@@ -6,6 +6,7 @@ import BackgroundAnimation from './components/BackgroundAnimation';
 import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
+import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import './index.css';
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
             
             {/* Submission */}
             <Route path="/submission/cmt" element={<ComingSoon title="Microsoft CMT Submission" />} />
-            <Route path="/submission/guidelines" element={<ComingSoon title="Submission Guidelines" />} />
+            <Route path="/submission/guidelines" element={<SubmissionGuidelines />} />
             <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
             <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
 
