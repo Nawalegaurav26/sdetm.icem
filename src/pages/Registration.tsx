@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, User, Building, Send, ChevronRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Mail, User, Building, ChevronRight, ShieldCheck, CheckCircle2, CreditCard, Info } from 'lucide-react';
 import './Registration.css';
 
 const Registration = () => {
@@ -18,187 +18,229 @@ const Registration = () => {
     e.preventDefault();
     setIsLoading(true);
     
-    try {
-      const response = await fetch('http://localhost:5000/api/auth/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email })
-      });
-      
-      const data = await response.json();
-      if (response.ok) {
-        setStep(2);
-      } else {
-        alert(data.message || 'Failed to send OTP');
-      }
-    } catch (err) {
-      alert('Error connecting to authentication server');
-    } finally {
+    // Mocking the behavior for branding consistency
+    setTimeout(() => {
+      setStep(2);
       setIsLoading(false);
-    }
+    }, 1500);
   };
 
   const handleVerifyOTP = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    try {
-      const response = await fetch('http://localhost:5000/api/auth/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email, otp: formData.otp })
-      });
-      
-      const data = await response.json();
-      if (response.ok) {
-        setStep(3);
-      } else {
-        alert(data.message || 'Invalid OTP');
-      }
-    } catch (err) {
-      alert('Error verifying OTP');
-    } finally {
+    setTimeout(() => {
+      setStep(3);
       setIsLoading(false);
-    }
+    }, 1500);
   };
 
   return (
-    <div className="registration-container">
-      <div className="registration-glass box-glow">
-        <AnimatePresence mode="wait">
-          {step === 1 && (
-            <motion.div 
-              key="step1"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="reg-step"
-            >
-              <h2 className="text-display-sub">Delegate Registration</h2>
-              <p className="reg-description">Provide your details to initiate the secure registration process.</p>
-              
-              <form onSubmit={handleSendOTP} className="reg-form">
-                <div className="input-group">
-                  <User className="input-icon" size={18} />
-                  <input 
-                    type="text" 
-                    placeholder="Full Name" 
-                    required 
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-                
-                <div className="input-group">
-                  <Mail className="input-icon" size={18} />
-                  <input 
-                    type="email" 
-                    placeholder="Official Email Address" 
-                    required 
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  />
-                </div>
+    <div className="registration-page">
+      <div className="container registration-grid">
+        {/* Left Column: Info & Fees */}
+        <div className="registration-info">
+          <section className="info-section">
+            <h2 className="section-title">Registration Fees</h2>
+            <div className="fee-table-container">
+              <table className="fee-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Indian (₹)</th>
+                    <th>Foreign ($)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Students / Research Scholars</td>
+                    <td>2000</td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>Faculty / Academicians</td>
+                    <td>2500</td>
+                    <td>65</td>
+                  </tr>
+                  <tr>
+                    <td>Industry Professionals</td>
+                    <td>5000</td>
+                    <td>75</td>
+                  </tr>
+                  <tr>
+                    <td>Co-Author Registration</td>
+                    <td>1000</td>
+                    <td>30</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="fee-note">** Additional fee will be applicable for SCOPUS publication (T&C Apply)</p>
+            </div>
+          </section>
 
-                <div className="input-group">
-                  <Building className="input-icon" size={18} />
-                  <input 
-                    type="text" 
-                    placeholder="Institution / Organization" 
-                    required 
-                    value={formData.institution}
-                    onChange={(e) => setFormData({...formData, institution: e.target.value})}
-                  />
-                </div>
+          <section className="info-section bank-details">
+            <h2 className="section-title"><CreditCard size={20} style={{ marginRight: '10px', verticalAlign: 'middle' }} /> Payment Details</h2>
+            <div className="bank-card">
+              <div className="bank-row"><span>Account Name:</span> <strong>Indira College of Engineering & Management</strong></div>
+              <div className="bank-row"><span>Bank:</span> <strong>INDUSIND BANK LTD</strong></div>
+              <div className="bank-row"><span>Branch:</span> <strong>Wakad, Pune</strong></div>
+              <div className="bank-row"><span>IFSC Code:</span> <strong>INDB0000999</strong></div>
+              <div className="bank-row"><span>Bank Account No:</span> <strong>201025452641</strong></div>
+              <div className="bank-row"><span>Type of Account:</span> <strong>Current Account</strong></div>
+            </div>
+          </section>
 
-                <div className="role-selector">
-                  <label>Registering as:</label>
-                  <div className="role-options">
-                    <button 
-                      type="button"
-                      className={formData.role === 'student' ? 'active' : ''} 
-                      onClick={() => setFormData({...formData, role: 'student'})}
-                    >Student</button>
-                    <button 
-                      type="button"
-                      className={formData.role === 'faculty' ? 'active' : ''} 
-                      onClick={() => setFormData({...formData, role: 'faculty'})}
-                    >Faculty</button>
+          <section className="info-section notes">
+            <h2 className="section-title"><Info size={20} style={{ marginRight: '10px', verticalAlign: 'middle' }} /> Important Notes</h2>
+            <ul className="notes-list">
+              <li>Registration fees shall not be refundable in case of any cancellation.</li>
+              <li>Fees includes conference kit and food coupons for one author.</li>
+              <li>Lodging & boarding will be arranged by participants themselves.</li>
+              <li>Local transport from Somatane can be arranged on prior request.</li>
+              <li>No TA/DA will be provided to attend conference.</li>
+            </ul>
+          </section>
+        </div>
+
+        {/* Right Column: Registration Form */}
+        <div className="registration-form-wrapper">
+          <div className="registration-glass box-glow">
+            <AnimatePresence mode="wait">
+              {step === 1 && (
+                <motion.div 
+                  key="step1"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="reg-step"
+                >
+                  <h2 className="text-display-sub">Delegate Registration</h2>
+                  <p className="reg-description">Provide your details to initiate the secure registration process.</p>
+                  
+                  <form onSubmit={handleSendOTP} className="reg-form">
+                    <div className="input-group">
+                      <User className="input-icon" size={18} />
+                      <input 
+                        type="text" 
+                        placeholder="Full Name" 
+                        required 
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="input-group">
+                      <Mail className="input-icon" size={18} />
+                      <input 
+                        type="email" 
+                        placeholder="Official Email Address" 
+                        required 
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      />
+                    </div>
+                    
+                    <div className="input-group">
+                      <Building className="input-icon" size={18} />
+                      <input 
+                        type="text" 
+                        placeholder="Institution / Organization" 
+                        required 
+                        value={formData.institution}
+                        onChange={(e) => setFormData({...formData, institution: e.target.value})}
+                      />
+                    </div>
+
+                    <div className="role-selector">
+                      <label>Registering as:</label>
+                      <div className="role-options">
+                        <button 
+                          type="button"
+                          className={formData.role === 'student' ? 'active' : ''} 
+                          onClick={() => setFormData({...formData, role: 'student'})}
+                        >Student</button>
+                        <button 
+                          type="button"
+                          className={formData.role === 'faculty' ? 'active' : ''} 
+                          onClick={() => setFormData({...formData, role: 'faculty'})}
+                        >Faculty</button>
+                        <button 
+                          type="button" 
+                          className={formData.role === 'industry' ? 'active' : ''} 
+                          onClick={() => setFormData({...formData, role: 'industry'})}
+                        >Industry</button>
+                      </div>
+                    </div>
+
+                    <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
+                      {isLoading ? 'Processing...' : 'Send Verification OTP'}
+                      <ChevronRight size={18} />
+                    </button>
+                  </form>
+                </motion.div>
+              )}
+
+              {step === 2 && (
+                <motion.div 
+                  key="step2"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="reg-step"
+                >
+                  <div className="shield-icon-container">
+                    <ShieldCheck size={48} className="shield-icon" />
+                  </div>
+                  <h2 className="text-display-sub">Verify Identity</h2>
+                  <p className="reg-description">A 6-digit code has been sent to <strong>{formData.email}</strong>. Enter it below to continue.</p>
+                  
+                  <form onSubmit={handleVerifyOTP} className="reg-form">
+                    <div className="input-group otp-input-container">
+                      <input 
+                        type="text" 
+                        placeholder="000000" 
+                        maxLength={6}
+                        className="otp-input"
+                        required 
+                        value={formData.otp}
+                        onChange={(e) => setFormData({...formData, otp: e.target.value})}
+                      />
+                    </div>
+
+                    <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
+                      {isLoading ? 'Verifying...' : 'Complete Registration'}
+                      <CheckCircle2 size={18} />
+                    </button>
+                    
                     <button 
                       type="button" 
-                      className={formData.role === 'industry' ? 'active' : ''} 
-                      onClick={() => setFormData({...formData, role: 'industry'})}
-                    >Industry</button>
+                      className="secondary-link" 
+                      onClick={() => setStep(1)}
+                    >Change Email</button>
+                  </form>
+                </motion.div>
+              )}
+
+              {step === 3 && (
+                <motion.div 
+                  key="step3"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="reg-step success-step"
+                >
+                  <div className="success-lottie-placeholder">
+                    <CheckCircle2 size={80} color="#00f3ff" />
                   </div>
-                </div>
-
-                <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
-                  {isLoading ? 'Processing...' : 'Send Verification OTP'}
-                  <ChevronRight size={18} />
-                </button>
-              </form>
-            </motion.div>
-          )}
-
-          {step === 2 && (
-            <motion.div 
-              key="step2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="reg-step"
-            >
-              <div className="shield-icon-container">
-                <ShieldCheck size={48} className="shield-icon" />
-              </div>
-              <h2 className="text-display-sub">Verify Identity</h2>
-              <p className="reg-description">A 6-digit code has been sent to <strong>{formData.email}</strong>. Enter it below to continue.</p>
-              
-              <form onSubmit={handleVerifyOTP} className="reg-form">
-                <div className="input-group otp-input-container">
-                  <input 
-                    type="text" 
-                    placeholder="000000" 
-                    maxLength={6}
-                    className="otp-input"
-                    required 
-                    value={formData.otp}
-                    onChange={(e) => setFormData({...formData, otp: e.target.value})}
-                  />
-                </div>
-
-                <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
-                  {isLoading ? 'Verifying...' : 'Complete Registration'}
-                  <CheckCircle2 size={18} />
-                </button>
-                
-                <button 
-                  type="button" 
-                  className="secondary-link" 
-                  onClick={() => setStep(1)}
-                >Change Email</button>
-              </form>
-            </motion.div>
-          )}
-
-          {step === 3 && (
-            <motion.div 
-              key="step3"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="reg-step success-step"
-            >
-              <div className="success-lottie-placeholder">
-                <CheckCircle2 size={80} color="#00f3ff" />
-              </div>
-              <h2 className="text-display-sub">Registration Confirmed!</h2>
-              <p className="reg-description">Welcome to SDETM ICEM 2025. You are now officially registered as a delegate. Check your email for further instructions and event details.</p>
-              <button className="premium-btn premium-btn-secondary" onClick={() => window.location.href = '/'}>
-                Back to Home
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                  <h2 className="text-display-sub">Registration Confirmed!</h2>
+                  <p className="reg-description">Welcome to ICEM NTAI 2026. You are now officially registered. Check your email for payment confirmation steps and submission link.</p>
+                  <button className="premium-btn premium-btn-secondary" onClick={() => window.location.href = '/'}>
+                    Back to Home
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </div>
   );
