@@ -1,0 +1,153 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.top-tier {
+  background: #fff;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.institution-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-sdetm {
+  height: 60px;
+  width: auto;
+}
+
+.institution-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1c2331;
+}
+
+.inst-status {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.ntai-badge {
+  background: var(--surface-low);
+  color: var(--primary-container);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Nav Tier */
+.nav-tier {
+  background: #1c2331;
+  color: #fff;
+  padding: 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.nav-links > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-links > li > a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0.5rem;
+}
+
+.nav-links > li:hover > a {
+  color: var(--primary-container);
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.nav-links > li:hover .chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1c2331;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  border-top: 2px solid var(--primary-container);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  padding: 0.5rem 0;
+}
+
+.nav-links > li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dropdown li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary-container);
+  padding-left: 1.75rem;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; /* Mobile menu implementation later */
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+}

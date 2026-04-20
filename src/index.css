@@ -1,0 +1,118 @@
+:root {
+  --bg-color: #0c1321;
+  --surface-low: #151c29;
+  --surface-high: #232a38;
+  --surface-bright: #323948;
+  
+  --primary: #c3f5ff;
+  --primary-container: #00e5ff;
+  --primary-fixed: #001f24;
+  
+  --secondary: #81cfff;
+  --secondary-container: #00a9e8;
+  
+  --on-surface: #dce2f6;
+  --on-surface-variant: #bac9cc;
+  
+  --outline: #849396;
+  --outline-variant: #3b494c;
+  
+  --glass-bg: rgba(25, 32, 45, 0.4);
+  --glass-blur: blur(12px);
+  --glass-border: rgba(59, 73, 76, 0.2);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--on-surface);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.premium-btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  color: var(--primary-fixed);
+}
+
+.premium-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+}
+
+.premium-btn-secondary {
+  background: var(--surface-high);
+  color: #fff;
+  border: 1px solid var(--glass-border);
+}
+
+.premium-btn-secondary:hover {
+  background: var(--surface-bright);
+}
+
+.section-padding {
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Base Responsive */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+}
