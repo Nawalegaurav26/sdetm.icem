@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import './ComingSoon.css';
+import { Rocket, Clock, ArrowLeft } from 'lucide-react';
 
 const ComingSoon = ({ title }: { title: string }) => {
   return (
