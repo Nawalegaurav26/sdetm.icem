@@ -1,0 +1,147 @@
+.dates-page {
+  padding: 8rem 0 4rem;
+}
+
+.dates-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.dates-header .section-subtitle {
+  display: block;
+  color: var(--color-teal);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dates-intro {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 1.5rem auto 0;
+}
+
+.dates-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-card {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.tl-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.tl-line {
+  width: 2px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  min-height: 40px;
+}
+
+.timeline-body {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.timeline-body:hover {
+  border-color: rgba(0, 243, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.timeline-card.highlight .timeline-body {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+}
+
+.timeline-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.timeline-label {
+  font-size: 1.15rem;
+  color: white;
+  font-weight: 600;
+}
+
+.deadline-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  padding: 0.25rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.timeline-date {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-note {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.dates-disclaimer {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.dates-disclaimer svg {
+  color: var(--color-teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
