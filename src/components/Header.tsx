@@ -64,17 +64,18 @@ const Header = () => {
       {/* Tier 1: Institution Tier */}
       <div className="top-tier">
         <div className="container header-container">
-          <div className="institution-brand">
+          <div className="header-logo-left">
             <img src="/icem-logo.png" alt="ICEM Logo" className="header-icem-logo" />
-            <div className="institution-text">
-              <span className="inst-name">Indira College of Engineering and Management</span>
-              <span className="inst-status inst-status-col">
-                <span>An Autonomous Institute (AICTE Approved)</span>
-                <span className="inst-status-highlight">Sustainable Developments in Engineering, Technology & Management (SDETM 2026)</span>
-              </span>
-            </div>
           </div>
-          <div className="logo-icem-placeholder">
+          
+          <div className="institution-text text-center">
+            <span className="inst-name">Sustainable Developments in Engineering, Technology & Management, 2026</span>
+            <span className="inst-status inst-status-col mt-1">
+            <span className="inst-status-highlight header-badge-text">International Conference 2026</span>
+            </span>
+          </div>
+
+          <div className="header-logo-right">
              <img src="/sdetm-logo.png" alt="SDETM Logo" className="header-sdetm-logo" />
           </div>
         </div>

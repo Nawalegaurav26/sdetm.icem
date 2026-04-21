@@ -285,3 +285,7 @@
   margin-top: 4px;
   color: var(--icem-cyan);
 }
+
+.header-badge-text {
+  font-size: 0.9rem;
+}
