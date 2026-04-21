@@ -10,11 +10,17 @@ import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
+import PaperSubmission from './pages/PaperSubmission';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
 function App() {
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
       <div className="app-wrapper">
         <BackgroundAnimation />
         <Header />
@@ -43,11 +49,22 @@ function App() {
             {/* Submission */}
             <Route path="/submission/cmt" element={<ComingSoon title="Microsoft CMT Submission" />} />
             <Route path="/submission/guidelines" element={<SubmissionGuidelines />} />
+            <Route path="/submission/submit" element={
+              <ProtectedRoute>
+                <PaperSubmission />
+              </ProtectedRoute>
+            } />
             <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
             <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
 
-            {/* Registration */}
+            {/* Registration & Login */}
             <Route path="/registration" element={<Registration />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } />
             
             {/* Other main routes */}
             <Route path="/dates" element={<ImportantDates />} />
@@ -64,7 +81,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 

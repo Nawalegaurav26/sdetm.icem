@@ -9,7 +9,7 @@
 
 .dates-header .section-subtitle {
   display: block;
-  color: var(--color-teal);
+  color: #43ccd1;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: 600;
@@ -17,7 +17,7 @@
 }
 
 .dates-intro {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 1.05rem;
   max-width: 500px;
   margin: 1.5rem auto 0;
@@ -37,6 +37,7 @@
   padding: 0;
   border: none;
   background: transparent;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
@@ -63,25 +64,26 @@
 }
 
 .timeline-body {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 60, 132, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 1.8rem;
   margin-bottom: 1.5rem;
   flex: 1;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: all 0.3s ease;
 }
 
 .timeline-body:hover {
-  border-color: rgba(0, 243, 255, 0.2);
+  border-color: rgba(67, 204, 209, 0.2);
   transform: translateX(5px);
 }
 
 .timeline-card.highlight .timeline-body {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
-  border-color: rgba(124, 58, 237, 0.3);
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+  background: linear-gradient(135deg, rgba(0, 60, 132, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  border-color: rgba(0, 60, 132, 0.3);
+  box-shadow: 0 0 30px rgba(0, 60, 132, 0.1);
 }
 
 .timeline-top {
@@ -136,12 +138,12 @@
   gap: 1rem;
   padding: 1.5rem 2rem;
   border-radius: 16px;
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
 .dates-disclaimer svg {
-  color: var(--color-teal);
+  color: #43ccd1;
   flex-shrink: 0;
   margin-top: 2px;
 }

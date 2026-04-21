@@ -1,0 +1,294 @@
+/* ============================================
+   ICEM 2026 — Login Page
+   Brand: Navy #003c84 | Cyan #43ccd1
+   ============================================ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Split layout — left branding, right form */
+.login-split {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  max-width: 1000px;
+  width: 100%;
+  gap: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Left — ICEM Navy Branding Panel */
+.login-brand {
+  background: linear-gradient(135deg, #003c84 0%, #002a6b 100%);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-brand::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: rgba(67, 204, 209, 0.08);
+  border-radius: 50%;
+}
+
+.login-brand-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.login-brand h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.login-brand h2 span {
+  color: #43ccd1;
+}
+
+.login-brand p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.login-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.login-features li .feat-dot {
+  width: 8px;
+  height: 8px;
+  background: #43ccd1;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Right — Form Panel */
+.login-form-panel {
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-form-header .login-icon {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #003c84, #43ccd1);
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+.login-form-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #003c84;
+  margin-bottom: 0.35rem;
+}
+
+.login-form-header p {
+  font-size: 0.87rem;
+  color: #718096;
+}
+
+/* Form Fields */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.login-form .form-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.login-form .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-form .input-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: #003c84;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.login-form input {
+  width: 100%;
+  background: #f7f9fc;
+  border: 1.5px solid #dde8f5;
+  border-radius: 10px;
+  padding: 0.8rem 0.85rem 0.8rem 2.75rem;
+  color: #1a2d4d;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #003c84;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 60, 132, 0.1);
+}
+
+.login-form input::placeholder {
+  color: #a0aec0;
+}
+
+/* OTP input — large digits */
+.otp-input-large {
+  text-align: center;
+  font-size: 1.75rem !important;
+  letter-spacing: 0.5em;
+  font-weight: 800;
+  padding-left: 0.85rem !important;
+  color: #003c84;
+}
+
+/* Buttons */
+.login-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #003c84 0%, #0a4fa0 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0.5rem;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #002a6b 0%, #003c84 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 60, 132, 0.3);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-alt-link {
+  text-align: center;
+  font-size: 0.87rem;
+  color: #718096;
+  margin-top: 1rem;
+}
+
+.login-alt-link button,
+.login-alt-link a {
+  color: #003c84;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.87rem;
+  transition: color 0.2s;
+}
+
+.login-alt-link button:hover,
+.login-alt-link a:hover {
+  color: #43ccd1;
+}
+
+/* OTP confirm step */
+.otp-confirm-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.otp-shield-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 60, 132, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: #003c84;
+}
+
+.otp-confirm-header p {
+  font-size: 0.87rem;
+  color: #718096;
+}
+
+.otp-confirm-header p strong {
+  color: #003c84;
+  font-weight: 700;
+}
+
+/* Responsive — stack on mobile */
+@media (max-width: 768px) {
+  .login-split {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .login-brand {
+    padding: 2rem;
+  }
+  .login-brand::before { display: none; }
+}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { FileText, Download, CheckCircle, Shield, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { FileText, Download, CheckCircle, Shield, Globe, Send } from 'lucide-react';
 import './SubmissionGuidelines.css';
 
 const SubmissionGuidelines = () => {
@@ -79,6 +80,12 @@ const SubmissionGuidelines = () => {
                 <li><CheckCircle size={16} /> TNR 12 + 1.5 Spacing</li>
                 <li><CheckCircle size={16} /> Figures with Captions</li>
               </ul>
+              <Link to="/submission/submit" style={{ textDecoration: 'none', marginBottom: '12px', display: 'block' }}>
+                <button className="premium-btn premium-btn-secondary full-width" style={{ gap: '10px' }}>
+                  <Send size={16} /> Open Submission Portal
+                </button>
+              </Link>
+
               <button 
                 className="premium-btn premium-btn-primary full-width"
                 onClick={() => window.open('https://cmt3.research.microsoft.com/', '_blank')}

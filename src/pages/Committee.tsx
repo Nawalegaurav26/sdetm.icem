@@ -13,7 +13,7 @@ interface MemberProps {
 const MemberCard: React.FC<MemberProps> = ({ name, role, org, email, linkedin }) => (
   <div className="profile-card">
     <div className="profile-image-container">
-      <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=00CED1&color=fff&size=200`} alt={name} />
+      <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} alt={name} />
     </div>
     <div className="profile-info">
       <span className="role">{role}</span>

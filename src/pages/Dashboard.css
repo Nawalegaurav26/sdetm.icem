@@ -1,0 +1,52 @@
+/* ============================================
+   ICEM 2026 — Delegate Dashboard
+   Brand: Navy #003c84 | Cyan #43ccd1
+   ============================================ */
+
+.dashboard-container {
+  min-height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #43ccd1 0%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card — ICEM navy tinted */
+.glass-card {
+  background: rgba(0, 60, 132, 0.15);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Primary CTA button */
+.btn-primary {
+  background: linear-gradient(135deg, #003c84 0%, #43ccd1 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(67, 204, 209, 0.3);
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(67, 204, 209, 0.45);
+  filter: brightness(1.08);
+}
+
+/* Paper cards on hover */
+.group:hover {
+  background: rgba(0, 60, 132, 0.1);
+}

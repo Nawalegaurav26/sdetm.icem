@@ -77,7 +77,7 @@ const Contact = () => {
                 className="convenor-card glass"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=Saurabh+Gupta&background=00CED1&color=fff&size=200"
+                  src="https://ui-avatars.com/api/?name=Saurabh+Gupta&background=003c84&color=fff&size=200"
                   alt="Dr. Saurabh Gupta"
                 />
                 <div className="convenor-details">
@@ -102,12 +102,12 @@ const Contact = () => {
                 className="convenor-card glass"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=Manjusha+Tatiya&background=7c3aed&color=fff&size=200"
+                  src="https://ui-avatars.com/api/?name=Manjusha+Tatiya&background=43ccd1&color=003c84&size=200"
                   alt="Dr. Manjusha Tatiya"
                 />
                 <div className="convenor-details">
                   <h3>Dr. Manjusha Tatiya</h3>
-                  <span className="badge badge-purple">Co-Convenor</span>
+                  <span className="badge" style={{ background: 'rgba(67,204,209,0.1)', color: '#43ccd1', borderColor: 'rgba(67,204,209,0.3)' }}>Co-Convenor</span>
                   <p>HOD – AI & Data Science, ICEM</p>
                   <div className="contact-actions">
                     <a href="tel:+919730019882" className="contact-chip">

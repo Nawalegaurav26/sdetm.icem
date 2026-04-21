@@ -43,7 +43,7 @@ const BackgroundAnimation = () => {
       draw() {
         ctx!.beginPath();
         ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx!.fillStyle = 'rgba(0, 229, 255, 0.5)';
+        ctx!.fillStyle = 'rgba(67, 204, 209, 0.45)';  // ICEM Cyan
         ctx!.fill();
       }
     }
@@ -65,7 +65,7 @@ const BackgroundAnimation = () => {
 
           if (dist < 150) {
             ctx!.beginPath();
-            ctx!.strokeStyle = `rgba(0, 229, 255, ${0.15 * (1 - dist / 150)})`;
+            ctx!.strokeStyle = `rgba(67, 204, 209, ${0.12 * (1 - dist / 150)})`;  // ICEM Cyan lines
             ctx!.lineWidth = 1;
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
@@ -104,7 +104,7 @@ const BackgroundAnimation = () => {
         top: 0,
         left: 0,
         zIndex: -1,
-        background: '#0c1321',
+        background: '#060f1e',  /* ICEM deep navy background */
         pointerEvents: 'none',
       }}
     />

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
 
   const navItems = [
     { title: 'HOME', path: '/' },
@@ -113,7 +115,18 @@ const Header = () => {
           </ul>
 
           <div className="auth-btn">
-             <button className="premium-btn premium-btn-primary">Login / Register</button>
+            {isAuthenticated && user ? (
+              <div className="flex items-center gap-3">
+                <Link to="/dashboard" className="premium-btn premium-btn-primary flex items-center gap-2">
+                  <User size={16} /> {user.name?.split(' ')[0] || 'User'}
+                </Link>
+                <button onClick={logout} className="logout-icon-btn p-2 text-gray-400 hover:text-red-400 transition-colors" title="Logout">
+                  <LogOut size={20} />
+                </button>
+              </div>
+            ) : (
+              <Link to="/registration" className="premium-btn premium-btn-primary">Join Conference</Link>
+            )}
           </div>
         </div>
       </nav>

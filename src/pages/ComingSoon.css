@@ -1,3 +1,8 @@
+/* ============================================
+   ICEM 2026 — Coming Soon Page
+   Brand: Navy #003c84 | Cyan #43ccd1
+   ============================================ */
+
 .coming-soon-container {
   min-height: 80vh;
   display: flex;
@@ -13,44 +18,61 @@
   width: 100%;
   padding: 4rem 3rem;
   text-align: center;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  background: var(--glass-surface);
-  border: 1px solid var(--glass-border);
+  background: rgba(0, 60, 132, 0.12);
+  border: 1px solid rgba(67, 204, 209, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .status-badge {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  background: rgba(0, 243, 255, 0.1);
-  color: var(--color-teal);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  padding: 0.45rem 1.2rem;
+  background: rgba(67, 204, 209, 0.1);
+  color: #43ccd1;
+  border: 1px solid rgba(67, 204, 209, 0.3);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
 
+.coming-soon-content h1,
+.coming-soon-content h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Animated loader dots — ICEM Cyan */
 .neural-loader {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: 3rem;
 }
 
 .neural-loader .dot {
   width: 10px;
   height: 10px;
-  background: var(--color-teal);
+  background: #43ccd1;
   border-radius: 50%;
-  animation: pulse 1.5s infinite ease-in-out;
-  box-shadow: 0 0 10px var(--color-teal);
+  animation: icem-pulse 1.5s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(67, 204, 209, 0.5);
 }
 
 .neural-loader .dot:nth-child(2) { animation-delay: 0.2s; }
 .neural-loader .dot:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes pulse {
+@keyframes icem-pulse {
   0%, 100% { opacity: 0.3; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
+  50%       { opacity: 1;   transform: scale(1.2); }
 }

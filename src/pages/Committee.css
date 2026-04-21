@@ -9,7 +9,7 @@
 
 .section-subtitle {
   text-align: center;
-  color: var(--primary-container);
+  color: #43ccd1;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
@@ -30,9 +30,10 @@
 }
 
 .profile-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 60, 132, 0.12);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(67, 204, 209, 0.15);
   border-radius: 24px;
   padding: 2rem;
   text-align: center;
@@ -48,15 +49,15 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--primary-container), transparent);
+  background: linear-gradient(90deg, transparent, #43ccd1, transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
 
 .profile-card:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--primary-container);
+  background: rgba(67, 204, 209, 0.08);
+  border-color: #43ccd1;
 }
 
 .profile-card:hover::before {
@@ -69,7 +70,7 @@
   margin: 0 auto 1.5rem;
   border-radius: 50%;
   padding: 5px;
-  background: linear-gradient(135deg, var(--primary-container), var(--secondary-container));
+  background: linear-gradient(135deg, #43ccd1, #003c84);
   position: relative;
 }
 
@@ -83,13 +84,13 @@
 
 .profile-info h3 {
   font-size: 1.25rem;
-  color: var(--surface-bright);
+  color: #ffffff;
   margin-bottom: 0.25rem;
 }
 
 .profile-info .role {
   font-size: 0.9rem;
-  color: var(--primary-container);
+  color: #43ccd1;
   font-weight: 600;
   margin-bottom: 0.5rem;
   display: block;
@@ -97,7 +98,7 @@
 
 .profile-info .org {
   font-size: 0.85rem;
-  color: var(--on-surface-variant);
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
   display: block;
 }
@@ -112,16 +113,16 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(67, 204, 209, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--on-surface-variant);
+  color: var(--text-muted);
   transition: all 0.2s;
 }
 
 .profile-social a:hover {
-  background: var(--primary-container);
+  background: #43ccd1;
   color: #fff;
   transform: scale(1.1);
 }

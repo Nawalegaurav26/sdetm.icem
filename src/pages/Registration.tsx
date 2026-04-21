@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, User, Building, ChevronRight, ShieldCheck, CheckCircle2, CreditCard, Info } from 'lucide-react';
+import { Mail, User, Building, ChevronRight, ShieldCheck, CheckCircle2, CreditCard, Info, LogIn } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 import './Registration.css';
 
 const Registration = () => {
+  const { login } = useAuth();
   const [step, setStep] = useState(1); // 1: Info, 2: OTP, 3: Success
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -17,22 +20,70 @@ const Registration = () => {
   const handleSendOTP = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Mocking the behavior for branding consistency
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/send-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: formData.email }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send OTP');
+      
       setStep(2);
+    } catch (error) {
+      const e = error as Error;
+      console.error('OTP Send Error:', e.message);
+      if (!import.meta.env.VITE_API_URL) {
+        setStep(2); // Mock for dev
+      } else {
+        alert("Error sending OTP: " + e.message);
+      }
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   const handleVerifyOTP = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/verify-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          otp: formData.otp,
+          userData: {
+            name: formData.name,
+            institution: formData.institution,
+            role: formData.role
+          }
+        }),
+      });
+
+      if (!response.ok) throw new Error('Invalid OTP');
+
+      login({
+        email: formData.email,
+        name: formData.name,
+        role: formData.role,
+        institution: formData.institution
+      });
+      
       setStep(3);
+    } catch (error) {
+      const e = error as Error;
+      console.error('Verification Error:', e.message);
+      if (!import.meta.env.VITE_API_URL) {
+        setStep(3); // Mock for dev
+      } else {
+        alert("Invalid OTP or Registration Error: " + e.message);
+      }
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -99,6 +150,12 @@ const Registration = () => {
               <li>Local transport from Somatane can be arranged on prior request.</li>
               <li>No TA/DA will be provided to attend conference.</li>
             </ul>
+            <div className="login-prompt mt-8 p-4 rounded-xl bg-[#43ccd1]/10 border border-[#43ccd1]/20">
+              <p className="text-sm text-gray-300 flex items-center gap-2">
+                <LogIn size={18} className="text-icem-cyan" />
+                Already have an account? <Link to="/login" className="text-icem-cyan hover:underline font-semibold">Log in here</Link>
+              </p>
+            </div>
           </section>
         </div>
 
@@ -229,7 +286,7 @@ const Registration = () => {
                   className="reg-step success-step"
                 >
                   <div className="success-lottie-placeholder">
-                    <CheckCircle2 size={80} color="#00f3ff" />
+                    <CheckCircle2 size={80} color="var(--icem-cyan)" />
                   </div>
                   <h2 className="text-display-sub">Registration Confirmed!</h2>
                   <p className="reg-description">Welcome to ICEM NTAI 2026. You are now officially registered. Check your email for payment confirmation steps and submission link.</p>

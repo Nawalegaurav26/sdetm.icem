@@ -1,48 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ===================================================
+   ICEM 2026 Conference — Design System
+   Aligned with indiraicem.ac.in Brand Identity
+   Colors: Navy #003c84 | Cyan #43ccd1 | White #fff
+   =================================================== */
+
+/* --- ICEM Brand Color Theme for Tailwind v4 --- */
+@theme {
+  --color-icem-navy: #003c84;
+  --color-icem-navy-dark: #002a6b;
+  --color-icem-navy-light: #0a4fa0;
+  --color-icem-cyan: #43ccd1;
+  --color-icem-cyan-dark: #2eb8bd;
+  --color-icem-cyan-light: #6edde1;
+  --color-icem-gold: #f5a623;
+  --color-icem-surface: #0a1628;
+  --color-icem-surface-2: #0f1e38;
+  --color-icem-surface-3: #1a2d4d;
+  --color-icem-border: rgba(67, 204, 209, 0.2);
+  --font-icem: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* --- CSS Custom Properties (Legacy support for non-Tailwind pages) --- */
 :root {
-  --bg-color: #0c1321;
-  --surface-low: #151c29;
-  --surface-high: #232a38;
-  --surface-bright: #323948;
-  
-  --primary: #c3f5ff;
-  --primary-container: #00e5ff;
-  --primary-fixed: #001f24;
-  
-  --secondary: #81cfff;
-  --secondary-container: #00a9e8;
-  
-  --on-surface: #dce2f6;
-  --on-surface-variant: #bac9cc;
-  
-  --outline: #849396;
-  --outline-variant: #3b494c;
-  
-  --glass-bg: rgba(25, 32, 45, 0.4);
-  --glass-blur: blur(12px);
-  --glass-border: rgba(59, 73, 76, 0.2);
-  
+  /* ICEM Official Colors */
+  --icem-navy:        #003c84;
+  --icem-navy-dark:   #002a6b;
+  --icem-navy-light:  #0a4fa0;
+  --icem-cyan:        #43ccd1;
+  --icem-cyan-dark:   #2eb8bd;
+  --icem-cyan-light:  #6edde1;
+  --icem-gold:        #f5a623;
+  --icem-white:       #ffffff;
+
+  /* Surface Colors — premium dark with navy undertones */
+  --bg-color:         #060f1e;
+  --surface-low:      #0a1628;
+  --surface-high:     #0f1e38;
+  --surface-bright:   #1a2d4d;
+
+  /* Typography */
+  --text-primary:     #ffffff;
+  --text-secondary:   #b8cce8;
+  --text-muted:       #7a9bbf;
+
+  /* Semantic Aliases */
+  --primary:          var(--icem-cyan);
+  --primary-dark:     var(--icem-cyan-dark);
+  --accent:           var(--icem-navy);
+
+  /* Glass / Blur */
+  --glass-bg:         rgba(0, 60, 132, 0.15);
+  --glass-blur:       blur(14px);
+  --glass-border:     rgba(67, 204, 209, 0.2);
+
+  /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
+/* ========== RESET ========== */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ========== BASE ========== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
-  color: var(--on-surface);
-  line-height: 1.6;
+  color: var(--text-primary);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
+/* Inter font is imported at the top of this file */
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
 a {
@@ -51,56 +98,81 @@ a {
   transition: var(--transition-smooth);
 }
 
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
+img { max-width: 100%; height: auto; }
 
-/* Utilities */
+/* ========== ICEM UTILITY CLASSES ========== */
+
+/* Glass card — navy tinted */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
 }
 
-.premium-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+/* Navy gradient text */
+.icem-gradient-text {
+  background: linear-gradient(135deg, var(--icem-cyan) 0%, #ffffff 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ========== BUTTONS ========== */
 .premium-btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
   font-weight: 600;
+  font-size: 0.875rem;
   cursor: pointer;
   border: none;
   transition: var(--transition-smooth);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Primary — ICEM Cyan (matches parent site's CTA buttons) */
 .premium-btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
-  color: var(--primary-fixed);
+  background: var(--icem-cyan);
+  color: var(--icem-navy-dark);
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(67, 204, 209, 0.35);
 }
-
 .premium-btn-primary:hover {
+  background: var(--icem-cyan-light);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(67, 204, 209, 0.45);
+  color: var(--icem-navy-dark);
 }
 
+/* Secondary — Navy outline */
 .premium-btn-secondary {
-  background: var(--surface-high);
-  color: #fff;
-  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--icem-cyan);
+  border: 2px solid var(--icem-cyan);
 }
-
 .premium-btn-secondary:hover {
-  background: var(--surface-bright);
+  background: rgba(67, 204, 209, 0.1);
+  transform: translateY(-2px);
 }
 
+/* Navy solid */
+.premium-btn-navy {
+  background: var(--icem-navy);
+  color: #fff;
+}
+.premium-btn-navy:hover {
+  background: var(--icem-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 60, 132, 0.4);
+}
+
+/* ========== LAYOUT ========== */
 .section-padding {
   padding: 5rem 2rem;
 }
@@ -108,11 +180,81 @@ ul {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
-/* Base Responsive */
+/* ========== SECTION STYLES ========== */
+.section-label {
+  display: inline-block;
+  background: rgba(67, 204, 209, 0.12);
+  color: var(--icem-cyan);
+  border: 1px solid rgba(67, 204, 209, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ========== ICEM CARD ========== */
+.icem-card {
+  background: linear-gradient(135deg, var(--surface-low) 0%, var(--surface-high) 100%);
+  border: 1px solid rgba(67, 204, 209, 0.15);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: var(--transition-smooth);
+}
+
+.icem-card:hover {
+  border-color: rgba(67, 204, 209, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 60, 132, 0.3);
+}
+
+/* Navy card variant */
+.icem-card-navy {
+  background: linear-gradient(135deg, var(--icem-navy) 0%, var(--icem-navy-light) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.75rem;
+  color: #fff;
+  transition: var(--transition-smooth);
+}
+
+/* ========== UTILITY ========== */
+.text-icem-cyan  { color: var(--icem-cyan); }
+.text-icem-navy  { color: var(--icem-navy); }
+.text-muted      { color: var(--text-muted); }
+.bg-icem-navy    { background-color: var(--icem-navy); }
+.bg-icem-surface { background-color: var(--surface-low); }
+
+/* Divider */
+.icem-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--icem-cyan), var(--icem-navy-light));
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .section-padding {
-    padding: 3rem 1rem;
-  }
+  .section-padding { padding: 3rem 1rem; }
+  .section-title   { font-size: 1.75rem; }
 }

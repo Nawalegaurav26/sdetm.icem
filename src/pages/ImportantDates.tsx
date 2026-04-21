@@ -41,9 +41,9 @@ const dates = [
 ];
 
 const statusColors: Record<string, string> = {
-  open: '#00f3ff',
-  upcoming: '#94a3b8',
-  conference: '#7c3aed',
+  open:       '#43ccd1',   // ICEM Cyan — active/open
+  upcoming:   '#94a3b8',   // Neutral grey
+  conference: '#003c84',   // ICEM Navy — main event
 };
 
 const ImportantDates = () => {
