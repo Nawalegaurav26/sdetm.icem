@@ -9,10 +9,10 @@ const Home = () => {
         <div className="container hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
+              SDETM NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
             </h1>
             <p className="hero-subtitle">
-              Sustainable Developments in Engineering, Technology & Management, 2026 (Second SDETM)
+              Sustainable Developments in Engineering, Technology & Management, 2026 (SDETM)
             </p>
             
             <div className="hero-info-pills">

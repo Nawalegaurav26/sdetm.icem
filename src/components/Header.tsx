@@ -65,7 +65,7 @@ const Header = () => {
       <div className="top-tier">
         <div className="container header-container">
           <div className="institution-brand">
-            <img src="/sdetm-logo.png" alt="SDETM Logo" className="header-sdetm-logo" />
+            <img src="/icem-logo.png" alt="ICEM Logo" className="header-icem-logo" />
             <div className="institution-text">
               <span className="inst-name">Indira College of Engineering and Management</span>
               <span className="inst-status inst-status-col">
@@ -75,7 +75,7 @@ const Header = () => {
             </div>
           </div>
           <div className="logo-icem-placeholder">
-             <img src="/icem-logo.png" alt="ICEM Logo" className="header-icem-logo" />
+             <img src="/sdetm-logo.png" alt="SDETM Logo" className="header-sdetm-logo" />
           </div>
         </div>
       </div>
