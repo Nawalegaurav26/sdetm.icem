@@ -35,7 +35,6 @@ const Committee = () => {
     if (path.includes('/chief-patron')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Chief Patron</h2>
           <div className="committee-grid centered">
             <MemberCard 
@@ -51,7 +50,6 @@ const Committee = () => {
     if (path.includes('/patron')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Patrons</h2>
           <div className="committee-grid">
             <MemberCard 
@@ -77,7 +75,6 @@ const Committee = () => {
     if (path.includes('/chair')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Conference Chair</h2>
           <div className="committee-grid centered">
             <MemberCard 
@@ -93,7 +90,6 @@ const Committee = () => {
     if (path.includes('/convenor')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Leadership</span>
           <h2 className="section-title text-center">Convenors</h2>
           <div className="committee-grid">
             <MemberCard 
@@ -116,7 +112,6 @@ const Committee = () => {
     if (path.includes('/advisory')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Academic</span>
           <h2 className="section-title text-center">Advisory Committee</h2>
           <div className="committee-grid">
             {[
@@ -146,7 +141,6 @@ const Committee = () => {
     if (path.includes('/organizing')) {
       return (
         <section className="committee-section">
-          <span className="section-subtitle">Execution</span>
           <h2 className="section-title text-center">Organizing Committee</h2>
           
           <div className="dept-group">
