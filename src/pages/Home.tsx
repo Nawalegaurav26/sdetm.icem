@@ -9,10 +9,13 @@ const Home = () => {
         <div className="container hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              SDETM NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
+              NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
             </h1>
-            <p className="hero-subtitle">
-              Sustainable Developments in Engineering, Technology & Management, 2026 (SDETM)
+            <h2 className="hero-subtitle">
+              Sustainable Developments in Engineering, Technology & Management, 2026
+            </h2>
+            <p className="hero-description">
+              SDETM 2026 brings together global pioneers and innovators to explore the intersection of next-generation technology and AI. Join us as we forge actionable solutions for a sustainable, resilient, and forward-thinking future across engineering and management disciplines.
             </p>
             
             <div className="hero-info-pills">

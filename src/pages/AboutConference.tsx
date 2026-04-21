@@ -8,7 +8,7 @@ const AboutConference = () => {
     { icon: <BookOpen size={28} />, title: 'Scopus Indexed', desc: 'Accepted papers published in Springer Nature proceedings, Scopus indexed.' },
     { icon: <Users size={28} />, title: '500+ Delegates', desc: 'Academics, industry professionals, students, and researchers under one roof.' },
     { icon: <Award size={28} />, title: 'Double-Blind Review', desc: 'Rigorous peer-review ensuring only the best research is accepted.' },
-    { icon: <Star size={28} />, title: 'SDETM Edition', desc: 'Building on the success of past SDETM conferences with greater scope.' },
+    { icon: <Star size={28} />, title: 'Second SDETM Edition', desc: 'Building on the success of the first SDETM conference with greater scope.' },
   ];
 
   return (
@@ -30,15 +30,15 @@ const AboutConference = () => {
             transition={{ delay: 0.1 }}
             className="about-conf-text glass"
           >
-            <h2>ICSDETM 2026 — SDETM</h2>
+            <h2>ICSDETM 2026 — Second SDETM</h2>
             <p>
-              The <strong>International Conference on Sustainable Developments in Engineering, Technology & Management (ICSDETM 2026)</strong>, also known as <strong>SDETM</strong>, is a premier academic forum hosted by Indira College of Engineering and Management (ICEM), Pune on <strong>4–5 November 2026</strong>.
+              The <strong>International Conference on Sustainable Developments in Engineering, Technology & Management (ICSDETM 2026)</strong>, also known as the <strong>Second SDETM</strong>, is a premier academic forum hosted by Indira College of Engineering and Management (ICEM), Pune on <strong>4–5 November 2026</strong>.
             </p>
             <p>
               This conference brings together leading researchers, engineers, academics, industry professionals, and students to exchange ideas, present innovations, and foster collaboration in the rapidly evolving landscape of engineering and technology.
             </p>
             <p>
-              Following the resounding success of the previous SDETM editions, the conference expands its scope to cover a broader spectrum of themes — from advanced computing and AI to sustainable mechanical engineering and management innovation.
+              Following the resounding success of the inaugural SDETM edition, the second conference expands its scope to cover a broader spectrum of themes — from advanced computing and AI to sustainable mechanical engineering and management innovation.
             </p>
             <h2 className="about-conf-objective-title">Objective</h2>
             <p>
