@@ -74,7 +74,7 @@ const Home = () => {
           <div className="glass-card p-4">
             <h2 className="section-title">About The Conference</h2>
             <p className="text-large">
-              The International Conference (ICSDETM, 2026) aims to bring together researchers, academicians, industry professionals, and students to exchange insights on emerging technologies and sustainable development. It provides a platform for knowledge sharing, innovation, and collaborative learning, enabling participants to explore the latest trends in the engineering and management domains.
+              The International Conference (ICSDETM, 2026) aims to bring together researchers, academicians, industry professionals, and students to exchange insights on NextGen Technology & AI for a Sustainable Future. It provides a platform for knowledge sharing, innovation, and collaborative learning, enabling participants to explore the latest trends in the engineering and management domains.
             </p>
           </div>
         </div>
@@ -170,7 +170,7 @@ const Home = () => {
         <div className="container">
           <div className="glass-card contact-grid">
             <div className="contact-info-main">
-              <h2 className="section-title">Contact Us</h2>
+              <h2 className="section-title">Conference Help Desk</h2>
               <p className="mb-2">For any queries regarding the conference, registration, or submission, please contact our convenors.</p>
               <div className="contact-links">
                  <div className="contact-card">
