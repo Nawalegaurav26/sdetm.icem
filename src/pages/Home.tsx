@@ -179,6 +179,53 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Venue & Location */}
+      <section className="venue-section section-padding">
+        <div className="container">
+          <div className="venue-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="venue-info">
+              <div className="label-hud mb-4">
+                <MapPin size={14} className="text-brand-primary" />
+                <span>Ground Intelligence</span>
+              </div>
+              <h2 className="section-title display-md mb-6">Venue & <span className="premium-gradient">Location</span></h2>
+              <div className="glass-card p-6 border-l-4 border-brand-primary">
+                <h3 className="text-xl font-bold text-white mb-2">Indira College of Engineering and Management</h3>
+                <p className="text-muted mb-6">
+                  Parandwadi, Near Somatne Phata, Maval, Pune - 410 506.
+                </p>
+                <div className="venue-metrics-minimal grid grid-cols-2 gap-4">
+                  <div className="metric">
+                    <span className="text-xs uppercase text-brand-primary block mb-1">Station</span>
+                    <span className="text-white font-bold">25 KM</span>
+                  </div>
+                  <div className="metric">
+                    <span className="text-xs uppercase text-brand-primary block mb-1">Airport</span>
+                    <span className="text-white font-bold">35 KM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="venue-map-preview h-[400px]">
+              <div className="map-frame-hud h-full glass-card overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.892019777598!2d73.69611767519308!3d18.630046582457814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbf58145e3f3%3A0x60032f2f4c9c1b4b!2sIndira%20College%20of%20Engineering%20%26%20Management!5e0!3m2!1sen!2sin!4v1713721000000!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  title="Home Venue Map"
+                ></iframe>
+                <div className="map-overlay-hud">
+                  <div className="scanner-line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="home-contact-section section-padding">
         <div className="container">

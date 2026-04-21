@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import BackgroundAnimation from './components/BackgroundAnimation';
-import ComingSoon from './pages/ComingSoon';
+import Venue from './pages/Venue';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
 import SubmissionGuidelines from './pages/SubmissionGuidelines';
@@ -69,7 +69,7 @@ function App() {
             
             {/* Other main routes */}
             <Route path="/dates" element={<ImportantDates />} />
-            <Route path="/venue" element={<ComingSoon title="Venue & Location" />} />
+            <Route path="/venue" element={<Venue />} />
             <Route path="/contact" element={<Contact />} />
             
             {/* More / Misc */}

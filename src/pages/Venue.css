@@ -1,0 +1,100 @@
+.venue-page {
+  min-height: 100vh;
+  background: var(--color-icem-surface);
+
+}
+
+.label-hud {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 4px;
+  color: var(--color-icem-cyan);
+
+  font-family: monospace;
+
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hud-line {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(0, 229, 255, 0.5) 0%, 
+    rgba(0, 229, 255, 0.1) 100%
+  );
+}
+
+/* Map Frame HUD Styling */
+.map-frame-hud {
+  position: relative;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+  background: var(--color-icem-surface-2);
+
+  height: 100%;
+}
+
+.map-overlay-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-icem-cyan), transparent);
+
+  box-shadow: 0 0 15px var(--color-icem-cyan);
+
+  animation: scan 4s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+.corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--color-icem-cyan);
+
+  opacity: 0.8;
+}
+
+.cor-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.cor-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.cor-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.cor-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.metric-row {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metric-row:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .map-container-hud {
+    height: 400px;
+    min-height: 400px;
+  }
+}
