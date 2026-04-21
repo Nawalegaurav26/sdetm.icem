@@ -1,0 +1,128 @@
+/* ============================================
+   ICEM 2026 — Conference Tracks
+   Glass-morphism premium cards
+   ============================================ */
+
+.tracks-page {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.track-card {
+  position: relative;
+  background: rgba(0, 60, 132, 0.15);
+  border: 1px solid rgba(67, 204, 209, 0.15);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #43ccd1, #003c84);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(67, 204, 209, 0.3);
+  background: rgba(0, 60, 132, 0.25);
+}
+
+.track-card:hover::before {
+  opacity: 1;
+}
+
+.track-icon-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(67, 204, 209, 0.2), rgba(0, 60, 132, 0.3));
+  border-radius: 18px;
+  color: #43ccd1;
+  transition: all 0.3s ease;
+}
+
+.track-card:hover .track-icon {
+  transform: rotate(5deg) scale(1.05);
+  background: linear-gradient(135deg, rgba(67, 204, 209, 0.3), rgba(0, 60, 132, 0.4));
+  box-shadow: 0 10px 20px rgba(67, 204, 209, 0.2);
+}
+
+.track-emoji {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.track-card:hover .track-emoji {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+.track-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.track-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

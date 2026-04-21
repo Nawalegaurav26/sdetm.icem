@@ -10,6 +10,7 @@ import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
+import ConferenceTracks from './pages/ConferenceTracks';
 import PaperSubmission from './pages/PaperSubmission';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -43,7 +44,7 @@ function App() {
             <Route path="/committee/organizing" element={<Committee />} />
             
             {/* Call for Papers */}
-            <Route path="/call-for-papers/tracks" element={<ComingSoon title="Conference Tracks" />} />
+            <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
             <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
             
             {/* Submission */}
