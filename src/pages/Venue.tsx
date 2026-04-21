@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Zap, Globe, Compass, Clock, Bus } from 'lucide-react';
 import './Venue.css';

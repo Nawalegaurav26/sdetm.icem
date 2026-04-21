@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import Venue from './pages/Venue';
+import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
 import SubmissionGuidelines from './pages/SubmissionGuidelines';
