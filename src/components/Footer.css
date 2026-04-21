@@ -158,6 +158,19 @@
   font-weight: 400;
 }
 
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.designed-by {
+  font-size: 0.75rem !important;
+  color: #43ccd1 !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
 .policy-links {
   display: flex;
   align-items: center;

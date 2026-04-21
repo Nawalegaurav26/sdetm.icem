@@ -82,7 +82,10 @@ const Footer = () => {
       {/* Bottom Bar — matches indiraicem.ac.in footer */}
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>© {new Date().getFullYear()} Indira College of Engineering and Management — All Rights Reserved.</p>
+          <div className="footer-credits">
+            <p>© {new Date().getFullYear()} Indira College of Engineering and Management — All Rights Reserved.</p>
+            <p className="designed-by">Designed &amp; Developed by CertiOwn team</p>
+          </div>
           <div className="policy-links">
             <a href="https://www.indiraicem.ac.in/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
             <span className="divider-dot">·</span>
