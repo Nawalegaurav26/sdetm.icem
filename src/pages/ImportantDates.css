@@ -56,6 +56,10 @@
   box-shadow: 0 0 12px currentColor;
 }
 
+.tl-dot-open { background: #43ccd1; }
+.tl-dot-upcoming { background: #94a3b8; }
+.tl-dot-conference { background: #003c84; }
+
 .tl-line {
   width: 2px;
   flex: 1;
@@ -123,6 +127,10 @@
   font-weight: 700;
   margin-bottom: 0.6rem;
 }
+
+.timeline-date-open { color: #43ccd1; }
+.timeline-date-upcoming { color: #94a3b8; }
+.timeline-date-conference { color: #003c84; }
 
 .timeline-note {
   color: #64748b;

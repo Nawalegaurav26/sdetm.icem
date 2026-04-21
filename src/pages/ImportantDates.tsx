@@ -40,11 +40,6 @@ const dates = [
   },
 ];
 
-const statusColors: Record<string, string> = {
-  open:       '#43ccd1',   // ICEM Cyan — active/open
-  upcoming:   '#94a3b8',   // Neutral grey
-  conference: '#003c84',   // ICEM Navy — main event
-};
 
 const ImportantDates = () => {
   return (
@@ -72,7 +67,7 @@ const ImportantDates = () => {
               className={`timeline-card glass ${item.status === 'conference' ? 'highlight' : ''}`}
             >
               <div className="timeline-connector">
-                <div className="tl-dot" style={{ background: statusColors[item.status] }}></div>
+                <div className={`tl-dot tl-dot-${item.status}`}></div>
                 {idx < dates.length - 1 && <div className="tl-line"></div>}
               </div>
               <div className="timeline-body">
@@ -84,7 +79,7 @@ const ImportantDates = () => {
                     </span>
                   )}
                 </div>
-                <div className="timeline-date" style={{ color: statusColors[item.status] }}>
+                <div className={`timeline-date timeline-date-${item.status}`}>
                   <Calendar size={18} /> {item.date}
                 </div>
                 <p className="timeline-note">{item.note}</p>

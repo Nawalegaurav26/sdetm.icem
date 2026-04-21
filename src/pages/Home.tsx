@@ -12,7 +12,7 @@ const Home = () => {
               NextGen Technology & AI for a <span className="premium-gradient">Sustainable Future</span>
             </h1>
             <p className="hero-subtitle">
-              Sustainable Developments in Engineering, Technology & Management, 2026 (Second NTAI)
+              Sustainable Developments in Engineering, Technology & Management, 2026 (Second SDETM)
             </p>
             
             <div className="hero-info-pills">
@@ -37,6 +37,17 @@ const Home = () => {
           </div>
 
           <div className="hero-visual">
+            <div className="rotating-coin-container mb-6">
+              <div className="coin">
+                <div className="coin-face coin-front">
+                  <img src="/sdetm-logo.png" alt="SDETM 2026" />
+                </div>
+                <div className="coin-face coin-back">
+                  <img src="/icem-logo.png" alt="ICEM" />
+                </div>
+              </div>
+            </div>
+
             <div className="glass-card conference-status">
               <div className="status-item">
                 <Award size={32} />

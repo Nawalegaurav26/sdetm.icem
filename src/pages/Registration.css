@@ -39,6 +39,11 @@
   font-weight: 700;
 }
 
+.section-title-icon {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 /* Fee Table */
 .fee-table-container {
   background: rgba(0, 60, 132, 0.12);

@@ -49,6 +49,10 @@
   font-weight: 700;
 }
 
+.about-conf-objective-title {
+  margin-top: 2rem;
+}
+
 .about-conf-text p {
   color: var(--text-secondary);
   line-height: 1.85;

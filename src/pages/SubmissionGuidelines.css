@@ -64,6 +64,12 @@
   border-color: rgba(67, 204, 209, 0.1);
 }
 
+.publication-note {
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 .guide-list {
   list-style: none;
   padding: 0;
@@ -138,6 +144,16 @@
 
 .checklist li svg {
   color: #43ccd1;
+}
+
+.submit-portal-link {
+  text-decoration: none;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.submit-portal-btn {
+  gap: 10px;
 }
 
 @media (max-width: 1024px) {

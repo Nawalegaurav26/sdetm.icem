@@ -1,0 +1,8 @@
+.bg-animation-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #060f1e;
+  pointer-events: none;
+}

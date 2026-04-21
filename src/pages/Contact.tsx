@@ -14,7 +14,7 @@ const Contact = () => {
           <span className="section-subtitle">Get In Touch</span>
           <h1 className="section-title">Contact Us</h1>
           <p className="contact-intro">
-            Have questions about NTAI 2026? Our organizing team is here to help. 
+            Have questions about SDETM 2026? Our organizing team is here to help. 
             Reach out to us and we'll respond within 48 hours.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ const Contact = () => {
                 />
                 <div className="convenor-details">
                   <h3>Dr. Manjusha Tatiya</h3>
-                  <span className="badge" style={{ background: 'rgba(67,204,209,0.1)', color: '#43ccd1', borderColor: 'rgba(67,204,209,0.3)' }}>Co-Convenor</span>
+                  <span className="badge">Co-Convenor</span>
                   <p>HOD – AI & Data Science, ICEM</p>
                   <div className="contact-actions">
                     <a href="tel:+919730019882" className="contact-chip">

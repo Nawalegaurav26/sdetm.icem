@@ -15,7 +15,7 @@ const SubmissionGuidelines = () => {
           <span className="section-subtitle">Technical Track</span>
           <h1 className="section-title">Submission Guidelines</h1>
           <p className="header-description">
-            ICEM NTAI 2026 invites researchers and academicians to submit their original work. 
+            ICEM SDETM 2026 invites researchers and academicians to submit their original work. 
             All submissions must adhere to the following technical and ethical guidelines.
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ const SubmissionGuidelines = () => {
                 <p>
                   Accepted papers will be published in the conference proceedings, indexed by <strong>SCOPUS</strong>.
                 </p>
-                <p style={{ marginTop: '1rem', fontStyle: 'italic', opacity: 0.8 }}>
+                <p className="publication-note">
                   Published by: SPRINGER NATURE, FUTURE TECHNOLOGY (Approval is in process).
                 </p>
               </div>
@@ -80,8 +80,8 @@ const SubmissionGuidelines = () => {
                 <li><CheckCircle size={16} /> TNR 12 + 1.5 Spacing</li>
                 <li><CheckCircle size={16} /> Figures with Captions</li>
               </ul>
-              <Link to="/submission/submit" style={{ textDecoration: 'none', marginBottom: '12px', display: 'block' }}>
-                <button className="premium-btn premium-btn-secondary full-width" style={{ gap: '10px' }}>
+              <Link to="/submission/submit" className="submit-portal-link">
+                <button className="premium-btn premium-btn-secondary full-width submit-portal-btn">
                   <Send size={16} /> Open Submission Portal
                 </button>
               </Link>

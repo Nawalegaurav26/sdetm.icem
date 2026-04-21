@@ -130,7 +130,7 @@ const Registration = () => {
           </section>
 
           <section className="info-section bank-details">
-            <h2 className="section-title"><CreditCard size={20} style={{ marginRight: '10px', verticalAlign: 'middle' }} /> Payment Details</h2>
+            <h2 className="section-title"><CreditCard size={20} className="section-title-icon" /> Payment Details</h2>
             <div className="bank-card">
               <div className="bank-row"><span>Account Name:</span> <strong>Indira College of Engineering & Management</strong></div>
               <div className="bank-row"><span>Bank:</span> <strong>INDUSIND BANK LTD</strong></div>
@@ -142,7 +142,7 @@ const Registration = () => {
           </section>
 
           <section className="info-section notes">
-            <h2 className="section-title"><Info size={20} style={{ marginRight: '10px', verticalAlign: 'middle' }} /> Important Notes</h2>
+            <h2 className="section-title"><Info size={20} className="section-title-icon" /> Important Notes</h2>
             <ul className="notes-list">
               <li>Registration fees shall not be refundable in case of any cancellation.</li>
               <li>Fees includes conference kit and food coupons for one author.</li>
@@ -289,7 +289,7 @@ const Registration = () => {
                     <CheckCircle2 size={80} color="var(--icem-cyan)" />
                   </div>
                   <h2 className="text-display-sub">Registration Confirmed!</h2>
-                  <p className="reg-description">Welcome to ICEM NTAI 2026. You are now officially registered. Check your email for payment confirmation steps and submission link.</p>
+                  <p className="reg-description">Welcome to ICEM SDETM 2026. You are now officially registered. Check your email for payment confirmation steps and submission link.</p>
                   <button className="premium-btn premium-btn-secondary" onClick={() => window.location.href = '/'}>
                     Back to Home
                   </button>

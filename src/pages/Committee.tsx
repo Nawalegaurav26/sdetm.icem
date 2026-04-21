@@ -168,7 +168,7 @@ const Committee = () => {
             </div>
           </div>
 
-          <div className="dept-group" style={{ marginTop: '4rem' }}>
+          <div className="dept-group dept-group-mt">
             <h3 className="dept-title">AI & Data Science</h3>
             <div className="committee-grid">
               {[

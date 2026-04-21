@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import './BackgroundAnimation.css';
 
 const BackgroundAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -99,14 +100,7 @@ const BackgroundAnimation = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: -1,
-        background: '#060f1e',  /* ICEM deep navy background */
-        pointerEvents: 'none',
-      }}
+      className="bg-animation-canvas"
     />
   );
 };
