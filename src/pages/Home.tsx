@@ -46,7 +46,7 @@ const Home = () => {
                   <img src="/sdetm-logo.png" alt="SDETM 2026" />
                 </div>
                 <div className="coin-face coin-back">
-                  <img src="/icem-logo.png" alt="ICEM" />
+                  <img src="/icemlogo2.png" alt="ICEM" />
                 </div>
               </div>
             </div>
