@@ -61,7 +61,7 @@
 }
 
 .header-icem-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }
@@ -271,7 +271,7 @@
     width: 44px;
   }
   .header-icem-logo {
-    height: 36px;
+    height: 48px;
   }
 }
 
