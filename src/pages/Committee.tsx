@@ -138,6 +138,45 @@ const Committee = () => {
       );
     }
 
+    if (path.includes('/international_advisory_committee')) {
+      return (
+        <section className="committee-section">
+          <h2 className="section-title text-center">International Advisory Committee</h2>
+          <div className="committee-grid">
+            {[
+              { 
+                name: "Dr Celestino Ruivo", 
+                role: "Professor in Mechanical Engineering", 
+                org: "University of Algarve, Portugal" 
+              },
+              { 
+                name: "Prof. Md. Zahir Uddin Arif", 
+                role: "Professor", 
+                org: "Jagannath University, Dhaka, Bangladesh" 
+              },
+              { 
+                name: "Prof. Md. Rahat Khan", 
+                role: "Professor", 
+                org: "Bangladesh University of Professionals, Dhaka, Bangladesh" 
+              },
+              { 
+                name: "Dr. Sonali Bhadoria", 
+                role: "Senior Data Analyst", 
+                org: "NC DIT, Raleigh, NC" 
+              }
+            ].map((member, idx) => (
+              <MemberCard 
+                key={idx} 
+                name={member.name} 
+                role={member.role} 
+                org={member.org} 
+              />
+            ))}
+          </div>
+        </section>
+      );
+    }
+
     if (path.includes('/organizing')) {
       return (
         <section className="committee-section">
