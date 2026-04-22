@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-col brand-col">
             <img src="/icem-logo.png" alt="ICEM Logo" className="footer-logo" />
             <p className="footer-tagline">
-              International Conference on Emerging Multidisciplinary Research
+              Sustainable Developments in Engineering, Technology & Management, 2026
             </p>
             <p className="footer-host">
               Hosted by <a href="https://www.indiraicem.ac.in" target="_blank" rel="noopener noreferrer" className="host-link">Indira College of Engineering &amp; Management</a>

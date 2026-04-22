@@ -52,8 +52,8 @@
 }
 
 .header-sdetm-logo {
-  height: 56px;
-  width: 56px;
+  height: 72px;
+  width: 72px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #dde8f5;
@@ -61,7 +61,7 @@
 }
 
 .header-icem-logo {
-  height: 64px;
+  height: 80px;
   width: auto;
   object-fit: contain;
 }

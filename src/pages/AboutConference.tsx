@@ -30,9 +30,9 @@ const AboutConference = () => {
             transition={{ delay: 0.1 }}
             className="about-conf-text glass"
           >
-            <h2>ICSDETM 2026 — Second SDETM</h2>
+            <h2>ICSDETM 2026</h2>
             <p>
-              The <strong>International Conference on Sustainable Developments in Engineering, Technology & Management (ICSDETM 2026)</strong>, also known as the <strong>Second SDETM</strong>, is a premier academic forum hosted by Indira College of Engineering and Management (ICEM), Pune on <strong>4–5 November 2026</strong>.
+              The <strong>International Conference on Sustainable Developments in Engineering, Technology & Management (ICSDETM 2026)</strong> is a premier academic forum hosted by Indira College of Engineering and Management (ICEM), Pune on <strong>4–5 November 2026</strong>.
             </p>
             <p>
               This conference brings together leading researchers, engineers, academics, industry professionals, and students to exchange ideas, present innovations, and foster collaboration in the rapidly evolving landscape of engineering and technology.

@@ -12,7 +12,7 @@ const Home = () => {
               Sustainable Developments in Engineering, Technology & Management, <span className="premium-gradient">2026</span>
             </h1>
             <h2 className="hero-subtitle">
-              Sustainable Developments in Engineering, Technology & Management, 2026
+              Next-Gen Technology and AI for a Sustainable Future
             </h2>
             <p className="hero-description">
               SDETM 2026 brings together global pioneers and innovators to explore the intersection of next-generation technology and AI. Join us as we forge actionable solutions for a sustainable, resilient, and forward-thinking future across engineering and management disciplines.
@@ -55,8 +55,8 @@ const Home = () => {
               <div className="status-item">
                 <Award size={32} />
                 <div className="status-text">
-                  <h3>Scopus Indexed</h3>
-                  <p>Proceedings Publication</p>
+                  <h3>*Scopus Indexed</h3>
+                  <p>(In process not done yet) Proposal send)</p>
                 </div>
               </div>
             </div>
