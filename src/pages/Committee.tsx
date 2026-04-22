@@ -177,6 +177,46 @@ const Committee = () => {
       );
     }
 
+    if (path.includes('/national_advisory_committee')) {
+      return (
+        <section className="committee-section">
+          <h2 className="section-title text-center">National Advisory Committee</h2>
+          <div className="committee-grid">
+            {[
+              { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune" },
+              { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune" },
+              { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune" },
+              { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune" },
+              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune" },
+              { name: "Dr. Anil Sahu", role: "Dean (PhD)", org: "GHRCEM, Pune" },
+              { name: "Dr. Pendyala Srinivas", role: "HoD (Mechanical)", org: "GITAM University, Hyderabad" },
+              { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor (CSE)", org: "Dayanand Sagar University, Bangalore" },
+              { name: "Dr. Sridaran Rajagopal", role: "Dean Executive", org: "Ganpat University, Mehsana" },
+              { name: "Dr. Kavitha Venkatachari", role: "Dean AI & ML", org: "Universal AI University, Karjat, Mumbai" },
+              { name: "Dr. M Karthikeyan", role: "Chief Scientist", org: "NCL, Pune" },
+              { name: "Dr Prashant Kumbharkar", role: "Professor & Dean", org: "ADYPU, Pune" },
+              { name: "Dr Anand Bewoor", role: "Dean-Academics", org: "Cummins College of Engineering, Pune" },
+              { name: "Dr Vikas Mathe", role: "Professor", org: "Pune" },
+              { name: "Dr Vahida Attar", role: "HoD (Computer)", org: "COEP Technological University, Pune" },
+              { name: "Dr Neha Sharma", role: "TCS", org: "Pune" },
+              { name: "Dr Rahul Mapari", role: "HoD (E&TC)", org: "PCCOER, Pune" },
+              { name: "Dr Meghana Bhilare", role: "Director", org: "Dr.D.Y.Patil Institute, Pune" },
+              { name: "Dr Santosh Deshpande", role: "Director", org: "IMCC, Pune" },
+              { name: "Prof. Mohan Patel", role: "Professor of Practice", org: "Pune" },
+              { name: "Prof. Ashok Saraf", role: "Professor of Practice", org: "Pune" }
+            ].map((member, idx) => (
+              <MemberCard 
+                key={idx} 
+                name={member.name} 
+                role={member.role} 
+                org={member.org} 
+              />
+            ))}
+          </div>
+        </section>
+      );
+    }
+
     if (path.includes('/organizing')) {
       return (
         <section className="committee-section">

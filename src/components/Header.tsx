@@ -28,6 +28,7 @@ const Header = () => {
         { name: 'Convenor & Co-Convenor', path: '/committee/convenor' },
         { name: 'College Advisory Committee', path: '/committee/collegeadvisory' },
         { name: 'International Advisory Committee', path: '/committee/international_advisory_committee' },
+        { name: 'National Advisory Committee', path: '/committee/national_advisory_committee' },
         { name: 'Organizing Committee', path: '/committee/organizing' }
       ] 
     },
