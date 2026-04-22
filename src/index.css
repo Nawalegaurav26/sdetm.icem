@@ -8,7 +8,8 @@
    =================================================== */
 
 /* --- ICEM Brand Color Theme for Tailwind v4 --- */
-@theme {
+:root {
+  /* --- ICEM Brand Color Theme --- */
   --color-icem-navy: #003c84;
   --color-icem-navy-dark: #002a6b;
   --color-icem-navy-light: #0a4fa0;
@@ -21,10 +22,7 @@
   --color-icem-surface-3: #1a2d4d;
   --color-icem-border: rgba(67, 204, 209, 0.2);
   --font-icem: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 
-/* --- CSS Custom Properties (Legacy support for non-Tailwind pages) --- */
-:root {
   /* ICEM Official Colors */
   --icem-navy:        #003c84;
   --icem-navy-dark:   #002a6b;

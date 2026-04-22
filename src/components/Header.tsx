@@ -26,7 +26,7 @@ const Header = () => {
         { name: 'Patron', path: '/committee/patron' },
         { name: 'Conference Chair', path: '/committee/chair' },
         { name: 'Convenor & Co-Convenor', path: '/committee/convenor' },
-        { name: 'Advisory Committee', path: '/committee/advisory' },
+        { name: 'College Advisory Committee', path: '/committee/collegeadvisory' },
         { name: 'Organizing Committee', path: '/committee/organizing' }
       ] 
     },

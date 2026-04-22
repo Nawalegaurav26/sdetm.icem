@@ -42,7 +42,7 @@ function App() {
             <Route path="/committee/patron" element={<Committee />} />
             <Route path="/committee/chair" element={<Committee />} />
             <Route path="/committee/convenor" element={<Committee />} />
-            <Route path="/committee/advisory" element={<Committee />} />
+            <Route path="/committee/collegeadvisory" element={<Committee />} />
             <Route path="/committee/organizing" element={<Committee />} />
             
             {/* Call for Papers */}

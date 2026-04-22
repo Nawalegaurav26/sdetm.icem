@@ -109,10 +109,10 @@ const Committee = () => {
       );
     }
 
-    if (path.includes('/advisory')) {
+    if (path.includes('/collegeadvisory')) {
       return (
         <section className="committee-section">
-          <h2 className="section-title text-center">Advisory Committee</h2>
+          <h2 className="section-title text-center">College Advisory Committee</h2>
           <div className="committee-grid">
             {[
               { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans" },
@@ -129,7 +129,7 @@ const Committee = () => {
               <MemberCard 
                 key={idx} 
                 name={member.name} 
-                role="Advisory Member" 
+                role="College Advisory Member" 
                 org={member.role} 
               />
             ))}

@@ -46,7 +46,7 @@ const Footer = () => {
               <li><Link to="/committee/patron">Patron</Link></li>
               <li><Link to="/committee/chair">Conference Chair</Link></li>
               <li><Link to="/committee/convenor">Convenor &amp; Co-Convenor</Link></li>
-              <li><Link to="/committee/advisory">Advisory Committee</Link></li>
+              <li><Link to="/committee/collegeadvisory">College Advisory Committee</Link></li>
             </ul>
           </div>
 
