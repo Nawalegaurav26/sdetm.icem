@@ -68,8 +68,9 @@ const ConferenceTracks = () => {
         </div>
 
         <div className="tracks-grid">
-          {tracks.map((track) => (
+          {tracks.map((track, index) => (
             <div key={track.id} className="track-card">
+              <div className="track-number">0{index + 1}</div>
               <div className="track-icon-wrapper">
                 <div className="track-icon">
                   {track.icon}
@@ -78,6 +79,7 @@ const ConferenceTracks = () => {
               </div>
               <h3 className="track-title">{track.title}</h3>
               <p className="track-desc">{track.description}</p>
+              <div className="track-footer-decor"></div>
             </div>
           ))}
         </div>

@@ -11,6 +11,7 @@ import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
+import AboutInstitute from './pages/AboutInstitute';
 import ConferenceTracks from './pages/ConferenceTracks';
 import PaperSubmission from './pages/PaperSubmission';
 import Login from './pages/Login';
@@ -32,7 +33,7 @@ function App() {
             
             {/* About Routes */}
             <Route path="/about/conference" element={<AboutConference />} />
-            <Route path="/about/institute" element={<ComingSoon title="About ICEM" />} />
+            <Route path="/about/institute" element={<AboutInstitute />} />
             <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
             <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
             
