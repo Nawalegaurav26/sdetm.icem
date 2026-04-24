@@ -7,7 +7,6 @@ import Venue from './pages/Venue';
 import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
-import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
