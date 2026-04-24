@@ -229,6 +229,33 @@ const PaperSubmission = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        className="submission-details-grid"
+      >
+        <div className="detail-section glass-panel">
+          <h3><Download size={20} /> Template Downloads</h3>
+          <p>Please use the following templates to ensure your manuscript meets the conference formatting requirements:</p>
+          <div className="download-buttons">
+            <a href="#" className="btn-secondary"><FileText size={16} /> MS Word Template</a>
+            <a href="#" className="btn-secondary"><FileText size={16} /> LaTeX Template</a>
+          </div>
+        </div>
+
+        <div className="detail-section glass-panel">
+          <h3><Shield size={20} /> Review Process</h3>
+          <p>The ICEM 2026 conference follows a rigorous double-blind peer-review process:</p>
+          <ol>
+            <li>Initial screening for scope and plagiarism.</li>
+            <li>Assignment to at least 2 technical program committee members.</li>
+            <li>Evaluation based on originality, technical depth, and clarity.</li>
+            <li>Final decision notification by the track chair.</li>
+          </ol>
+        </div>
+      </motion.section>
+
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         className="faq-section"
       >
         <h2 className="gradient-text">Submission FAQ</h2>
@@ -244,7 +271,7 @@ const PaperSubmission = () => {
             },
             {
               q: "What is the template format?",
-              a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Downloads section."
+              a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Downloads section above."
             },
             {
               q: "Is there a submission fee?",
@@ -268,10 +295,19 @@ const PaperSubmission = () => {
         viewport={{ once: true }}
         className="acknowledgement-section glass-panel"
       >
-        <h2>Acknowledgement</h2>
-        <p>
-          The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-        </p>
+        <h2>Mandatory Acknowledgement</h2>
+        <div className="cmt-integration">
+          <p>
+            The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="highlight-link">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p>
+          <div className="cmt-cta">
+            <p>Already have a CMT account? You can also submit directly via the official portal:</p>
+            <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <span>Go to Microsoft CMT</span>
+              <Globe size={18} />
+            </a>
+          </div>
+        </div>
       </motion.div>
     </div>
   );
