@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Send, Info, Shield, CheckCircle, HelpCircle } from 'lucide-react';
+import { FileText, Send, Info, Shield, CheckCircle, HelpCircle, Globe, Download } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 import './PaperSubmission.css';
 
@@ -103,9 +103,31 @@ const PaperSubmission = () => {
         animate={{ opacity: 1, y: 0 }}
         className="submission-header"
       >
-        <h1 className="text-display-section gradient-text">Paper Submission</h1>
-        <p className="subtitle">Submit your research findings for peer review (Track 1-6)</p>
+        <h1 className="text-display-section gradient-text">Submission Portal</h1>
+        <p className="subtitle">Guidelines & Manuscript Submission for SDETM 2026</p>
       </motion.div>
+
+      <div className="guidelines-overview glass-panel">
+        <div className="guide-grid">
+          <div className="guide-card">
+            <h3><FileText size={20} /> Manuscript Preparation</h3>
+            <ul>
+              <li>Format: MS Word / LaTeX (PDF only)</li>
+              <li>Typography: Times New Roman, 12pt</li>
+              <li>Spacing: 1.5 Line spacing</li>
+              <li>Visuals: Descriptive captions for all figures</li>
+            </ul>
+          </div>
+          <div className="guide-card">
+            <h3><Globe size={20} /> Publication & Indexing</h3>
+            <p>Accepted papers will be published in conference proceedings and indexed by <strong>SCOPUS</strong>. Approval by Springer Nature is in process.</p>
+          </div>
+          <div className="guide-card">
+            <h3><Shield size={20} /> Review Process</h3>
+            <p>Rigorous <strong>double-blind peer review</strong>. Manuscripts must not contain author names to ensure impartial evaluation.</p>
+          </div>
+        </div>
+      </div>
 
       <div className="submission-content">
         <form onSubmit={handleSubmit} className="submission-form glass-panel">

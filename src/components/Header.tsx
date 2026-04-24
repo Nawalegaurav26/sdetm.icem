@@ -42,8 +42,7 @@ const Header = () => {
     { 
       title: 'SUBMISSION', 
       children: [
-        { name: 'Submit via CMT', path: '/submission/cmt' },
-        { name: 'Guidelines', path: '/submission/guidelines' },
+        { name: 'Submission Portal', path: '/submission/submit' },
         { name: 'Downloads', path: '/submission/downloads' },
         { name: 'Review Process', path: '/submission/review' }
       ] 
