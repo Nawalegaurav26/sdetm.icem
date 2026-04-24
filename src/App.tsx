@@ -52,11 +52,7 @@ function App() {
             <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
             
             {/* Submission */}
-            <Route path="/submission/cmt" element={<ComingSoon title="Microsoft CMT Submission" />} />
-            <Route path="/submission/guidelines" element={<PaperSubmission />} />
-            <Route path="/submission/submit" element={<PaperSubmission />} />
-            <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
-            <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
+            <Route path="/submission" element={<PaperSubmission />} />
 
             {/* Registration & Login */}
             <Route path="/registration" element={<Registration />} />
