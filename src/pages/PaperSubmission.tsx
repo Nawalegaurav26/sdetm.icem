@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Send, Info, Shield, CheckCircle } from 'lucide-react';
+import { FileText, Send, Info, Shield, CheckCircle, HelpCircle } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 import './PaperSubmission.css';
 
@@ -202,6 +202,55 @@ const PaperSubmission = () => {
           </div>
         </aside>
       </div>
+
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="faq-section"
+      >
+        <h2 className="gradient-text">Submission FAQ</h2>
+        <div className="faq-grid">
+          {[
+            {
+              q: "What is the maximum file size?",
+              a: "The maximum file size allowed for manuscript submission is 10MB. Please ensure your PDF is optimized for web viewing."
+            },
+            {
+              q: "Can I submit multiple papers?",
+              a: "Yes, authors can submit multiple papers. Each paper must be submitted separately through this portal or via CMT."
+            },
+            {
+              q: "What is the template format?",
+              a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Downloads section."
+            },
+            {
+              q: "Is there a submission fee?",
+              a: "There is no fee for submitting a paper for review. Registration fees are only applicable after paper acceptance."
+            }
+          ].map((item, index) => (
+            <div key={index} className="faq-item glass-panel">
+              <div className="faq-question">
+                <HelpCircle size={18} />
+                <span>{item.q}</span>
+              </div>
+              <p className="faq-answer">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="acknowledgement-section glass-panel"
+      >
+        <h2>Acknowledgement</h2>
+        <p>
+          The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+        </p>
+      </motion.div>
     </div>
   );
 };

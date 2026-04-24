@@ -205,3 +205,72 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* --- Acknowledgement Section --- */
+.acknowledgement-section {
+  margin-top: 60px;
+  padding: 30px;
+  border-left: 4px solid var(--icem-cyan);
+  background: rgba(67, 204, 209, 0.05);
+}
+
+.acknowledgement-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--icem-cyan);
+}
+
+.acknowledgement-section p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.acknowledgement-section a {
+  color: var(--icem-cyan);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.acknowledgement-section a:hover {
+  color: var(--icem-cyan-light);
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.faq-item {
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: var(--icem-cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-answer {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
