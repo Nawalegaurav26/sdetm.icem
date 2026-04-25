@@ -245,27 +245,39 @@
 }
 
 .role-options {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .role-options button {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(67, 204, 209, 0.1);
+  flex: 1;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.4);
-  padding: 0.6rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .role-options button.active {
-  background: rgba(67, 204, 209, 0.1);
+  background: rgba(67, 204, 209, 0.15);
   border-color: #43ccd1;
   color: #fff;
-  box-shadow: 0 0 10px rgba(67, 204, 209, 0.1);
+  box-shadow: 0 0 15px rgba(67, 204, 209, 0.2);
+}
+
+.role-options button.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: #43ccd1;
 }
 
 .otp-input {
