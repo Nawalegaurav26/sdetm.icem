@@ -252,6 +252,20 @@ const PaperSubmission = () => {
         </div>
       </motion.section>
 
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="acknowledgement-section glass-panel"
+      >
+        <h2>Acknowledgement</h2>
+        <div className="cmt-integration">
+          <p>
+            The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="highlight-link">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p>
+        </div>
+      </motion.div>
+
       <motion.section 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -289,26 +303,6 @@ const PaperSubmission = () => {
         </div>
       </motion.section>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="acknowledgement-section glass-panel"
-      >
-        <h2>Mandatory Acknowledgement</h2>
-        <div className="cmt-integration">
-          <p>
-            The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="highlight-link">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-          </p>
-          <div className="cmt-cta">
-            <p>Already have a CMT account? You can also submit directly via the official portal:</p>
-            <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="btn-primary">
-              <span>Go to Microsoft CMT</span>
-              <Globe size={18} />
-            </a>
-          </div>
-        </div>
-      </motion.div>
     </div>
   );
 };
