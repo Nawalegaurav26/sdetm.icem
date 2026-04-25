@@ -1,59 +1,53 @@
 .venue-page {
   min-height: 100vh;
   background: var(--color-icem-surface);
-
+  position: relative;
 }
 
 .label-hud {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(195, 245, 255, 0.05);
+  border: 1px solid rgba(195, 245, 255, 0.1);
   border-radius: 4px;
   color: var(--color-icem-cyan);
-
-  font-family: monospace;
-
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
 }
 
-.hud-line {
+.venue-intel-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hud-separator {
   height: 1px;
   background: linear-gradient(90deg, 
-    rgba(0, 229, 255, 0.5) 0%, 
-    rgba(0, 229, 255, 0.1) 100%
+    rgba(195, 245, 255, 0.3) 0%, 
+    rgba(195, 245, 255, 0.05) 100%
   );
 }
 
-/* Map Frame HUD Styling */
-.map-frame-hud {
+.metric-item {
   position: relative;
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
-  background: var(--color-icem-surface-2);
-
-  height: 100%;
+  transition: all 0.3s ease;
 }
 
-.map-frame-hud iframe {
-  border: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
+.metric-item:hover {
+  transform: translateX(5px);
 }
 
-.map-overlay-hud {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
+/* Map Terminal Styling */
+.map-terminal {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.map-wrapper {
+  background: rgba(25, 32, 45, 0.4);
+  backdrop-blur: 20px;
 }
 
 .scanner-line {
@@ -61,47 +55,51 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, var(--color-icem-cyan), transparent);
-
-  box-shadow: 0 0 15px var(--color-icem-cyan);
-
-  animation: scan 4s linear infinite;
-  opacity: 0.6;
+  box-shadow: 0 0 20px var(--color-icem-cyan);
+  animation: scan 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  opacity: 0.5;
+  z-index: 20;
 }
 
 @keyframes scan {
-  0% { top: 0; }
-  50% { top: 100%; }
-  100% { top: 0; }
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { top: 100%; opacity: 0; }
 }
 
-.corner {
+.hud-corner {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  border: 2px solid var(--color-icem-cyan);
-
-  opacity: 0.8;
+  pointer-events: none;
+  z-index: 20;
 }
 
-.cor-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-.cor-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
-.cor-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
-.cor-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
-
-.metric-row {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
 }
 
-.metric-row:last-child {
-  border-bottom: none;
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
 @media (max-width: 1024px) {
-  .map-container-hud {
+  .map-terminal {
+    height: 500px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .venue-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .map-terminal {
     height: 400px;
     min-height: 400px;
   }
 }
+
