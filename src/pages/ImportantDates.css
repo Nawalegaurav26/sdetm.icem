@@ -1,157 +1,268 @@
-.dates-page {
-  padding: 8rem 0 4rem;
+.dates-page-hud {
+  padding: 10rem 0 6rem;
+  background-color: #060f1e;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-.dates-header {
+.neural-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(67, 204, 209, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67, 204, 209, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 80%);
+  pointer-events: none;
+}
+
+.dates-header-hud {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 10;
 }
 
-.dates-header .section-subtitle {
-  display: block;
+.tech-badge-hud {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(67, 204, 209, 0.05);
+  border: 1px solid rgba(67, 204, 209, 0.2);
+  padding: 6px 16px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #43ccd1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #43ccd1;
+  animation: pulse-hud 2s infinite;
+}
+
+.badge-text {
+  font-family: 'JetBrains Mono', monospace;
   color: #43ccd1;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.hud-title-main {
+  font-family: 'Michroma', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: white;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 4px;
+}
+
+.dates-intro-hud {
+  color: #94a3b8;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.highlight-cyan {
+  color: #43ccd1;
   font-weight: 600;
+}
+
+.dates-grid-hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.date-card-hud {
+  background: rgba(6, 15, 30, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.date-card-hud:hover {
+  transform: translateY(-10px);
+  background: rgba(10, 25, 47, 0.9);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(67, 204, 209, 0.1);
+}
+
+.terminal-header-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(67, 204, 209, 0.1);
+  padding-bottom: 1rem;
+}
+
+.terminal-id {
+  font-family: 'JetBrains Mono', monospace;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.critical-tag {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.date-label-hud {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.status-indicator {
   margin-bottom: 1rem;
 }
 
-.dates-intro {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  max-width: 500px;
-  margin: 1.5rem auto 0;
-}
-
-.dates-timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.timeline-card {
-  display: flex;
-  gap: 2rem;
-  padding: 0;
-  border: none;
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-}
-
-.timeline-connector {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1rem;
-}
-
-.tl-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 12px currentColor;
-}
-
-.tl-dot-open { background: #43ccd1; }
-.tl-dot-upcoming { background: #94a3b8; }
-.tl-dot-conference { background: #003c84; }
-
-.tl-line {
-  width: 2px;
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  min-height: 40px;
-}
-
-.timeline-body {
-  background: rgba(0, 60, 132, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
-  padding: 1.8rem;
-  margin-bottom: 1.5rem;
-  flex: 1;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  transition: all 0.3s ease;
-}
-
-.timeline-body:hover {
-  border-color: rgba(67, 204, 209, 0.2);
-  transform: translateX(5px);
-}
-
-.timeline-card.highlight .timeline-body {
-  background: linear-gradient(135deg, rgba(0, 60, 132, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
-  border-color: rgba(0, 60, 132, 0.3);
-  box-shadow: 0 0 30px rgba(0, 60, 132, 0.1);
-}
-
-.timeline-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.timeline-label {
-  font-size: 1.15rem;
-  color: white;
-  font-weight: 600;
-}
-
-.deadline-badge {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #f87171;
-  padding: 0.25rem 0.8rem;
-  border-radius: 99px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.timeline-date {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-}
-
-.timeline-date-open { color: #43ccd1; }
-.timeline-date-upcoming { color: #94a3b8; }
-.timeline-date-conference { color: #003c84; }
-
-.timeline-note {
+.status-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: rgba(100, 116, 139, 0.1);
   color: #64748b;
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
 
-.dates-disclaimer {
-  max-width: 800px;
-  margin: 2rem auto 0;
+.status-pill.open { background: rgba(67, 204, 209, 0.1); color: #43ccd1; }
+.status-pill.conference { background: rgba(0, 60, 132, 0.2); color: #43ccd1; border: 1px solid rgba(67, 204, 209, 0.3); }
+
+.main-date-display {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  padding: 1.5rem 2rem;
-  border-radius: 16px;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+  color: #43ccd1;
+  margin-bottom: 1.5rem;
 }
 
-.dates-disclaimer svg {
+.date-icon-hud {
+  opacity: 0.7;
+}
+
+.date-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.tech-divider-hud {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(67, 204, 209, 0.3), transparent);
+}
+
+.divider-bit {
+  width: 4px;
+  height: 4px;
+  background: #43ccd1;
+  transform: rotate(45deg);
+}
+
+.date-description-hud {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-footer-hud {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metadata-bits {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(100, 116, 139, 0.5);
+}
+
+.scan-line-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #43ccd1, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.date-card-hud:hover .scan-line-hud {
+  animation: scanMove 2.5s linear infinite;
+  opacity: 0.2;
+}
+
+.protocol-notice-hud {
+  max-width: 800px;
+  margin: 5rem auto 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(67, 204, 209, 0.03);
+}
+
+.notice-icon {
   color: #43ccd1;
   flex-shrink: 0;
-  margin-top: 2px;
+  animation: pulse-hud 2s infinite;
+}
+
+.protocol-notice-hud p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@keyframes pulse-hud {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes scanMove {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@media (max-width: 768px) {
+  .dates-grid-hud {
+    grid-template-columns: 1fr;
+  }
+  
+  .date-value {
+    font-size: 1.5rem;
+  }
 }

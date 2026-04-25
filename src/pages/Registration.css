@@ -1,426 +1,342 @@
-/* ============================================
-   ICEM 2026 — Registration Page
-   Brand: Navy #003c84 | Cyan #43ccd1
-   ============================================ */
-
 .registration-page {
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 8rem 2rem 4rem;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .registration-grid {
   display: grid;
-  grid-template-columns: 1fr 440px;
+  grid-template-columns: 1fr 480px;
   gap: 4rem;
   align-items: start;
 }
 
-/* Info Section */
+/* Info Section HUD */
 .registration-info {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
-.info-section {
-  animation: fadeIn 0.8s ease-out;
-}
-
-.info-section .section-title {
-  font-size: 1.1rem;
-  margin-bottom: 1.25rem;
+.hud-section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
   color: #43ccd1;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-left: 3px solid #43ccd1;
-  padding-left: 0.85rem;
-  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 2px;
 }
 
-.section-title-icon {
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-/* Fee Table */
 .fee-table-container {
-  background: rgba(0, 60, 132, 0.12);
-  border: 1px solid rgba(67, 204, 209, 0.15);
-  border-radius: 12px;
-  padding: 1.25rem;
-  overflow-x: auto;
+  padding: 1rem 0;
 }
 
 .fee-table {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
 .fee-table th {
-  background: rgba(0, 60, 132, 0.5);
-  color: #43ccd1;
-  padding: 0.75rem 1rem;
   text-align: left;
-  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
-
-.fee-table th:first-child { border-radius: 8px 0 0 0; }
-.fee-table th:last-child  { border-radius: 0 8px 0 0; }
 
 .fee-table td {
-  padding: 0.7rem 1rem;
-  border-bottom: 1px solid rgba(67, 204, 209, 0.08);
+  padding: 1rem;
+  background: rgba(67, 204, 209, 0.03);
+  border-top: 1px solid rgba(67, 204, 209, 0.1);
+  border-bottom: 1px solid rgba(67, 204, 209, 0.1);
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
-.fee-table tr:last-child td { border-bottom: none; }
+.fee-table td:first-child {
+  border-left: 1px solid rgba(67, 204, 209, 0.1);
+  border-radius: 4px 0 0 4px;
+}
 
-.fee-table tr:hover td {
-  background: rgba(67, 204, 209, 0.05);
-  color: #fff;
+.fee-table td:last-child {
+  border-right: 1px solid rgba(67, 204, 209, 0.1);
+  border-radius: 0 4px 4px 0;
+}
+
+.fee-value {
+  font-family: 'JetBrains Mono', monospace;
+  color: #43ccd1 !important;
+}
+
+.hud-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(67, 204, 209, 0.2), transparent);
+  margin: 1.5rem 0;
 }
 
 .fee-note {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'JetBrains Mono', monospace;
 }
 
-/* Bank Details */
-.bank-details .section-title {
-  border-left-color: #003c84;
-  color: #43ccd1;
-}
-
+/* Bank Protocol Card */
 .bank-card {
-  background: rgba(0, 60, 132, 0.15);
-  border: 1px solid rgba(67, 204, 209, 0.15);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .bank-row {
   display: flex;
-  gap: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-}
-
-.bank-row:last-child { border-bottom: none; }
-
-.bank-row span { color: var(--text-muted); min-width: 140px; flex-shrink: 0; }
-.bank-row strong { color: #fff; font-weight: 600; }
-
-/* Notes */
-.notes-list {
-  list-style: disc;
-  padding-left: 1.4rem;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  line-height: 1.8;
-}
-
-/* Info list */
-.info-list {
-  list-style: disc;
-  padding-left: 1.4rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-/* ===== Registration Form Panel ===== */
-.registration-form-panel {
-  position: sticky;
-  top: 100px;
-  background: rgba(0, 60, 132, 0.15);
-  border: 1px solid rgba(67, 204, 209, 0.2);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-}
-
-.form-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(67, 204, 209, 0.15);
-}
-
-.form-header .form-icon {
-  display: inline-flex;
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #003c84, #43ccd1);
-  border-radius: 14px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.form-header h2 {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.4rem;
-}
-
-.form-header p {
+  justify-content: space-between;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(67, 204, 209, 0.1);
 }
 
-/* Form */
-.reg-form {
+.bank-row span {
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.bank-row strong {
+  color: #fff;
+}
+
+.tech-code {
+  color: #43ccd1 !important;
+  letter-spacing: 1px;
+}
+
+/* Notes Protocol */
+.notes-list {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.8rem;
 }
 
-.form-group {
+.notes-list li {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.notes-list li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: #43ccd1;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Form Terminal */
+.main-terminal {
+  background: rgba(6, 15, 30, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.terminal-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: rgba(67, 204, 209, 0.05);
+  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
+  margin-bottom: 2rem;
 }
 
-.form-group label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
+.terminal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #43ccd1;
+  letter-spacing: 1px;
 }
 
-.form-group .input-wrapper {
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(67, 204, 209, 0.2);
+}
+
+.reg-step {
+  padding: 0 2rem 2rem;
+}
+
+.step-indicator {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(67, 204, 209, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.hud-form-title {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.reg-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(67, 204, 209, 0.7);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.form-group .input-icon {
+.input-wrapper .input-icon {
   position: absolute;
-  left: 0.85rem;
+  left: 1rem;
   color: #43ccd1;
-  opacity: 0.7;
-  pointer-events: none;
+  opacity: 0.5;
 }
 
-.form-group input,
-.form-group select {
+.input-wrapper input {
   width: 100%;
-  background: rgba(0, 60, 132, 0.2);
-  border: 1px solid rgba(67, 204, 209, 0.2);
-  border-radius: 10px;
-  padding: 0.75rem 0.85rem 0.75rem 2.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(67, 204, 209, 0.1);
+  padding: 0.8rem 1rem 0.8rem 3rem;
   color: #fff;
-  font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.2s ease;
+  font-family: 'Space Grotesk', sans-serif;
   outline: none;
-  -webkit-appearance: none;
+  transition: all 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.input-wrapper input:focus {
+  background: rgba(67, 204, 209, 0.05);
   border-color: #43ccd1;
-  background: rgba(0, 60, 132, 0.3);
-  box-shadow: 0 0 0 3px rgba(67, 204, 209, 0.12);
+  box-shadow: 0 0 15px rgba(67, 204, 209, 0.1);
 }
 
-.form-group input::placeholder { color: rgba(255,255,255,0.25); }
-.form-group select option       { background: #0a1628; color: #fff; }
-
-.submit-btn {
-  width: 100%;
-  padding: 0.9rem;
-  background: linear-gradient(135deg, #003c84 0%, #43ccd1 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  letter-spacing: 0.03em;
-  margin-top: 0.5rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(67, 204, 209, 0.35);
-  filter: brightness(1.05);
-}
-
-.submit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* OTP Step */
-.otp-step {
-  text-align: center;
-}
-
-.otp-step h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.otp-step p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.otp-input-group {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.otp-input-group input {
-  width: 52px;
-  height: 52px;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 0;
-  background: rgba(0, 60, 132, 0.3);
-  border: 2px solid rgba(67, 204, 209, 0.25);
-  border-radius: 10px;
-  color: #fff;
-  outline: none;
-  transition: all 0.2s;
-}
-
-.otp-input-group input:focus {
-  border-color: #43ccd1;
-  box-shadow: 0 0 0 3px rgba(67, 204, 209, 0.15);
-}
-
-/* Success step */
-.success-step {
-  text-align: center;
-  padding: 1rem 0;
-}
-
-.success-icon {
-  color: #43ccd1;
-  margin: 0 auto 1rem;
-}
-
-.success-step h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.6rem;
-  font-weight: 800;
-}
-
-.success-step p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Login prompt */
-.login-prompt {
-  background: rgba(67, 204, 209, 0.06);
-  border: 1px solid rgba(67, 204, 209, 0.2);
-  border-radius: 10px;
-  padding: 1rem 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.login-prompt p {
-  font-size: 0.87rem;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.login-prompt a {
-  color: #43ccd1;
-  font-weight: 600;
-}
-
-.login-prompt a:hover { text-decoration: underline; }
-
-/* Progress Steps */
-.form-steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
+.role-selector {
   margin-bottom: 2rem;
 }
 
-.step-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border: 2px solid rgba(67, 204, 209, 0.3);
-  color: var(--text-muted);
-  background: var(--surface-low);
-  transition: all 0.3s ease;
+.role-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.step-circle.active {
-  background: linear-gradient(135deg, #003c84, #43ccd1);
+.role-options button {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(67, 204, 209, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.role-options button.active {
+  background: rgba(67, 204, 209, 0.1);
   border-color: #43ccd1;
   color: #fff;
-  box-shadow: 0 0 12px rgba(67, 204, 209, 0.4);
+  box-shadow: 0 0 10px rgba(67, 204, 209, 0.1);
 }
 
-.step-circle.done {
-  background: rgba(67, 204, 209, 0.2);
-  border-color: #43ccd1;
+.otp-input {
+  letter-spacing: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.shield-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
   color: #43ccd1;
 }
 
-.step-line {
-  height: 2px;
-  width: 40px;
-  background: rgba(67, 204, 209, 0.2);
+.terminal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: rgba(67, 204, 209, 0.03);
+  border-top: 1px solid rgba(67, 204, 209, 0.1);
 }
 
-.step-line.done { background: #43ccd1; }
+.terminal-status, .terminal-encoding {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(67, 204, 209, 0.3);
+}
 
-/* Responsive */
-@media (max-width: 900px) {
+.success-check {
+  color: #43ccd1;
+  margin: 0 auto 2rem;
+  filter: drop-shadow(0 0 10px rgba(67, 204, 209, 0.5));
+}
+
+.login-prompt {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(67, 204, 209, 0.05);
+  border: 1px dashed rgba(67, 204, 209, 0.2);
+}
+
+.login-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-link {
+  color: #43ccd1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.secondary-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
   .registration-grid {
     grid-template-columns: 1fr;
   }
-  .registration-form-panel {
-    position: static;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
 }

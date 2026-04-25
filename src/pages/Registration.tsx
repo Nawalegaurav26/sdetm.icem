@@ -88,61 +88,85 @@ const Registration = () => {
 
   return (
     <div className="registration-page">
+      <div className="neural-background"></div>
       <div className="container registration-grid">
         {/* Left Column: Info & Fees */}
         <div className="registration-info">
-          <section className="info-section">
-            <h2 className="section-title">Registration Fees</h2>
+          <motion.section 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="info-section hud-frame"
+          >
+            <div className="hud-corner top-left"></div>
+            <div className="hud-corner bottom-right"></div>
+            <h2 className="hud-section-title">01 // REGISTRATION FEES</h2>
             <div className="fee-table-container">
               <table className="fee-table">
                 <thead>
                   <tr>
-                    <th>Category</th>
-                    <th>Indian (₹)</th>
-                    <th>Foreign ($)</th>
+                    <th>CATEGORY</th>
+                    <th>INDIAN (₹)</th>
+                    <th>FOREIGN ($)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Students / Research Scholars</td>
-                    <td>2000</td>
-                    <td>50</td>
+                    <td className="fee-value">2000</td>
+                    <td className="fee-value">50</td>
                   </tr>
                   <tr>
                     <td>Faculty / Academicians</td>
-                    <td>2500</td>
-                    <td>65</td>
+                    <td className="fee-value">2500</td>
+                    <td className="fee-value">65</td>
                   </tr>
                   <tr>
                     <td>Industry Professionals</td>
-                    <td>5000</td>
-                    <td>75</td>
+                    <td className="fee-value">5000</td>
+                    <td className="fee-value">75</td>
                   </tr>
                   <tr>
                     <td>Co-Author Registration</td>
-                    <td>1000</td>
-                    <td>30</td>
+                    <td className="fee-value">1000</td>
+                    <td className="fee-value">30</td>
                   </tr>
                 </tbody>
               </table>
+              <div className="hud-divider"></div>
               <p className="fee-note">** Additional fee will be applicable for SCOPUS publication (T&C Apply)</p>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="info-section bank-details">
-            <h2 className="section-title"><CreditCard size={20} className="section-title-icon" /> Payment Details</h2>
+          <motion.section 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="info-section bank-details hud-frame"
+          >
+            <div className="hud-corner top-right"></div>
+            <div className="hud-corner bottom-left"></div>
+            <h2 className="hud-section-title"><CreditCard size={18} /> 02 // PAYMENT PROTOCOL</h2>
             <div className="bank-card">
-              <div className="bank-row"><span>Account Name:</span> <strong>Indira College of Engineering & Management</strong></div>
-              <div className="bank-row"><span>Bank:</span> <strong>INDUSIND BANK LTD</strong></div>
-              <div className="bank-row"><span>Branch:</span> <strong>Wakad, Pune</strong></div>
-              <div className="bank-row"><span>IFSC Code:</span> <strong>INDB0000999</strong></div>
-              <div className="bank-row"><span>Bank Account No:</span> <strong>201025452641</strong></div>
-              <div className="bank-row"><span>Type of Account:</span> <strong>Current Account</strong></div>
+              <div className="bank-row"><span>ACCOUNT:</span> <strong>Indira College of Engineering & Management</strong></div>
+              <div className="bank-row"><span>BANK:</span> <strong>INDUSIND BANK LTD</strong></div>
+              <div className="bank-row"><span>BRANCH:</span> <strong>Wakad, Pune</strong></div>
+              <div className="bank-row"><span>IFSC:</span> <strong className="tech-code">INDB0000999</strong></div>
+              <div className="bank-row"><span>ACCOUNT NO:</span> <strong className="tech-code">201025452641</strong></div>
+              <div className="bank-row"><span>TYPE:</span> <strong>Current Account</strong></div>
             </div>
-          </section>
+          </motion.section>
 
-          <section className="info-section notes">
-            <h2 className="section-title"><Info size={20} className="section-title-icon" /> Important Notes</h2>
+          <motion.section 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="info-section notes hud-frame"
+          >
+            <div className="hud-corner top-left"></div>
+            <h2 className="hud-section-title"><Info size={18} /> 03 // TERMS & CONDITIONS</h2>
             <ul className="notes-list">
               <li>Registration fees shall not be refundable in case of any cancellation.</li>
               <li>Fees includes conference kit and food coupons for one author.</li>
@@ -150,87 +174,106 @@ const Registration = () => {
               <li>Local transport from Somatane can be arranged on prior request.</li>
               <li>No TA/DA will be provided to attend conference.</li>
             </ul>
-            <div className="login-prompt mt-8 p-4 rounded-xl bg-[#43ccd1]/10 border border-[#43ccd1]/20">
-              <p className="text-sm text-gray-300 flex items-center gap-2">
-                <LogIn size={18} className="text-icem-cyan" />
-                Already have an account? <Link to="/login" className="text-icem-cyan hover:underline font-semibold">Log in here</Link>
+            <div className="login-prompt">
+              <p className="login-text">
+                <LogIn size={16} />
+                EXISTING USER? <Link to="/login" className="login-link">ACCESS PORTAL</Link>
               </p>
             </div>
-          </section>
+          </motion.section>
         </div>
 
         {/* Right Column: Registration Form */}
         <div className="registration-form-wrapper">
-          <div className="registration-glass box-glow">
+          <div className="registration-glass hud-frame main-terminal">
+            <div className="hud-corner top-left"></div>
+            <div className="hud-corner top-right"></div>
+            <div className="hud-corner bottom-left"></div>
+            <div className="hud-corner bottom-right"></div>
+            <div className="terminal-header">
+              <span className="terminal-title">DELEGATE_REGISTRATION_v2.0</span>
+              <div className="terminal-dots"><span></span><span></span><span></span></div>
+            </div>
+
             <AnimatePresence mode="wait">
               {step === 1 && (
                 <motion.div 
                   key="step1"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
                   className="reg-step"
                 >
-                  <h2 className="text-display-sub">Delegate Registration</h2>
-                  <p className="reg-description">Provide your details to initiate the secure registration process.</p>
+                  <div className="step-indicator">STEP 01 / 03</div>
+                  <h2 className="hud-form-title">Delegate Identity</h2>
+                  <p className="reg-description">Initialize secure registration sequence.</p>
                   
                   <form onSubmit={handleSendOTP} className="reg-form">
                     <div className="input-group">
-                      <User className="input-icon" size={18} />
-                      <input 
-                        type="text" 
-                        placeholder="Full Name" 
-                        required 
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      />
+                      <label className="input-label">FULL_NAME</label>
+                      <div className="input-wrapper">
+                        <User className="input-icon" size={18} />
+                        <input 
+                          type="text" 
+                          placeholder="ENTER NAME" 
+                          required 
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        />
+                      </div>
                     </div>
                     
                     <div className="input-group">
-                      <Mail className="input-icon" size={18} />
-                      <input 
-                        type="email" 
-                        placeholder="Official Email Address" 
-                        required 
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      />
+                      <label className="input-label">COMM_EMAIL</label>
+                      <div className="input-wrapper">
+                        <Mail className="input-icon" size={18} />
+                        <input 
+                          type="email" 
+                          placeholder="OFFICIAL ADDRESS" 
+                          required 
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        />
+                      </div>
                     </div>
                     
                     <div className="input-group">
-                      <Building className="input-icon" size={18} />
-                      <input 
-                        type="text" 
-                        placeholder="Institution / Organization" 
-                        required 
-                        value={formData.institution}
-                        onChange={(e) => setFormData({...formData, institution: e.target.value})}
-                      />
+                      <label className="input-label">ORG_AFFILIATION</label>
+                      <div className="input-wrapper">
+                        <Building className="input-icon" size={18} />
+                        <input 
+                          type="text" 
+                          placeholder="INSTITUTION" 
+                          required 
+                          value={formData.institution}
+                          onChange={(e) => setFormData({...formData, institution: e.target.value})}
+                        />
+                      </div>
                     </div>
 
                     <div className="role-selector">
-                      <label>Registering as:</label>
+                      <label className="input-label">ACCESS_LEVEL</label>
                       <div className="role-options">
                         <button 
                           type="button"
                           className={formData.role === 'student' ? 'active' : ''} 
                           onClick={() => setFormData({...formData, role: 'student'})}
-                        >Student</button>
+                        >STUDENT</button>
                         <button 
                           type="button"
                           className={formData.role === 'faculty' ? 'active' : ''} 
                           onClick={() => setFormData({...formData, role: 'faculty'})}
-                        >Faculty</button>
+                        >FACULTY</button>
                         <button 
                           type="button" 
                           className={formData.role === 'industry' ? 'active' : ''} 
                           onClick={() => setFormData({...formData, role: 'industry'})}
-                        >Industry</button>
+                        >INDUSTRY</button>
                       </div>
                     </div>
 
-                    <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
-                      {isLoading ? 'Processing...' : 'Send Verification OTP'}
+                    <button type="submit" disabled={isLoading} className="hud-btn-primary full-width">
+                      {isLoading ? 'INITIATING...' : 'GENERATE OTP'}
                       <ChevronRight size={18} />
                     </button>
                   </form>
@@ -240,22 +283,24 @@ const Registration = () => {
               {step === 2 && (
                 <motion.div 
                   key="step2"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
                   className="reg-step"
                 >
+                  <div className="step-indicator">STEP 02 / 03</div>
                   <div className="shield-icon-container">
                     <ShieldCheck size={48} className="shield-icon" />
                   </div>
-                  <h2 className="text-display-sub">Verify Identity</h2>
-                  <p className="reg-description">A 6-digit code has been sent to <strong>{formData.email}</strong>. Enter it below to continue.</p>
+                  <h2 className="hud-form-title">Security Check</h2>
+                  <p className="reg-description">Verification code sent to: <br/><strong>{formData.email}</strong></p>
                   
                   <form onSubmit={handleVerifyOTP} className="reg-form">
                     <div className="input-group otp-input-container">
+                      <label className="input-label">VERIFICATION_CODE</label>
                       <input 
                         type="text" 
-                        placeholder="000000" 
+                        placeholder="______" 
                         maxLength={6}
                         className="otp-input"
                         required 
@@ -264,8 +309,8 @@ const Registration = () => {
                       />
                     </div>
 
-                    <button type="submit" disabled={isLoading} className="premium-btn premium-btn-primary full-width">
-                      {isLoading ? 'Verifying...' : 'Complete Registration'}
+                    <button type="submit" disabled={isLoading} className="hud-btn-primary full-width">
+                      {isLoading ? 'VERIFYING...' : 'AUTHORIZE REGISTRATION'}
                       <CheckCircle2 size={18} />
                     </button>
                     
@@ -273,7 +318,7 @@ const Registration = () => {
                       type="button" 
                       className="secondary-link" 
                       onClick={() => setStep(1)}
-                    >Change Email</button>
+                    >CHANGE EMAIL</button>
                   </form>
                 </motion.div>
               )}
@@ -286,16 +331,20 @@ const Registration = () => {
                   className="reg-step success-step"
                 >
                   <div className="success-lottie-placeholder">
-                    <CheckCircle2 size={80} color="var(--icem-cyan)" />
+                    <CheckCircle2 size={80} className="success-check" />
                   </div>
-                  <h2 className="text-display-sub">Registration Confirmed!</h2>
-                  <p className="reg-description">Welcome to ICEM SDETM 2026. You are now officially registered. Check your email for payment confirmation steps and submission link.</p>
-                  <button className="premium-btn premium-btn-secondary" onClick={() => window.location.href = '/'}>
-                    Back to Home
+                  <h2 className="hud-form-title">Confirmed.</h2>
+                  <p className="reg-description">Welcome to SDETM 2026. Credentials established. Please finalize payment protocol via email instructions.</p>
+                  <button className="hud-btn-secondary" onClick={() => window.location.href = '/'}>
+                    RETURN TO COMMAND
                   </button>
                 </motion.div>
               )}
             </AnimatePresence>
+            <div className="terminal-footer">
+              <span className="terminal-status">SECURE_CONNECTION: ACTIVE</span>
+              <span className="terminal-encoding">UTF-8 // RSA-2048</span>
+            </div>
           </div>
         </div>
       </div>

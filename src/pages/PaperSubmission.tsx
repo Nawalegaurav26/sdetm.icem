@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FileText, Send, Info, Shield, CheckCircle, HelpCircle, Globe, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FileText, Send, Info, Shield, Globe, Download, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 import './PaperSubmission.css';
 
@@ -35,7 +35,6 @@ const PaperSubmission = () => {
 
     setIsUploading(true);
     try {
-      // 1. Upload to Supabase Storage
       const fileExt = file.name.split('.').pop();
       const fileName = `${Math.random()}.${fileExt}`;
       const filePath = `papers/${fileName}`;
@@ -46,12 +45,10 @@ const PaperSubmission = () => {
 
       if (uploadError) throw uploadError;
 
-      // 2. Get Public URL
       const { data: { publicUrl } } = supabase.storage
         .from('manuscripts')
         .getPublicUrl(filePath);
 
-      // 3. Save Metadata to Railway Backend
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/papers/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -63,16 +60,13 @@ const PaperSubmission = () => {
       });
 
       if (!response.ok) throw new Error('Backend submission failed');
-
       setIsSubmitted(true);
     } catch (error) {
-      const e = error as Error;
-      console.error('Submission error:', e);
-      // Fallback for demo if backend is not ready
+      console.error('Submission error:', error);
       if (!import.meta.env.VITE_API_URL) {
         setIsSubmitted(true);
       } else {
-        alert('Error submitting paper: ' + e.message);
+        alert('Error submitting paper: ' + (error as Error).message);
       }
     } finally {
       setIsUploading(false);
@@ -82,15 +76,20 @@ const PaperSubmission = () => {
   if (isSubmitted) {
     return (
       <div className="submission-container">
+        <div className="neural-background"></div>
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="success-card glass-panel"
+          className="success-card hud-frame main-terminal"
         >
-          <CheckCircle className="success-icon" size={64} />
-          <h2>Submission Received!</h2>
-          <p>Thank you for submitting your research to ICEM 2026. A confirmation email has been sent to your registered address.</p>
-          <button onClick={() => setIsSubmitted(false)} className="btn-primary">Submit Another Paper</button>
+          <div className="hud-corner top-left"></div>
+          <div className="hud-corner bottom-right"></div>
+          <Globe className="success-icon pulse" size={64} />
+          <h2 className="hud-title">TRANSMISSION_COMPLETE</h2>
+          <p className="hud-para">Manuscript received and queued for review. Check your terminal logs (email) for tracking ID.</p>
+          <button onClick={() => setIsSubmitted(false)} className="hud-btn-primary">
+            SUBMIT_ANOTHER
+          </button>
         </motion.div>
       </div>
     );
@@ -98,82 +97,103 @@ const PaperSubmission = () => {
 
   return (
     <div className="submission-container">
+      <div className="neural-background"></div>
+      
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="submission-header"
       >
-        <h1 className="text-display-section gradient-text">Submission Portal</h1>
-        <p className="subtitle">Guidelines & Manuscript Submission for SDETM 2026</p>
+        <div className="hud-badge">
+          <span className="scan-line"></span>
+          <span className="hud-text">UPLOADER // v4.0</span>
+        </div>
+        <h1 className="hud-title">Submission Portal</h1>
+        <p className="subtitle">Secure Manuscript Gateway for SDETM 2026</p>
       </motion.div>
 
-      <div className="guidelines-overview glass-panel">
+      <div className="guidelines-overview hud-frame">
+        <div className="hud-corner top-left"></div>
+        <div className="hud-corner bottom-right"></div>
         <div className="guide-grid">
           <div className="guide-card">
-            <h3><FileText size={20} /> Manuscript Preparation</h3>
-            <ul>
-              <li>Format: MS Word / LaTeX (PDF only)</li>
-              <li>Typography: Times New Roman, 12pt</li>
-              <li>Spacing: 1.5 Line spacing</li>
-              <li>Visuals: Descriptive captions for all figures</li>
+            <h3 className="hud-card-title"><FileText size={18} /> 01 // PREPARATION</h3>
+            <ul className="hud-list">
+              <li>FORMAT: PDF ONLY</li>
+              <li>FONT: TIMES NEW ROMAN</li>
+              <li>ANONYMITY: REQUIRED</li>
             </ul>
           </div>
           <div className="guide-card">
-            <h3><Globe size={20} /> Publication & Indexing</h3>
-            <p>Accepted papers will be published in conference proceedings and indexed by <strong>SCOPUS</strong>. Approval by Springer Nature is in process.</p>
+            <h3 className="hud-card-title"><Globe size={18} /> 02 // INDEXING</h3>
+            <p className="hud-para">Accepted papers will be published and indexed by <strong className="highlight">SCOPUS</strong>.</p>
           </div>
           <div className="guide-card">
-            <h3><Shield size={20} /> Review Process</h3>
-            <p>Rigorous <strong>double-blind peer review</strong>. Manuscripts must not contain author names to ensure impartial evaluation.</p>
+            <h3 className="hud-card-title"><Shield size={18} /> 03 // SECURITY</h3>
+            <p className="hud-para">Rigorous <strong className="highlight">double-blind review</strong> protocols active.</p>
           </div>
         </div>
       </div>
 
       <div className="submission-content">
-        <form onSubmit={handleSubmit} className="submission-form glass-panel">
-          <div className="form-group">
-            <label><FileText size={18} /> Paper Title</label>
-            <input 
-              type="text" 
-              placeholder="Enter full title of your manuscript"
-              required
-              value={formData.title}
-              onChange={(e) => setFormData({...formData, title: e.target.value})}
-            />
+        <form onSubmit={handleSubmit} className="submission-form hud-frame main-terminal">
+          <div className="hud-corner top-right"></div>
+          <div className="hud-corner bottom-left"></div>
+          <div className="terminal-header">
+            <span className="terminal-title">MANUSCRIPT_UPLOAD_PROTOCOL</span>
+            <div className="terminal-dots"><span></span><span></span><span></span></div>
           </div>
 
-          <div className="form-grid">
-            <div className="form-group">
-              <label>Select Conference Track</label>
-              <select 
-                title="Select Conference Track"
-                value={formData.track}
-                onChange={(e) => setFormData({...formData, track: e.target.value})}
-              >
-                <option value="mechanical">Track 1: Mechanical & Future Mobility</option>
-                <option value="ai-ml">Track 2: AI, ML & Data Science</option>
-                <option value="computing">Track 3: Future Computing & IT</option>
-                <option value="electronics">Track 4: Electronics & Communication</option>
-                <option value="energy">Track 5: Energy & Environment</option>
-                <option value="management">Track 6: Management & Education</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Keywords</label>
+          <div className="form-group">
+            <label className="input-label">PAPER_TITLE</label>
+            <div className="input-wrapper">
+              <FileText className="input-icon" size={18} />
               <input 
                 type="text" 
-                placeholder="Comma separated (e.g. AI, Robotics)"
-                value={formData.keywords}
-                onChange={(e) => setFormData({...formData, keywords: e.target.value})}
+                placeholder="ENTER FULL MANUSCRIPT TITLE"
+                required
+                value={formData.title}
+                onChange={(e) => setFormData({...formData, title: e.target.value})}
               />
             </div>
           </div>
 
+          <div className="form-grid">
+            <div className="form-group">
+              <label className="input-label">RESEARCH_TRACK</label>
+              <div className="input-wrapper">
+                <select 
+                  title="Select Conference Track"
+                  value={formData.track}
+                  onChange={(e) => setFormData({...formData, track: e.target.value})}
+                >
+                  <option value="mechanical">TRACK 1: MECHANICAL & MOBILITY</option>
+                  <option value="ai-ml">TRACK 2: AI, ML & DATA SCIENCE</option>
+                  <option value="computing">TRACK 3: FUTURE COMPUTING</option>
+                  <option value="electronics">TRACK 4: E&TC</option>
+                  <option value="energy">TRACK 5: ENERGY & ENVIRONMENT</option>
+                  <option value="management">TRACK 6: MANAGEMENT</option>
+                </select>
+              </div>
+            </div>
+            <div className="form-group">
+              <label className="input-label">KEYWORDS</label>
+              <div className="input-wrapper">
+                <input 
+                  type="text" 
+                  placeholder="CSV FORMAT"
+                  value={formData.keywords}
+                  onChange={(e) => setFormData({...formData, keywords: e.target.value})}
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="form-group">
-            <label>Abstract (Max 300 words)</label>
+            <label className="input-label">ABSTRACT_SYNOPSIS</label>
             <textarea 
-              rows={6}
-              placeholder="Provide a brief summary of your research..."
+              rows={5}
+              placeholder="INITIALIZE RESEARCH SUMMARY..."
               required
               value={formData.abstract}
               onChange={(e) => setFormData({...formData, abstract: e.target.value})}
@@ -181,98 +201,75 @@ const PaperSubmission = () => {
           </div>
 
           <div className="form-group">
-            <label><FileText size={18} /> Upload Manuscript (PDF Only)</label>
-            <div className="file-upload-wrapper">
+            <label className="input-label">MANUSCRIPT_FILE (.PDF)</label>
+            <div className="file-upload-hud">
               <input 
                 type="file" 
                 title="Upload Manuscript"
-                placeholder="Choose PDF file"
                 accept=".pdf"
                 onChange={handleFileChange}
                 required
               />
-              {file && <p className="file-selected">Selected: {file.name}</p>}
+              <div className="upload-visual">
+                <Download size={24} />
+                <span>{file ? file.name : "SELECT PDF FOR TRANSMISSION"}</span>
+              </div>
             </div>
           </div>
 
-          <div className="form-alert">
-            <Shield size={20} />
-            <p><strong>Note:</strong> All submissions undergo a <strong>double-blind peer review</strong>. Ensure your manuscript file (PDF) does not contain author names.</p>
+          <div className="form-alert hud-frame">
+            <Shield size={18} />
+            <p><strong>ALERT:</strong> All submissions undergo double-blind peer review. Remove author metadata.</p>
           </div>
 
-          <button type="submit" className="submit-btn btn-primary" disabled={isUploading}>
-            <span>{isUploading ? 'Uploading...' : 'Submit Manuscript'}</span>
-            <Send size={18} />
+          <button type="submit" className="hud-btn-primary full-width" disabled={isUploading}>
+            <span>{isUploading ? 'UPLOADING...' : 'SUBMIT PROTOCOL'}</span>
+            <ChevronRight size={18} />
           </button>
         </form>
 
         <aside className="submission-sidebar">
-          <div className="sidebar-card glass-panel">
-            <h3><Info size={18} /> Guidelines</h3>
-            <ul>
-              <li>Format: MsWord / LaTeX (PDF)</li>
-              <li>Font: Times New Roman, 12pt</li>
-              <li>Spacing: 1.5 Line spacing</li>
-              <li>Double-blind process followed</li>
+          <div className="sidebar-card hud-frame">
+            <div className="hud-corner top-left"></div>
+            <h3 className="hud-card-title"><Info size={16} /> QUICK_GUIDE</h3>
+            <ul className="hud-list mini">
+              <li>MAX SIZE: 10MB</li>
+              <li>ANONYMITY: REQD</li>
+              <li>REVIEW: BLIND</li>
             </ul>
           </div>
           
-          <div className="sidebar-card security-card glass-panel">
-            <Shield className="status-icon" />
-            <h3>Secure Submission</h3>
-            <p>Your data is encrypted and stored in our private conference database.</p>
+          <div className="sidebar-card security-card hud-frame">
+            <div className="hud-corner bottom-right"></div>
+            <div className="status-pulse"></div>
+            <h3 className="hud-card-title">SECURE_SYNC</h3>
+            <p className="hud-para small">E2E Manuscript Encryption active.</p>
           </div>
         </aside>
       </div>
-
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="submission-details-grid"
-      >
-        <div className="detail-section glass-panel">
-          <h3><Download size={20} /> Template Downloads</h3>
-          <p>Please use the following templates to ensure your manuscript meets the conference formatting requirements:</p>
-          <div className="download-buttons">
-            <a href="#" className="btn-secondary"><FileText size={16} /> MS Word Template</a>
-            <a href="#" className="btn-secondary"><FileText size={16} /> LaTeX Template</a>
-          </div>
-        </div>
-
-        <div className="detail-section glass-panel">
-          <h3><Shield size={20} /> Review Process</h3>
-          <p>The ICEM 2026 conference follows a rigorous double-blind peer-review process:</p>
-          <ol>
-            <li>Initial screening for scope and plagiarism.</li>
-            <li>Assignment to at least 2 technical program committee members.</li>
-            <li>Evaluation based on originality, technical depth, and clarity.</li>
-            <li>Final decision notification by the track chair.</li>
-          </ol>
-        </div>
-      </motion.section>
 
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="acknowledgement-section glass-panel"
+        className="acknowledgement-section hud-frame"
       >
-        <h2>Acknowledgement</h2>
+        <div className="hud-corner top-left"></div>
+        <div className="hud-corner bottom-right"></div>
+        <h2 className="hud-card-title">ACKNOWLEDGEMENT</h2>
         <div className="cmt-integration">
-          <p>
+          <p className="hud-para">
             The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer" className="highlight-link">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
           </p>
         </div>
       </motion.div>
 
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="faq-section"
-      >
-        <h2 className="gradient-text">Submission FAQ</h2>
+      <section className="faq-section-hud hud-frame">
+        <div className="hud-corner top-right"></div>
+        <div className="hud-corner bottom-left"></div>
+        <div className="terminal-header">
+          <span className="terminal-title">SUBMISSION_FAQ_PROTOCOL</span>
+        </div>
         <div className="faq-grid">
           {[
             {
@@ -281,28 +278,27 @@ const PaperSubmission = () => {
             },
             {
               q: "Can I submit multiple papers?",
-              a: "Yes, authors can submit multiple papers. Each paper must be submitted separately through this portal or via CMT."
+              a: "Yes, authors can submit multiple papers. Each paper must be submitted separately through the portal or via CMT."
             },
             {
               q: "What is the template format?",
-              a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Downloads section above."
+              a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Resources section."
             },
             {
               q: "Is there a submission fee?",
               a: "There is no fee for submitting a paper for review. Registration fees are only applicable after paper acceptance."
             }
           ].map((item, index) => (
-            <div key={index} className="faq-item glass-panel">
+            <div key={index} className="faq-item-hud">
               <div className="faq-question">
-                <HelpCircle size={18} />
+                <span className="highlight">Q{index + 1} //</span>
                 <span>{item.q}</span>
               </div>
               <p className="faq-answer">{item.a}</p>
             </div>
           ))}
         </div>
-      </motion.section>
-
+      </section>
     </div>
   );
 };

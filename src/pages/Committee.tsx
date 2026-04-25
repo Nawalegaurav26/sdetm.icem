@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin, User, ShieldCheck, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
 import './Committee.css';
 
 interface MemberProps {
@@ -11,31 +12,85 @@ interface MemberProps {
 }
 
 const MemberCard: React.FC<MemberProps> = ({ name, role, org, email, linkedin }) => (
-  <div className="profile-card">
-    <div className="profile-image-container">
-      <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} alt={name} />
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="profile-card-hud hud-frame"
+  >
+    <div className="hud-corner top-left"></div>
+    <div className="hud-corner top-right"></div>
+    <div className="hud-corner bottom-left"></div>
+    <div className="hud-corner bottom-right"></div>
+    
+    <div className="dossier-header px-4 py-2 flex justify-between items-center border-b border-icem-cyan/20 bg-icem-cyan/5">
+      <div className="flex items-center gap-2">
+        <ShieldCheck size={12} className="text-icem-cyan" />
+        <span className="text-[10px] font-mono tracking-tighter opacity-70">VERIFIED_PERSONNEL</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <Activity size={12} className="text-icem-cyan animate-pulse" />
+        <span className="text-[10px] font-mono opacity-50">ACTIVE</span>
+      </div>
     </div>
-    <div className="profile-info">
-      <span className="role">{role}</span>
-      <h3>{name}</h3>
-      <span className="org">{org}</span>
+
+    <div className="profile-image-section p-6 flex flex-col items-center">
+      <div className="profile-image-hud">
+        <div className="image-ring"></div>
+        <div className="image-container">
+          <img 
+            src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=060f1e&color=43ccd1&size=200&bold=true&font-size=0.33`} 
+            alt={name} 
+          />
+          <div className="scan-overlay"></div>
+        </div>
+      </div>
+
+      <div className="profile-details text-center mt-6 w-full">
+        <div className="role-tag text-icem-cyan font-mono text-[10px] tracking-widest mb-2 px-2 py-1 bg-icem-cyan/10 inline-block rounded">
+          {role.toUpperCase()}
+        </div>
+        <h3 className="tech-heading text-lg mb-2 text-white">{name}</h3>
+        <p className="hud-para text-xs opacity-60 line-clamp-2 min-h-[32px]">
+          {org}
+        </p>
+      </div>
     </div>
-    <div className="profile-social">
-      <a href={`mailto:${email || 'sdetm.icem@indiraicem.ac.in'}`} title="Email"><Mail size={18} /></a>
-      <a href={linkedin || "#"} target="_blank" rel="noopener noreferrer" title="LinkedIn"><Linkedin size={18} /></a>
+
+    <div className="profile-actions-hud grid grid-cols-2 border-t border-icem-cyan/20">
+      <a 
+        href={`mailto:${email || 'sdetm.icem@indiraicem.ac.in'}`} 
+        className="social-btn border-r border-icem-cyan/20"
+        title="SECURE MAIL"
+      >
+        <Mail size={16} />
+        <span className="text-[9px] font-mono mt-1">MAIL</span>
+      </a>
+      <a 
+        href={linkedin || "#"} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="social-btn"
+        title="NETWORK ID"
+      >
+        <Linkedin size={16} />
+        <span className="text-[9px] font-mono mt-1">LINKEDIN</span>
+      </a>
     </div>
-  </div>
+    
+    <div className="card-glitch-line"></div>
+  </motion.div>
 );
 
 const Committee = () => {
   const location = useLocation();
   const path = location.pathname;
+  const sectionTitle = path.split('/').pop()?.replace(/_/g, ' ').toUpperCase() || 'COMMITTEE';
 
   const renderSection = () => {
     if (path.includes('/chief-patron')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Chief Patron</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Tarita Shankar" 
@@ -49,8 +104,7 @@ const Committee = () => {
 
     if (path.includes('/patron')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Patrons</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid">
             <MemberCard 
               name="Mr. Chetan Wakalkar" 
@@ -74,8 +128,7 @@ const Committee = () => {
 
     if (path.includes('/chair')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Conference Chair</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Nilesh Uke" 
@@ -89,8 +142,7 @@ const Committee = () => {
 
     if (path.includes('/convenor')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Convenors</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid">
             <MemberCard 
               name="Dr. Saurabh Gupta" 
@@ -111,8 +163,7 @@ const Committee = () => {
 
     if (path.includes('/collegeadvisory')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">College Advisory Committee</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid">
             {[
               { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans" },
@@ -140,30 +191,13 @@ const Committee = () => {
 
     if (path.includes('/international_advisory_committee')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">International Advisory Committee</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid">
             {[
-              { 
-                name: "Dr Celestino Ruivo", 
-                role: "Professor in Mechanical Engineering", 
-                org: "University of Algarve, Portugal" 
-              },
-              { 
-                name: "Prof. Md. Zahir Uddin Arif", 
-                role: "Professor", 
-                org: "Jagannath University, Dhaka, Bangladesh" 
-              },
-              { 
-                name: "Prof. Md. Rahat Khan", 
-                role: "Professor", 
-                org: "Bangladesh University of Professionals, Dhaka, Bangladesh" 
-              },
-              { 
-                name: "Dr. Sonali Bhadoria", 
-                role: "Senior Data Analyst", 
-                org: "NC DIT, Raleigh, NC" 
-              }
+              { name: "Dr Celestino Ruivo", role: "Professor", org: "University of Algarve, Portugal" },
+              { name: "Prof. Md. Zahir Uddin Arif", role: "Professor", org: "Jagannath University, Bangladesh" },
+              { name: "Prof. Md. Rahat Khan", role: "Professor", org: "Bangladesh University of Professionals" },
+              { name: "Dr. Sonali Bhadoria", role: "Senior Data Analyst", org: "NC DIT, Raleigh, NC" }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
@@ -179,20 +213,19 @@ const Committee = () => {
 
     if (path.includes('/national_advisory_committee')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">National Advisory Committee</h2>
+        <section className="committee-section-hud">
           <div className="committee-grid">
             {[
               { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune" },
               { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune" },
               { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune" },
               { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune" },
-              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune" },
+              { name: "Dr. S. S. Ohol", role: "Asso Professor", org: "COEP Technological University, Pune" },
               { name: "Dr. Anil Sahu", role: "Dean (PhD)", org: "GHRCEM, Pune" },
               { name: "Dr. Pendyala Srinivas", role: "HoD (Mechanical)", org: "GITAM University, Hyderabad" },
-              { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor (CSE)", org: "Dayanand Sagar University, Bangalore" },
+              { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor", org: "Dayanand Sagar University, Bangalore" },
               { name: "Dr. Sridaran Rajagopal", role: "Dean Executive", org: "Ganpat University, Mehsana" },
-              { name: "Dr. Kavitha Venkatachari", role: "Dean AI & ML", org: "Universal AI University, Karjat, Mumbai" },
+              { name: "Dr. Kavitha Venkatachari", role: "Dean AI & ML", org: "Universal AI University, Karjat" },
               { name: "Dr. M Karthikeyan", role: "Chief Scientist", org: "NCL, Pune" },
               { name: "Dr Prashant Kumbharkar", role: "Professor & Dean", org: "ADYPU, Pune" },
               { name: "Dr Anand Bewoor", role: "Dean-Academics", org: "Cummins College of Engineering, Pune" },
@@ -219,11 +252,9 @@ const Committee = () => {
 
     if (path.includes('/organizing')) {
       return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Organizing Committee</h2>
-          
-          <div className="dept-group">
-            <h3 className="dept-title">Mechanical Engineering</h3>
+        <section className="committee-section-hud">
+          <div className="dept-group-hud mb-12">
+            <h3 className="tech-heading text-center text-icem-cyan mb-8 tracking-[0.2em]">MECHANICAL ENGINEERING</h3>
             <div className="committee-grid">
               {[
                 { name: "Dr. Mahesh Bhong", role: "Associate Professor" },
@@ -247,8 +278,8 @@ const Committee = () => {
             </div>
           </div>
 
-          <div className="dept-group dept-group-mt">
-            <h3 className="dept-title">AI & Data Science</h3>
+          <div className="dept-group-hud">
+            <h3 className="tech-heading text-center text-icem-cyan mb-8 tracking-[0.2em]">AI & DATA SCIENCE</h3>
             <div className="committee-grid">
               {[
                 { name: "Ms. Deepa Padwal", role: "Assistant Professor" },
@@ -277,8 +308,16 @@ const Committee = () => {
   };
 
   return (
-    <div className="committee-page">
-      <div className="container">
+    <div className="committee-page-hud relative z-10 pt-32 pb-20">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <header className="committee-header-hud text-center mb-16">
+          <div className="tech-subheading">PERSONNEL_DOSSIER</div>
+          <h1 className="hud-title mt-4">
+            {sectionTitle}
+          </h1>
+          <div className="header-line mx-auto mt-6"></div>
+        </header>
+        
         {renderSection()}
       </div>
     </div>

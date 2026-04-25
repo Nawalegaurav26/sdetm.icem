@@ -44,171 +44,133 @@
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.stat-card {
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 24px;
+.institute-header .hud-title {
+  margin-top: 1.5rem;
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.stats-grid-hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card-hud {
+  padding: 2rem;
+  background: rgba(6, 15, 30, 0.4);
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.stat-card .icon {
-  width: 48px;
-  height: 48px;
-  color: #00E5FF;
-  margin-bottom: 20px;
-}
-
-.stat-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
-
-.stat-card p {
-  font-size: 0.9rem;
-  color: rgba(195, 245, 255, 0.6);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-radius: 32px;
-  padding: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.content-section {
-  margin-bottom: 80px;
-}
-
-.text-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 24px;
-  color: #ffffff;
-}
-
-.text-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(195, 245, 255, 0.8);
-  margin-bottom: 40px;
-}
-
-.highlights {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.highlight-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(0, 229, 255, 0.05);
-  padding: 12px 20px;
-  border-radius: 12px;
-}
-
-.highlight-icon {
-  color: #00E5FF;
-  width: 20px;
-  height: 20px;
-}
-
-.vision-mission-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.vision-card, .mission-card {
-  padding: 50px;
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.card-header h2 {
-  font-size: 2rem;
-  margin: 0;
-  color: #ffffff;
-}
-
-.card-header .icon {
-  width: 32px;
-  height: 32px;
-  color: #00E5FF;
-}
-
-.mission-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mission-card li {
-  margin-bottom: 16px;
-  padding-left: 28px;
   position: relative;
-  line-height: 1.6;
-  color: rgba(195, 245, 255, 0.8);
+  transition: all 0.3s ease;
 }
 
-.mission-card li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #00E5FF;
+.stat-card-hud:hover {
+  transform: translateY(-5px);
 }
 
-.departments-section {
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
-
-.dept-grid {
+.stat-icon-hud {
+  color: var(--icem-cyan);
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
+}
+
+.stat-card-hud h3 {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card-hud p {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.content-section-hud {
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.highlights-hud {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
-.dept-pill {
-  padding: 14px 28px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 100px;
-  font-size: 1rem;
+.highlight-item-hud {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(67, 204, 209, 0.1);
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  color: var(--icem-cyan);
+}
+
+.vision-mission-grid-hud {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.vision-card-hud, .mission-card-hud {
+  padding: 2.5rem;
+  background: rgba(6, 15, 30, 0.6);
+}
+
+.card-header-hud {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--icem-cyan);
+}
+
+.departments-section-hud {
+  padding: 3rem;
+  background: rgba(6, 15, 30, 0.4);
+  text-align: center;
+}
+
+.dept-grid-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dept-pill-hud {
+  padding: 0.6rem 1.5rem;
+  background: rgba(67, 204, 209, 0.05);
+  border: 1px solid rgba(67, 204, 209, 0.2);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  border-radius: 4px;
   transition: all 0.3s ease;
-  cursor: default;
 }
 
-.dept-pill:hover {
-  background: rgba(0, 229, 255, 0.1);
-  border-color: #00E5FF;
-  color: #ffffff;
+.dept-pill-hud:hover {
+  background: var(--icem-cyan);
+  color: var(--icem-dark);
+}
+
+@media (max-width: 992px) {
+  .vision-mission-grid-hud {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 968px) {
@@ -218,5 +180,19 @@
   
   .glass-card {
     padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-institute {
+    padding: 100px 1.5rem 60px;
+  }
+  
+  .institute-header .hud-title {
+    font-size: 2rem;
+  }
+
+  .stat-card-hud, .vision-card-hud, .mission-card-hud, .departments-section-hud {
+    padding: 1.5rem;
   }
 }
