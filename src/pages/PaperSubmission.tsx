@@ -167,12 +167,13 @@ const PaperSubmission = () => {
                   value={formData.track}
                   onChange={(e) => setFormData({...formData, track: e.target.value})}
                 >
-                  <option value="mechanical">TRACK 1: MECHANICAL & MOBILITY</option>
-                  <option value="ai-ml">TRACK 2: AI, ML & DATA SCIENCE</option>
-                  <option value="computing">TRACK 3: FUTURE COMPUTING</option>
-                  <option value="electronics">TRACK 4: E&TC</option>
-                  <option value="energy">TRACK 5: ENERGY & ENVIRONMENT</option>
-                  <option value="management">TRACK 6: MANAGEMENT</option>
+                  <option value="mechanical">TRACK 1: MECHANICAL ENGINEERING</option>
+                  <option value="ai-ml">TRACK 2: AI & MACHINE LEARNING</option>
+                  <option value="it">TRACK 3: INFORMATION TECHNOLOGY</option>
+                  <option value="electronics">TRACK 4: ELECTRONICS & TELECOM</option>
+                  <option value="advanced-computing">TRACK 5: ADVANCED COMPUTING</option>
+                  <option value="business">TRACK 6: BUSINESS INNOVATION</option>
+                  <option value="sustainable">TRACK 7: SUSTAINABLE PRACTICES</option>
                 </select>
               </div>
             </div>
