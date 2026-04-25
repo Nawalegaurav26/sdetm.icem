@@ -33,8 +33,6 @@ function App() {
             {/* About Routes */}
             <Route path="/about/conference" element={<AboutConference />} />
             <Route path="/about/institute" element={<AboutInstitute />} />
-            <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
-            <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
             
             {/* Committee Routes */}
             <Route path="/committee/chief-patron" element={<Committee />} />
@@ -48,7 +46,6 @@ function App() {
             
             {/* Call for Papers */}
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
-            <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
             
             {/* Submission */}
             <Route path="/submission" element={<PaperSubmission />} />

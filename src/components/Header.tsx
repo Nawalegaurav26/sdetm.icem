@@ -14,9 +14,7 @@ const Header = () => {
       title: 'ABOUT', 
       children: [
         { name: 'About Conference', path: '/about/conference' },
-        { name: 'About Institute (ICEM)', path: '/about/institute' },
-        { name: 'Vision & Objectives', path: '/about/vision' },
-        { name: 'Conference Theme', path: '/about/theme' }
+        { name: 'About Institute (ICEM)', path: '/about/institute' }
       ] 
     },
     { 
@@ -35,8 +33,7 @@ const Header = () => {
     { 
       title: 'CALL FOR PAPERS', 
       children: [
-        { name: 'Tracks / Topics', path: '/call-for-papers/tracks' },
-        { name: 'Scope', path: '/call-for-papers/scope' }
+        { name: 'Tracks / Topics', path: '/call-for-papers/tracks' }
       ] 
     },
     { title: 'SUBMISSION', path: '/submission' },
