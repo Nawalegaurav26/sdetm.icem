@@ -5,95 +5,112 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="main-footer">
-      {/* Top Footer Grid */}
-      <div className="footer-top">
-        <div className="container footer-grid">
-          {/* Brand Column */}
-          <div className="footer-col brand-col">
-            <img src="/icem-logo.png" alt="ICEM Logo" className="footer-logo" />
-            <p className="footer-tagline">
-              Sustainable Developments in Engineering, Technology & Management, 2026
+      <div className="footer-glow"></div>
+      
+      <div className="container footer-content">
+        <div className="footer-main-grid">
+          {/* 1. Brand & HUD Identity */}
+          <div className="footer-brand">
+            <div className="footer-logos">
+              <img src="/icem-logo.png" alt="ICEM" className="footer-logo-small" />
+              <img src="/sdetm-logo.png" alt="SDETM" className="footer-logo-small" />
+            </div>
+            <h2 className="footer-title">SDETM // ICEM 2026</h2>
+            <p className="footer-desc">
+              Advanced Neural Interface for the International Conference on Sustainable Developments in Engineering, Technology & Management.
             </p>
-            <p className="footer-host">
-              Hosted by <a href="https://www.indiraicem.ac.in" target="_blank" rel="noopener noreferrer" className="host-link">Indira College of Engineering &amp; Management</a>
-            </p>
-            <div className="social-links">
-              <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-              <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
-              <a href="#" aria-label="YouTube"><Youtube size={18} /></a>
+            <div className="tech-status">
+              <span className="status-dot animate-pulse"></span>
+              <span className="status-text">SYSTEMS_NOMINAL // V2.0.4</span>
+            </div>
+            <div className="social-nodes">
+              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
+                <a key={i} href="#" className="social-node">
+                  <Icon size={16} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><Link to="/about/conference">About Conference</Link></li>
+          {/* 2. Sitemap: CONFERENCE */}
+          <div className="footer-sitemap-col">
+            <h4 className="sitemap-heading">CONFERENCE</h4>
+            <ul className="sitemap-links">
+              <li><Link to="/">Home Terminal</Link></li>
+              <li><Link to="/about/conference">About SDETM</Link></li>
+              <li><Link to="/about/institute">About ICEM</Link></li>
+              <li><Link to="/venue">Geospatial Venue</Link></li>
+              <li><Link to="/dates">Temporal Uplink</Link></li>
+              <li><Link to="/contact">Comm Terminal</Link></li>
+            </ul>
+          </div>
+
+          {/* 3. Sitemap: PARTICIPATION */}
+          <div className="footer-sitemap-col">
+            <h4 className="sitemap-heading">PARTICIPATION</h4>
+            <ul className="sitemap-links">
               <li><Link to="/call-for-papers/tracks">Technical Tracks</Link></li>
-              <li><Link to="/submission/guidelines">Submission Guidelines</Link></li>
-              <li><Link to="/dates">Important Dates</Link></li>
-              <li><Link to="/registration">Registration</Link></li>
-              <li><Link to="/venue">Venue</Link></li>
+              <li><Link to="/submission">Paper Submission</Link></li>
+              <li><Link to="/registration">Registration Portal</Link></li>
+              <li><Link to="/program">Event Schedule</Link></li>
+              <li><Link to="/partners">Global Partners</Link></li>
+              <li><Link to="/downloads">Resource Hub</Link></li>
             </ul>
           </div>
 
-          {/* Committee */}
-          <div className="footer-col">
-            <h3>Committee</h3>
-            <ul>
+          {/* 4. Sitemap: COMMITTEE */}
+          <div className="footer-sitemap-col">
+            <h4 className="sitemap-heading">COMMITTEE</h4>
+            <ul className="sitemap-links">
               <li><Link to="/committee/chief-patron">Chief Patron</Link></li>
-              <li><Link to="/committee/patron">Patron</Link></li>
-              <li><Link to="/committee/chair">Conference Chair</Link></li>
-              <li><Link to="/committee/convenor">Convenor &amp; Co-Convenor</Link></li>
-              <li><Link to="/committee/collegeadvisory">College Advisory Committee</Link></li>
-              <li><Link to="/committee/international_advisory_committee">International Advisory Committee</Link></li>
-              <li><Link to="/committee/national_advisory_committee">National Advisory Committee</Link></li>
+              <li><Link to="/committee/patron">Patrons</Link></li>
+              <li><Link to="/committee/chair">Conference Chairs</Link></li>
+              <li><Link to="/committee/convenor">Convenors</Link></li>
+              <li><Link to="/committee/international_advisory_committee">International Advisory</Link></li>
+              <li><Link to="/committee/national_advisory_committee">National Advisory</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="footer-col contact-col">
-            <h3>Contact Us</h3>
-            <ul className="contact-list">
-              <li>
-                <span className="contact-icon"><Mail size={15} /></span>
+          {/* 5. CONTACT INTEL */}
+          <div className="footer-contact-col">
+            <h4 className="sitemap-heading">CONTACT_INTEL</h4>
+            <div className="contact-intel-box">
+              <div className="intel-item">
+                <Mail size={14} className="text-icem-cyan" />
                 <a href="mailto:saurabhgupta@indiraicem.ac.in">saurabhgupta@indiraicem.ac.in</a>
-              </li>
-              <li>
-                <span className="contact-icon"><Phone size={15} /></span>
-                <span>Dr. Saurabh Gupta: +91-8380822479</span>
-              </li>
-              <li>
-                <span className="contact-icon"><Phone size={15} /></span>
-                <span>Dr. Manjusha Tatiya: +91-9730019882</span>
-              </li>
-              <li>
-                <span className="contact-icon"><MapPin size={15} /></span>
-                <span>Gat No. 276, Parandwadi, Tal. Maval, Pune – 410 506</span>
-              </li>
-              <li>
-                <span className="contact-icon"><Globe size={15} /></span>
-                <a href="https://www.indiraicem.ac.in" target="_blank" rel="noopener noreferrer">www.indiraicem.ac.in</a>
-              </li>
-            </ul>
+              </div>
+              <div className="intel-item">
+                <Phone size={14} className="text-icem-cyan" />
+                <span>+91-8380822479 (Dr. Saurabh)</span>
+              </div>
+              <div className="intel-item">
+                <MapPin size={14} className="text-icem-cyan" />
+                <span>Parandwadi, Pune - 410 506</span>
+              </div>
+            </div>
+            <div className="footer-badge">
+              <Globe size={14} />
+              <span>IND // MH // PUNE</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar — matches indiraicem.ac.in footer */}
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
-          <div className="footer-credits">
-            <p>© {new Date().getFullYear()} Indira College of Engineering and Management — All Rights Reserved.</p>
-            <p className="designed-by">Designed &amp; Developed by CertiOwn team</p>
+        <div className="footer-divider"></div>
+
+        <div className="footer-legal">
+          <div className="legal-left">
+            <p>© {new Date().getFullYear()} Indira College of Engineering and Management. All Rights Reserved.</p>
+            <div className="legal-links">
+              <Link to="/policies">Privacy Policy</Link>
+              <Link to="/policies">Terms of Use</Link>
+              <a href="https://indiraicem.ac.in" target="_blank" rel="noreferrer">Official Site</a>
+            </div>
           </div>
-          <div className="policy-links">
-            <a href="https://www.indiraicem.ac.in/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-            <span className="divider-dot">·</span>
-            <a href="#">Terms &amp; Conditions</a>
-            <span className="divider-dot">·</span>
-            <a href="https://www.indiraicem.ac.in" target="_blank" rel="noopener noreferrer">indiraicem.ac.in</a>
+          <div className="legal-right">
+             <div className="dev-credit">
+                <span className="opacity-50">DESIGNED_BY:</span>
+                <span className="text-icem-cyan ml-1">CertiOwn_TECH</span>
+             </div>
           </div>
         </div>
       </div>
