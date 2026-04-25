@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
+import { Menu, X, ChevronDown, User, LogOut, Terminal } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Header.css';
 
 const Header = () => {
@@ -59,11 +60,11 @@ const Header = () => {
             <img src="/icem-logo.png" alt="ICEM Logo" className="header-icem-logo" />
           </div>
           
-          <div className="institution-text text-center">
-            <span className="inst-name">Sustainable Developments in Engineering, Technology & Management, 2026</span>
-            <span className="inst-status inst-status-col mt-1">
-            <span className="inst-status-highlight header-badge-text">International Conference 2026</span>
-            </span>
+          <div className="institution-text">
+            <h1 className="inst-name">Sustainable Developments in Engineering, Technology & Management</h1>
+            <div className="inst-status-highlight">
+              <span className="font-mono text-xs">// INTERNATIONAL CONFERENCE 2026</span>
+            </div>
           </div>
 
           <div className="header-logo-right">
@@ -84,10 +85,12 @@ const Header = () => {
               <li key={idx} className={item.children ? 'has-children' : ''}>
                 {item.path ? (
                   <Link to={item.path} onClick={() => setIsMenuOpen(false)}>
+                    <span className="opacity-40 mr-1">{idx < 9 ? `0${idx + 1}` : idx + 1}</span>
                     {item.title}
                   </Link>
                 ) : (
                   <a href="#" onClick={(e) => e.preventDefault()}>
+                    <span className="opacity-40 mr-1">{idx < 9 ? `0${idx + 1}` : idx + 1}</span>
                     {item.title}
                     {item.children && <ChevronDown size={14} className="chevron" />}
                   </a>
@@ -114,12 +117,14 @@ const Header = () => {
                 <Link to="/dashboard" className="premium-btn premium-btn-primary flex items-center gap-2">
                   <User size={16} /> {user.name?.split(' ')[0] || 'User'}
                 </Link>
-                <button onClick={logout} className="logout-icon-btn p-2 text-gray-400 hover:text-red-400 transition-colors" title="Logout">
+                <button onClick={logout} className="logout-icon-btn" title="Logout">
                   <LogOut size={20} />
                 </button>
               </div>
             ) : (
-              <Link to="/registration" className="premium-btn premium-btn-primary">Join Conference</Link>
+              <Link to="/registration" className="premium-btn premium-btn-primary">
+                Join <Terminal size={14} className="ml-2" />
+              </Link>
             )}
           </div>
         </div>
