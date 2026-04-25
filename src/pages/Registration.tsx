@@ -254,21 +254,16 @@ const Registration = () => {
                     <div className="role-selector">
                       <label className="input-label">ACCESS_LEVEL</label>
                       <div className="role-options">
-                        <button 
-                          type="button"
-                          className={formData.role === 'student' ? 'active' : ''} 
-                          onClick={() => setFormData({...formData, role: 'student'})}
-                        >STUDENT</button>
-                        <button 
-                          type="button"
-                          className={formData.role === 'faculty' ? 'active' : ''} 
-                          onClick={() => setFormData({...formData, role: 'faculty'})}
-                        >FACULTY</button>
-                        <button 
-                          type="button" 
-                          className={formData.role === 'industry' ? 'active' : ''} 
-                          onClick={() => setFormData({...formData, role: 'industry'})}
-                        >INDUSTRY</button>
+                        {['student', 'faculty', 'industry'].map((role) => (
+                          <button 
+                            key={role}
+                            type="button"
+                            className={formData.role === role ? 'active' : ''} 
+                            onClick={() => setFormData({...formData, role: role as any})}
+                          >
+                            {role.toUpperCase()}
+                          </button>
+                        ))}
                       </div>
                     </div>
 
