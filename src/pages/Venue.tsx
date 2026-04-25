@@ -14,10 +14,13 @@ const Venue = () => {
         >
           <div className="hud-label">
             <Satellite size={14} className="animate-pulse text-icem-cyan" />
-            <span>GEOSPATIAL // INTEL</span>
+            <span>LOCATION // INTELLIGENCE</span>
           </div>
-          <h1 className="hud-title">CONFERENCE <span className="premium-gradient">VENUE</span></h1>
-          <p className="hud-subtitle">Strategically positioned within Pune's technical corridor.</p>
+          <h1 className="hud-title display-lg">CONFERENCE <span className="premium-gradient">VENUE</span></h1>
+          <p className="hud-subtitle">
+            Experience SDETM 2026 at the Indira College of Engineering and Management (ICEM). 
+            A sanctuary of innovation strategically positioned within Pune's high-growth technical corridor.
+          </p>
         </motion.div>
 
         <div className="venue-hud-grid">
