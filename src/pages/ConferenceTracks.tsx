@@ -7,49 +7,49 @@ const ConferenceTracks = () => {
       id: 1,
       title: "Mechanical Engineering",
       icon: <PenTool size={32} strokeWidth={1.5} />,
-      emoji: "🔧",
+      image: "/track-1.png",
       description: "Emerging trends in thermal, design, and manufacturing systems. Focus on advanced materials and robotics.",
     },
     {
       id: 2,
       title: "AI & Machine Learning",
       icon: <BrainCircuit size={32} strokeWidth={1.5} />,
-      emoji: "🤖",
+      image: "/track-2.png",
       description: "Revolutionizing industries with intelligent algorithms, deep learning, and neural network architectures.",
     },
     {
       id: 3,
       title: "Information Technology",
       icon: <Monitor size={32} strokeWidth={1.5} />,
-      emoji: "💻",
+      image: "/track-3.png",
       description: "Exploring Cloud Computing, Cybersecurity protocols, and Modern Full-stack Development Architectures.",
     },
     {
       id: 4,
       title: "Electronics & Telecom",
       icon: <RadioTower size={32} strokeWidth={1.5} />,
-      emoji: "📡",
+      image: "/track-4.png",
       description: "Next-Gen communication systems including 5G/6G, IoT ecosystems, and advanced Signal Processing.",
     },
     {
       id: 5,
       title: "Advanced Computing",
       icon: <Zap size={32} strokeWidth={1.5} />,
-      emoji: "⚡",
+      image: "/track-5.png",
       description: "Quantum computation paradigms and High-Performance Parallel Computing for complex simulations.",
     },
     {
       id: 6,
       title: "Business Innovation",
       icon: <TrendingUp size={32} strokeWidth={1.5} />,
-      emoji: "📈",
+      image: "/track-6.png",
       description: "Evolving management practices, digital transformation strategies, and disruptive business models.",
     },
     {
       id: 7,
       title: "Sustainable Practices",
       icon: <Leaf size={32} strokeWidth={1.5} />,
-      emoji: "🌿",
+      image: "/track-7.png",
       description: "Green technology initiatives, eco-friendly engineering solutions, and renewable energy integration.",
     }
   ];
@@ -85,10 +85,11 @@ const ConferenceTracks = () => {
                 </div>
               </div>
 
-              <div className="terminal-content p-6">
-                <div className="icon-box-hud mb-6">
-                  <div className="main-icon">{track.icon}</div>
-                  <div className="ghost-emoji">{track.emoji}</div>
+              <div className="terminal-content">
+                <div className="track-image-container mb-6">
+                  <img src={track.image} alt={track.title} className="track-bg-img" />
+                  <div className="track-overlay"></div>
+                  <div className="main-icon-overlay">{track.icon}</div>
                 </div>
                 
                 <h3 className="tech-heading text-xl mb-4 group-hover:text-icem-cyan transition-colors">
