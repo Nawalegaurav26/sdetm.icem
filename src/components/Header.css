@@ -9,16 +9,18 @@
   z-index: 1000;
   width: 100%;
   font-family: var(--font-main);
-  background: rgba(6, 15, 30, 0.7);
+  background: rgba(6, 15, 30, 0.85);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(67, 204, 209, 0.15);
+  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* ---- Tier 1: Institutional Bar ---- */
 /* ---- Tier 1: Unified HUD Bar ---- */
 .top-tier {
-  padding: 0.75rem 0;
-  background: linear-gradient(to bottom, rgba(6, 15, 30, 0.4), transparent);
+  padding: 0.85rem 0;
+  background: linear-gradient(180deg, rgba(67, 204, 209, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .header-container {
@@ -34,13 +36,15 @@
 }
 
 .inst-name {
-  font-family: var(--font-heading);
+  font-family: 'Michroma', sans-serif;
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--icem-white);
-  letter-spacing: 0.05em;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .inst-status-highlight {
@@ -70,8 +74,8 @@
 
 /* ---- Tier 2: Navigation Tier (Integrated) ---- */
 .nav-tier {
-  border-top: 1px solid rgba(67, 204, 209, 0.1);
-  background: rgba(0, 60, 132, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(67, 204, 209, 0.1);
 }
 
 .nav-container {
