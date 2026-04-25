@@ -25,27 +25,28 @@
   margin-bottom: 1.5rem;
 }
 
-.hud-title {
-  font-family: 'Michroma', sans-serif;
-  font-size: 3rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  letter-spacing: -2px;
+.hud-title.display-lg {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
 .hud-subtitle {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 600px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 800px;
   margin: 0 auto;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* Grid Layout */
 .venue-hud-grid {
   display: grid;
-  grid-template-columns: 450px 1fr;
-  gap: 3rem;
-  align-items: stretch;
+  grid-template-columns: minmax(400px, 1fr) 1.5fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 /* Intel Terminal */
@@ -85,8 +86,10 @@
 }
 
 .terminal-content {
-  padding: 2.5rem;
+  padding: 2rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .location-badge {
@@ -118,10 +121,12 @@
 
 .venue-address {
   font-style: normal;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .metrics-grid {
