@@ -7,6 +7,7 @@ import Venue from './pages/Venue';
 import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
+import SubmissionGuidelines from './pages/SubmissionGuidelines';
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
@@ -33,6 +34,8 @@ function App() {
             {/* About Routes */}
             <Route path="/about/conference" element={<AboutConference />} />
             <Route path="/about/institute" element={<AboutInstitute />} />
+            <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
+            <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
             
             {/* Committee Routes */}
             <Route path="/committee/chief-patron" element={<Committee />} />
@@ -46,9 +49,18 @@ function App() {
             
             {/* Call for Papers */}
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
+            <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
             
             {/* Submission */}
-            <Route path="/submission" element={<PaperSubmission />} />
+            <Route path="/submission/cmt" element={<ComingSoon title="Microsoft CMT Submission" />} />
+            <Route path="/submission/guidelines" element={<SubmissionGuidelines />} />
+            <Route path="/submission/submit" element={
+              <ProtectedRoute>
+                <PaperSubmission />
+              </ProtectedRoute>
+            } />
+            <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
+            <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
 
             {/* Registration & Login */}
             <Route path="/registration" element={<Registration />} />

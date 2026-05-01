@@ -1,276 +1,100 @@
 .venue-page {
   min-height: 100vh;
-  padding: 8rem 2rem 4rem;
-  position: relative;
-  z-index: 1;
+  background: var(--color-icem-surface);
+
 }
 
-/* Header HUD */
-.venue-hud-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.hud-label {
+.label-hud {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 0.5rem 1rem;
-  background: rgba(67, 204, 209, 0.05);
-  border: 1px solid rgba(67, 204, 209, 0.2);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  color: #43ccd1;
-  margin-bottom: 1.5rem;
-}
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 4px;
+  color: var(--color-icem-cyan);
 
-.hud-title.display-lg {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-family: monospace;
+
+  font-size: 0.75rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
 }
 
-.hud-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-/* Grid Layout */
-.venue-hud-grid {
-  display: grid;
-  grid-template-columns: minmax(400px, 1fr) 1.5fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-/* Intel Terminal */
-.intel-terminal {
-  background: rgba(6, 15, 30, 0.8);
-  backdrop-filter: blur(20px);
-  display: flex;
-  flex-direction: column;
-}
-
-.terminal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1.25rem;
-  background: rgba(67, 204, 209, 0.05);
-  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
-}
-
-.terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.terminal-dots span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(67, 204, 209, 0.2);
-}
-
-.terminal-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #43ccd1;
-  letter-spacing: 1px;
-}
-
-.terminal-content {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.location-badge {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.location-badge h3 {
-  font-family: 'Michroma', sans-serif;
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.2rem;
-}
-
-.location-badge p {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  color: #43ccd1;
-  letter-spacing: 1px;
-}
-
-.hud-divider {
+.hud-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(67, 204, 209, 0.2), transparent);
-  margin: 2rem 0;
+  background: linear-gradient(90deg, 
+    rgba(0, 229, 255, 0.5) 0%, 
+    rgba(0, 229, 255, 0.1) 100%
+  );
 }
 
-.venue-address {
-  font-style: normal;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  word-wrap: break-word;
-  max-width: 100%;
-}
-
-.metrics-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.metric-row {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px dashed rgba(67, 204, 209, 0.1);
-}
-
-.metric-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.metric-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9rem;
-  color: #fff;
-}
-
-.terminal-notice {
-  display: flex;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: rgba(67, 204, 209, 0.05);
-  border: 1px solid rgba(67, 204, 209, 0.1);
-}
-
-.notice-text strong {
-  display: block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: #fff;
-  margin-bottom: 0.3rem;
-}
-
-.notice-text p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.terminal-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 1.25rem;
-  background: rgba(67, 204, 209, 0.03);
-  border-top: 1px solid rgba(67, 204, 209, 0.1);
-}
-
-.terminal-footer span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: rgba(67, 204, 209, 0.3);
-}
-
-/* Map Terminal */
-.map-terminal-frame {
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-}
-
-.map-view-container {
-  flex: 1;
+/* Map Frame HUD Styling */
+.map-frame-hud {
   position: relative;
-  background: #000;
-  margin: 1.5rem;
-  border: 1px solid rgba(67, 204, 209, 0.2);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+  background: var(--color-icem-surface-2);
+
+  height: 100%;
 }
 
-.map-iframe {
+.map-overlay-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
-  filter: grayscale(1) invert(0.9) brightness(0.7) contrast(1.2);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-icem-cyan), transparent);
+
+  box-shadow: 0 0 15px var(--color-icem-cyan);
+
+  animation: scan 4s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+.corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--color-icem-cyan);
+
   opacity: 0.8;
 }
 
-.map-hud-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.cor-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.cor-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+.cor-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+.cor-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.metric-row {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.scan-line-v {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(67, 204, 209, 0.3);
-  box-shadow: 0 0 15px rgba(67, 204, 209, 0.5);
-  animation: scanV 8s linear infinite;
-}
-
-@keyframes scanV {
-  0% { top: 0%; opacity: 0; }
-  5% { opacity: 1; }
-  95% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
-
-.hud-coords-badge {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  padding: 0.6rem 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(67, 204, 209, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: #43ccd1;
+.metric-row:last-child {
+  border-bottom: none;
 }
 
 @media (max-width: 1024px) {
-  .venue-hud-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hud-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .map-view-container {
+  .map-container-hud {
     height: 400px;
-  }
-  
-  .terminal-content {
-    padding: 1.5rem;
+    min-height: 400px;
   }
 }

@@ -3,123 +3,63 @@
    "The Synthetic Aurora" - Neural HUD Aesthetic
    ============================================ */
 
-.tracks-page-hud {
-  background-color: var(--icem-dark);
-  position: relative;
-  overflow: hidden;
+.tracks-page {
+  background-color: #0c1321;
+  min-height: 100vh;
+  color: #c3f5ff;
 }
 
-.tracks-grid-hud {
+.tracks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+  perspective: 1000px;
 }
 
-.track-terminal-hud {
-  background: rgba(6, 15, 30, 0.4);
+.track-card {
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 4px; /* Harder corners for HUD feel */
+  padding: 48px 32px;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Asymmetric alignment */
+  text-align: left;
 }
 
-.track-terminal-hud:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(67, 204, 209, 0.05);
-}
-
-.track-terminal-hud:hover .scan-line {
-  animation: scan 2s linear infinite;
-  opacity: 1;
-}
-
-.track-image-container {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
-}
-
-.track-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  filter: grayscale(0.5) brightness(0.6) contrast(1.2);
-}
-
-.track-overlay {
+.track-number {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(6, 15, 30, 0.9));
-}
-
-.main-icon-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--icem-cyan);
-  filter: drop-shadow(0 0 10px rgba(67, 204, 209, 0.5));
-  transition: all 0.3s ease;
-  z-index: 2;
-}
-
-.track-terminal-hud:hover .track-bg-img {
-  transform: scale(1.1);
-  filter: grayscale(0) brightness(0.8);
-}
-
-.track-terminal-hud:hover .main-icon-overlay {
-  transform: translate(-50%, -50%) scale(1.2);
-  color: #fff;
-}
-
-.scan-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--icem-cyan), transparent);
-  opacity: 0;
+  top: 32px;
+  right: 32px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(0, 229, 255, 0.05);
+  line-height: 1;
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-@keyframes scan {
-  0% { top: 0; }
-  100% { top: 100%; }
+.track-card:hover .track-number {
+  color: rgba(0, 229, 255, 0.1);
+  transform: translateY(-5px);
 }
 
-.header-line {
-  width: 100px;
+.track-footer-decor {
+  margin-top: auto;
+  width: 40px;
   height: 2px;
-  background: var(--icem-cyan);
-  position: relative;
+  background: #00E5FF;
+  opacity: 0.2;
+  transition: all 0.3s ease;
 }
 
-.header-line::before, .header-line::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  background: var(--icem-cyan);
-  top: 0;
-}
-
-.header-line::before { left: -15px; opacity: 0.5; }
-.header-line::after { right: -15px; opacity: 0.5; }
-
-@media (max-width: 768px) {
-  .tracks-grid-hud {
-    grid-template-columns: 1fr;
-  }
-  
-  .tracks-header-hud .hud-title {
-    font-size: 2rem;
-  }
+.track-card:hover .track-footer-decor {
+  width: 100%;
+  opacity: 0.5;
 }
 
 /* HUD Corner Accents */

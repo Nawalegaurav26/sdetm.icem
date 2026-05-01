@@ -8,74 +8,70 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  font-family: var(--font-main);
-  background: rgba(6, 15, 30, 0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
 }
 
 /* ---- Tier 1: Institutional Bar ---- */
-/* ---- Tier 1: Unified HUD Bar ---- */
 .top-tier {
-  padding: 0.85rem 0;
-  background: linear-gradient(180deg, rgba(67, 204, 209, 0.05) 0%, transparent 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  background: #ffffff;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #dde8f5;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+}
+
+.institution-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
 }
 
 .institution-text {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .inst-name {
-  font-family: 'Michroma', sans-serif;
-  font-weight: 400;
-  font-size: 0.85rem;
-  color: var(--icem-white);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  line-height: 1.4;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #003c84;           /* ICEM Navy */
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
-.inst-status-highlight {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--icem-cyan);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.header-sdetm-logo, .header-icem-logo {
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-  transition: var(--transition-smooth);
+.inst-status {
+  font-size: 0.72rem;
+  color: #5a7aa8;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .header-sdetm-logo {
-  height: 60px;
-  width: 60px;
+  height: 72px;
+  width: 72px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 1px solid rgba(67, 204, 209, 0.3);
+  border: 2px solid #dde8f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .header-icem-logo {
-  height: 64px;
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* ---- Tier 2: Navigation Tier (Integrated) ---- */
+/* ---- Tier 2: Navigation Bar ---- */
 .nav-tier {
-  background: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(67, 204, 209, 0.1);
+  background: #003c84;      /* ICEM Navy — exact match to parent site */
+  color: #fff;
+  padding: 0;
+  box-shadow: 0 2px 16px rgba(0, 60, 132, 0.4);
 }
 
 .nav-container {
@@ -99,27 +95,25 @@
 }
 
 .nav-links > li > a {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0 1rem;
+  gap: 0.25rem;
+  padding: 0 0.7rem;
   height: 100%;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  transition: var(--transition-smooth);
-  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
 }
 
 .nav-links > li:hover > a,
-.nav-links > li > a.active {
-  color: var(--icem-cyan);
-  border-bottom-color: var(--icem-cyan);
-  background: rgba(67, 204, 209, 0.05);
-  text-shadow: 0 0 10px rgba(67, 204, 209, 0.5);
+.nav-links > li > a:hover {
+  color: #43ccd1;           /* ICEM Cyan hover */
+  border-bottom-color: #43ccd1;
+  background: rgba(255,255,255,0.06);
 }
 
 .chevron {
@@ -137,17 +131,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(10, 22, 40, 0.95);
-  backdrop-filter: blur(20px);
-  min-width: 240px;
+  background: #002a6b;      /* Darker navy for dropdown */
+  min-width: 220px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: var(--transition-smooth);
-  border: 1px solid rgba(67, 204, 209, 0.2);
-  border-top: 2px solid var(--icem-cyan);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  padding: 0.5rem 0;
+  transform: translateY(8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 2px solid #43ccd1;  /* Cyan accent top border */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  padding: 0.4rem 0;
+  border-radius: 0 0 8px 8px;
   z-index: 100;
 }
 

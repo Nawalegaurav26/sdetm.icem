@@ -43,89 +43,60 @@ const dates = [
 
 const ImportantDates = () => {
   return (
-    <div className="dates-page-hud">
-      <div className="neural-grid-bg"></div>
+    <div className="dates-page">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="dates-header-hud"
+          animate={{ opacity: 1, y: 0 }}
+          className="dates-header"
         >
-          <div className="tech-badge-hud">
-            <span className="pulse-dot"></span>
-            <span className="badge-text">TEMPORAL_UPLINK // 2026.1</span>
-          </div>
-          <h1 className="hud-title-main">Important Dates</h1>
-          <p className="dates-intro-hud">
-            Synchronizing administrative milestones. All sequences calibrated to <span className="highlight-cyan">IST [UTC+5:30]</span>.
+          <span className="section-subtitle">Conference Schedule</span>
+          <h1 className="section-title">Important Dates</h1>
+          <p className="dates-intro">
+            Mark your calendar. All deadlines are in Indian Standard Time (IST, UTC+5:30).
           </p>
         </motion.div>
 
-        <div className="dates-grid-hud">
+        <div className="dates-timeline">
           {dates.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className={`date-card-hud hud-frame ${item.status}`}
+              className={`timeline-card glass ${item.status === 'conference' ? 'highlight' : ''}`}
             >
-              <div className="hud-corner top-left"></div>
-              <div className="hud-corner top-right"></div>
-              <div className="hud-corner bottom-left"></div>
-              <div className="hud-corner bottom-right"></div>
-              
-              <div className="terminal-header-hud">
-                <div className="terminal-id">MILESTONE_0{idx + 1}</div>
-                {item.deadline && <div className="critical-tag">CRITICAL_PATH</div>}
+              <div className="timeline-connector">
+                <div className={`tl-dot tl-dot-${item.status}`}></div>
+                {idx < dates.length - 1 && <div className="tl-line"></div>}
               </div>
-
-              <div className="date-content-hud">
-                <div className="label-wrapper-hud">
-                  <h3 className="date-label-hud">{item.label}</h3>
-                  <div className="status-indicator">
-                    <span className={`status-pill ${item.status}`}>{item.status.toUpperCase()}</span>
-                  </div>
+              <div className="timeline-body">
+                <div className="timeline-top">
+                  <h3 className="timeline-label">{item.label}</h3>
+                  {item.deadline && (
+                    <span className="deadline-badge">
+                      <AlertCircle size={13} /> Deadline
+                    </span>
+                  )}
                 </div>
-
-                <div className="main-date-display">
-                  <Calendar size={24} className="date-icon-hud" />
-                  <span className="date-value">{item.date}</span>
+                <div className={`timeline-date timeline-date-${item.status}`}>
+                  <Calendar size={18} /> {item.date}
                 </div>
-
-                <div className="tech-divider-hud">
-                  <div className="divider-line"></div>
-                  <div className="divider-bit"></div>
-                </div>
-
-                <p className="date-description-hud">{item.note}</p>
+                <p className="timeline-note">{item.note}</p>
               </div>
-
-              <div className="card-footer-hud">
-                <div className="metadata-bits">
-                  <span>SECURED_UPLINK</span>
-                  <span>AUT_LOG_26</span>
-                </div>
-              </div>
-
-              <div className="scan-line-hud"></div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="protocol-notice-hud hud-frame"
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="dates-disclaimer glass"
         >
-          <div className="hud-corner top-left"></div>
-          <AlertCircle size={20} className="notice-icon" />
+          <CheckCircle size={20} />
           <p>
-            PROTOCOL NOTICE: Timeline parameters are subject to orbital administrative drift. Authors are advised to maintain active uplink monitors.
+            All dates are tentative and subject to change. Check this page regularly or contact the organizing committee for the latest updates.
           </p>
         </motion.div>
       </div>

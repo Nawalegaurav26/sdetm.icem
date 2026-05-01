@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FileText, Download, CheckCircle, Shield, Globe, Send, HelpCircle } from 'lucide-react';
+import { FileText, Download, CheckCircle, Shield, Globe, Send } from 'lucide-react';
 import './SubmissionGuidelines.css';
 
 const SubmissionGuidelines = () => {
@@ -95,55 +95,6 @@ const SubmissionGuidelines = () => {
             </div>
           </div>
         </div>
-
-        <motion.section 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="faq-section"
-        >
-          <h2 className="icem-gradient-text">Frequently Asked Questions</h2>
-          <div className="faq-grid">
-            {[
-              {
-                q: "What is the maximum file size?",
-                a: "The maximum file size allowed for manuscript submission is 10MB. Please ensure your PDF is optimized for web viewing."
-              },
-              {
-                q: "Can I submit multiple papers?",
-                a: "Yes, authors can submit multiple papers. Each paper must be submitted separately through the portal or via CMT."
-              },
-              {
-                q: "What is the template format?",
-                a: "Manuscripts should follow the standard IEEE/ICEM format (Double-column, Times New Roman). Templates are available in the Resources section."
-              },
-              {
-                q: "Is there a submission fee?",
-                a: "There is no fee for submitting a paper for review. Registration fees are only applicable after paper acceptance."
-              }
-            ].map((item, index) => (
-              <div key={index} className="faq-item">
-                <div className="faq-question">
-                  <HelpCircle size={18} />
-                  <span>{item.q}</span>
-                </div>
-                <p className="faq-answer">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="acknowledgement-section"
-        >
-          <h2>Acknowledgement</h2>
-          <p>
-            The <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft CMT service</a> was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-          </p>
-        </motion.div>
       </div>
     </div>
   );
