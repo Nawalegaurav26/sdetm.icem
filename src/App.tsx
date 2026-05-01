@@ -7,7 +7,7 @@ import Venue from './pages/Venue';
 import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
-import SubmissionGuidelines from './pages/SubmissionGuidelines';
+
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
 import AboutConference from './pages/AboutConference';
@@ -46,11 +46,8 @@ function App() {
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
             <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
 
-            {/* Submission */}
-            <Route path="/submission/guidelines" element={<SubmissionGuidelines />} />
-            <Route path="/submission/submit" element={<PaperSubmission />} />
-            <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
-            <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
+            {/* Submission — single unified page */}
+            <Route path="/submission" element={<PaperSubmission />} />
 
             {/* Registration (fees & payment info only) */}
             <Route path="/registration" element={<Registration />} />

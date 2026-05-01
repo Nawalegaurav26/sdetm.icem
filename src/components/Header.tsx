@@ -37,15 +37,7 @@ const Header = () => {
         { name: 'Scope', path: '/call-for-papers/scope' }
       ]
     },
-    {
-      title: 'SUBMISSION',
-      children: [
-        { name: 'Submit Paper', path: '/submission/submit' },
-        { name: 'Guidelines', path: '/submission/guidelines' },
-        { name: 'Downloads', path: '/submission/downloads' },
-        { name: 'Review Process', path: '/submission/review' }
-      ]
-    },
+    { title: 'SUBMISSION', path: '/submission' },
     { title: 'DATES', path: '/dates' },
     { title: 'REGISTRATION', path: '/registration' },
     { title: 'VENUE', path: '/venue' },
