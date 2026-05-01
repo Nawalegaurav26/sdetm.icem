@@ -14,29 +14,24 @@ import AboutConference from './pages/AboutConference';
 import AboutInstitute from './pages/AboutInstitute';
 import ConferenceTracks from './pages/ConferenceTracks';
 import PaperSubmission from './pages/PaperSubmission';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import { AuthProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
       <div className="app-wrapper">
         <BackgroundAnimation />
         <Header />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            
+
             {/* About Routes */}
             <Route path="/about/conference" element={<AboutConference />} />
             <Route path="/about/institute" element={<AboutInstitute />} />
             <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
             <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
-            
+
             {/* Committee Routes */}
             <Route path="/committee/chief-patron" element={<Committee />} />
             <Route path="/committee/patron" element={<Committee />} />
@@ -46,36 +41,25 @@ function App() {
             <Route path="/committee/international_advisory_committee" element={<Committee />} />
             <Route path="/committee/national_advisory_committee" element={<Committee />} />
             <Route path="/committee/organizing" element={<Committee />} />
-            
+
             {/* Call for Papers */}
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
             <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
-            
+
             {/* Submission */}
-            <Route path="/submission/cmt" element={<ComingSoon title="Microsoft CMT Submission" />} />
             <Route path="/submission/guidelines" element={<SubmissionGuidelines />} />
-            <Route path="/submission/submit" element={
-              <ProtectedRoute>
-                <PaperSubmission />
-              </ProtectedRoute>
-            } />
+            <Route path="/submission/submit" element={<PaperSubmission />} />
             <Route path="/submission/downloads" element={<ComingSoon title="Template Downloads" />} />
             <Route path="/submission/review" element={<ComingSoon title="Review Process" />} />
 
-            {/* Registration & Login */}
+            {/* Registration (fees & payment info only) */}
             <Route path="/registration" element={<Registration />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } />
-            
+
             {/* Other main routes */}
             <Route path="/dates" element={<ImportantDates />} />
             <Route path="/venue" element={<Venue />} />
             <Route path="/contact" element={<Contact />} />
-            
+
             {/* More / Misc */}
             <Route path="/program" element={<ComingSoon title="Conference Program" />} />
             <Route path="/partners" element={<ComingSoon title="Technical Partners & Sponsors" />} />
@@ -86,8 +70,7 @@ function App() {
         </main>
         <Footer />
       </div>
-      </Router>
-    </AuthProvider>
+    </Router>
   );
 }
 

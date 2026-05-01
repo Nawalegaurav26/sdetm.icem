@@ -1,26 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, isAuthenticated, logout } = useAuth();
 
   const navItems = [
     { title: 'HOME', path: '/' },
-    { 
-      title: 'ABOUT', 
+    {
+      title: 'ABOUT',
       children: [
         { name: 'About Conference', path: '/about/conference' },
         { name: 'About Institute (ICEM)', path: '/about/institute' },
         { name: 'Vision & Objectives', path: '/about/vision' },
         { name: 'Conference Theme', path: '/about/theme' }
-      ] 
+      ]
     },
-    { 
-      title: 'COMMITTEE', 
+    {
+      title: 'COMMITTEE',
       children: [
         { name: 'Chief Patron', path: '/committee/chief-patron' },
         { name: 'Patron', path: '/committee/patron' },
@@ -30,34 +28,36 @@ const Header = () => {
         { name: 'International Advisory Committee', path: '/committee/international_advisory_committee' },
         { name: 'National Advisory Committee', path: '/committee/national_advisory_committee' },
         { name: 'Organizing Committee', path: '/committee/organizing' }
-      ] 
+      ]
     },
-    { 
-      title: 'CALL FOR PAPERS', 
+    {
+      title: 'CALL FOR PAPERS',
       children: [
         { name: 'Tracks / Topics', path: '/call-for-papers/tracks' },
         { name: 'Scope', path: '/call-for-papers/scope' }
-      ] 
+      ]
     },
-    { 
-      title: 'SUBMISSION', 
+    {
+      title: 'SUBMISSION',
       children: [
-        { name: 'Submit via CMT', path: '/submission/cmt' },
+        { name: 'Submit Paper', path: '/submission/submit' },
         { name: 'Guidelines', path: '/submission/guidelines' },
         { name: 'Downloads', path: '/submission/downloads' },
         { name: 'Review Process', path: '/submission/review' }
-      ] 
+      ]
     },
     { title: 'DATES', path: '/dates' },
     { title: 'REGISTRATION', path: '/registration' },
     { title: 'VENUE', path: '/venue' },
-    { title: 'MORE', children: [
-      { name: 'Program', path: '/program' },
-      { name: 'Partners', path: '/partners' },
-      { name: 'Downloads', path: '/downloads' },
-      { name: 'FAQ', path: '/faq' },
-      { name: 'Policies', path: '/policies' }
-    ]},
+    {
+      title: 'MORE', children: [
+        { name: 'Program', path: '/program' },
+        { name: 'Partners', path: '/partners' },
+        { name: 'Downloads', path: '/downloads' },
+        { name: 'FAQ', path: '/faq' },
+        { name: 'Policies', path: '/policies' }
+      ]
+    },
     { title: 'CONTACT', path: '/contact' },
   ];
 
@@ -69,16 +69,16 @@ const Header = () => {
           <div className="header-logo-left">
             <img src="/icem-logo.png" alt="ICEM Logo" className="header-icem-logo" />
           </div>
-          
+
           <div className="institution-text text-center">
-            <span className="inst-name">Sustainable Developments in Engineering, Technology & Management, 2026</span>
+            <span className="inst-name">Sustainable Developments in Engineering, Technology &amp; Management, 2026</span>
             <span className="inst-status inst-status-col mt-1">
-            <span className="inst-status-highlight header-badge-text">International Conference 2026</span>
+              <span className="inst-status-highlight header-badge-text">International Conference 2026</span>
             </span>
           </div>
 
           <div className="header-logo-right">
-             <img src="/sdetm-logo.png" alt="SDETM Logo" className="header-sdetm-logo" />
+            <img src="/sdetm-logo.png" alt="SDETM Logo" className="header-sdetm-logo" />
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const Header = () => {
                     {item.children && <ChevronDown size={14} className="chevron" />}
                   </a>
                 )}
-                
+
                 {item.children && (
                   <ul className="dropdown">
                     {item.children.map((child, cIdx) => (
@@ -118,21 +118,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-
-          <div className="auth-btn">
-            {isAuthenticated && user ? (
-              <div className="flex items-center gap-3">
-                <Link to="/dashboard" className="premium-btn premium-btn-primary flex items-center gap-2">
-                  <User size={16} /> {user.name?.split(' ')[0] || 'User'}
-                </Link>
-                <button onClick={logout} className="logout-icon-btn p-2 text-gray-400 hover:text-red-400 transition-colors" title="Logout">
-                  <LogOut size={20} />
-                </button>
-              </div>
-            ) : (
-              <Link to="/registration" className="premium-btn premium-btn-primary">Join Conference</Link>
-            )}
-          </div>
         </div>
       </nav>
     </header>
