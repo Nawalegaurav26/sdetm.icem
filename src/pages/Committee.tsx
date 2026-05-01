@@ -147,9 +147,9 @@ const Committee = () => {
                 org: "Jagannath University, Dhaka, Bangladesh" 
               },
               { 
-                name: "Prof. Md. Rahat Khan", 
-                role: "Professor", 
-                org: "Bangladesh University of Professionals, Dhaka, Bangladesh" 
+                name: "Dr. Md. Rahat Khan", 
+                role: "Faculty Member & MBA Program Coordinator", 
+                org: "Army Institute of Business Administration, Savar, Bangladesh University of Professionals, Dhaka, Bangladesh" 
               },
               { 
                 name: "Dr. Sonali Bhadoria", 
