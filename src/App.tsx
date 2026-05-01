@@ -29,8 +29,6 @@ function App() {
             {/* About Routes */}
             <Route path="/about/conference" element={<AboutConference />} />
             <Route path="/about/institute" element={<AboutInstitute />} />
-            <Route path="/about/vision" element={<ComingSoon title="Vision & Objectives" />} />
-            <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
 
             {/* Committee Routes */}
             <Route path="/committee/patrons" element={<Committee />} />

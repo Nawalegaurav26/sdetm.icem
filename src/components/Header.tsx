@@ -12,9 +12,7 @@ const Header = () => {
       title: 'ABOUT',
       children: [
         { name: 'About Conference', path: '/about/conference' },
-        { name: 'About Institute (ICEM)', path: '/about/institute' },
-        { name: 'Vision & Objectives', path: '/about/vision' },
-        { name: 'Conference Theme', path: '/about/theme' }
+        { name: 'About Institute (ICEM)', path: '/about/institute' }
       ]
     },
     {
