@@ -123,11 +123,18 @@ const Registration = () => {
                 <li>
                   <span className="step-num">04</span>
                   <div>
-                    <strong>Send Payment Proof</strong>
-                    <p>Email the payment screenshot / transaction ID to the convenors below.</p>
+                    <strong>Fill Registration Form</strong>
+                    <p>After payment, complete your registration by filling out the official form below with your transaction details.</p>
                   </div>
                 </li>
               </ol>
+
+              {/* Registration Link Button */}
+              <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                <a href="https://forms.gle/c9gtHqSeiwB8kGsM6" target="_blank" rel="noopener noreferrer" className="hud-submit-btn" style={{ display: 'inline-flex', padding: '12px 32px', background: 'rgba(0, 229, 255, 0.1)', border: '1px solid #00e5ff', color: '#00e5ff', textDecoration: 'none', fontWeight: 'bold', borderRadius: '4px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                  Complete Registration Form
+                </a>
+              </div>
 
               {/* Contact convenors */}
               <div className="convenor-contact-box">
