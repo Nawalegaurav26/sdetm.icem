@@ -42,9 +42,8 @@ function App() {
             <Route path="/committee/national_advisory_committee" element={<Committee />} />
             <Route path="/committee/organizing" element={<Committee />} />
 
-            {/* Call for Papers */}
+            {/* Call for Papers — single page (all tracks) */}
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />
-            <Route path="/call-for-papers/scope" element={<ComingSoon title="Scope" />} />
 
             {/* Submission — single unified page */}
             <Route path="/submission" element={<PaperSubmission />} />

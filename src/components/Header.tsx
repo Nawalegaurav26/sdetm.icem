@@ -30,13 +30,7 @@ const Header = () => {
         { name: 'Organizing Committee', path: '/committee/organizing' }
       ]
     },
-    {
-      title: 'CALL FOR PAPERS',
-      children: [
-        { name: 'Tracks / Topics', path: '/call-for-papers/tracks' },
-        { name: 'Scope', path: '/call-for-papers/scope' }
-      ]
-    },
+    { title: 'CALL FOR PAPERS', path: '/call-for-papers/tracks' },
     { title: 'SUBMISSION', path: '/submission' },
     { title: 'DATES', path: '/dates' },
     { title: 'REGISTRATION', path: '/registration' },
