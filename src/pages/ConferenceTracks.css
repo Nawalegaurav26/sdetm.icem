@@ -1,178 +1,230 @@
-/* ============================================
-   ICEM 2026 — Conference Tracks
-   "The Synthetic Aurora" - Neural HUD Aesthetic
-   ============================================ */
+/* =============================================
+   SDETM 2026 — Conference Tracks
+   Design: Synthetic Aurora / Luminal Frontier
+   Palette: Deep Navy #0c1321 · Cyan #00e5ff
+   ============================================= */
 
 .tracks-page {
-  background-color: #0c1321;
   min-height: 100vh;
-  color: #c3f5ff;
+  padding-top: 100px;
+  background-color: #0c1321;
+  color: #dce2f6;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Ambient Deep Space Glow */
+.tracks-ambient-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(0,229,255,0.05) 0%, transparent 60%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tracks-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Hero Section ── */
+.tracks-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.tracks-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00e5ff;
+  margin-bottom: 1.5rem;
+  background: rgba(0,229,255,0.05);
+  border: 1px solid rgba(0,229,255,0.2);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.tracks-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.tracks-title-accent {
+  background: linear-gradient(135deg, #c3f5ff 0%, #00e5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tracks-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #bac9cc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Tracks Grid ── */
 .tracks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 32px;
-  perspective: 1000px;
+  padding-bottom: 100px;
 }
 
-.track-card {
+/* Adjust last row for odd numbers (7 tracks) */
+.tracks-grid > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 600px;
+  justify-self: center;
+  width: 100%;
+}
+
+.track-glass-card {
+  background: rgba(21, 28, 41, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59,73,76,0.3);
+  border-radius: 20px;
+  padding: 40px;
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border-radius: 4px; /* Harder corners for HUD feel */
-  padding: 48px 32px;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Asymmetric alignment */
-  text-align: left;
 }
 
-.track-number {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(0, 229, 255, 0.05);
-  line-height: 1;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.track-card:hover .track-number {
-  color: rgba(0, 229, 255, 0.1);
-  transform: translateY(-5px);
-}
-
-.track-footer-decor {
-  margin-top: auto;
-  width: 40px;
-  height: 2px;
-  background: #00E5FF;
-  opacity: 0.2;
-  transition: all 0.3s ease;
-}
-
-.track-card:hover .track-footer-decor {
-  width: 100%;
-  opacity: 0.5;
-}
-
-/* HUD Corner Accents */
-.track-card::before,
-.track-card::after {
+.track-glass-card::before {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-color: #00E5FF;
-  border-style: solid;
-  opacity: 0.3;
-  transition: all 0.3s ease;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.4), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
-.track-card::before {
-  top: 15px;
-  left: 15px;
-  border-width: 2px 0 0 2px;
+.track-glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(30, 38, 56, 0.6);
+  border-color: rgba(0,229,255,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 40px rgba(0,229,255,0.02);
 }
 
-.track-card::after {
-  bottom: 15px;
-  right: 15px;
-  border-width: 0 2px 2px 0;
+.track-glass-card:hover::before {
+  transform: scaleX(1);
 }
 
-.track-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(0, 229, 255, 0.2);
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
-              inset 0 0 20px rgba(0, 229, 255, 0.05);
+/* HUD Numbering */
+.track-hud-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: rgba(0,229,255,0.4);
+  letter-spacing: 2px;
 }
 
-.track-card:hover::before,
-.track-card:hover::after {
-  opacity: 1;
-  width: 20px;
-  height: 20px;
+.track-glass-card:hover .track-hud-number {
+  color: rgba(0,229,255,0.8);
+}
+
+/* Card Header */
+.track-header {
+  margin-bottom: 24px;
 }
 
 .track-icon-wrapper {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  margin-bottom: 32px;
+  width: 64px;
+  height: 64px;
+  background: rgba(0,229,255,0.05);
+  border: 1px solid rgba(0,229,255,0.15);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.track-icon {
-  color: #00E5FF;
-  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.4));
+  color: #00e5ff;
+  margin-bottom: 24px;
+  position: relative;
   transition: all 0.3s ease;
 }
 
-.track-card:hover .track-icon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
-}
-
-.track-emoji {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 1.2rem;
-  opacity: 0.5;
-  transition: all 0.3s ease;
-}
-
-.track-card:hover .track-emoji {
-  opacity: 1;
-  transform: rotate(15deg);
+.track-glass-card:hover .track-icon-wrapper {
+  background: rgba(0,229,255,0.1);
+  box-shadow: 0 0 20px rgba(0,229,255,0.2);
+  transform: scale(1.05);
 }
 
 .track-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
-  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0 0 16px 0;
 }
 
 .track-desc {
   font-size: 1rem;
-  color: rgba(195, 245, 255, 0.6);
   line-height: 1.7;
-  font-weight: 400;
+  color: #bac9cc;
+  margin: 0;
+  flex-grow: 1;
 }
 
-/* Subtle background glow for the whole section */
-.tracks-page::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.03) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+/* Bottom decorative elements */
+.track-footer-hud {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255,255,255,0.1);
 }
 
+.track-hud-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(0,229,255,0.2);
+  border-radius: 50%;
+}
+
+.track-glass-card:hover .track-hud-dot {
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+.track-hud-line {
+  flex-grow: 1;
+  height: 1px;
+  margin: 0 16px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .tracks-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .tracks-title {
+    font-size: 2.2rem;
   }
-  
-  .track-card {
-    padding: 32px 24px;
+  .track-glass-card {
+    padding: 32px;
   }
 }
