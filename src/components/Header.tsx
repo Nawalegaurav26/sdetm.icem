@@ -20,14 +20,17 @@ const Header = () => {
     {
       title: 'COMMITTEE',
       children: [
-        { name: 'Chief Patron', path: '/committee/chief-patron' },
-        { name: 'Patron', path: '/committee/patron' },
-        { name: 'Conference Chair', path: '/committee/chair' },
-        { name: 'Convenor & Co-Convenor', path: '/committee/convenor' },
-        { name: 'College Advisory Committee', path: '/committee/collegeadvisory' },
-        { name: 'International Advisory Committee', path: '/committee/international_advisory_committee' },
-        { name: 'National Advisory Committee', path: '/committee/national_advisory_committee' },
-        { name: 'Organizing Committee', path: '/committee/organizing' }
+        { isGroupHeader: true, name: 'Leadership' },
+        { name: 'Patrons', path: '/committee/patrons' },
+        { isGroupHeader: true, name: 'Core Team' },
+        { name: 'Core Team', path: '/committee/core-team' },
+        { isGroupHeader: true, name: 'Advisory Board' },
+        { name: 'International Advisory Committee', path: '/committee/international-advisory' },
+        { name: 'National Advisory Committee', path: '/committee/national-advisory' },
+        { name: 'College Advisory Committee', path: '/committee/college-advisory' },
+        { isGroupHeader: true, name: 'Organizing' },
+        { name: 'Organizing Committee', path: '/committee/organizing' },
+        { name: 'Student Committee', path: '/committee/student' }
       ]
     },
     { title: 'CALL FOR PAPERS', path: '/call-for-papers/tracks' },
@@ -93,10 +96,14 @@ const Header = () => {
                 {item.children && (
                   <ul className="dropdown">
                     {item.children.map((child, cIdx) => (
-                      <li key={cIdx}>
-                        <Link to={child.path} onClick={() => setIsMenuOpen(false)}>
-                          {child.name}
-                        </Link>
+                      <li key={cIdx} className={child.isGroupHeader ? 'dropdown-group-header' : ''}>
+                        {child.isGroupHeader ? (
+                          <span>{child.name}</span>
+                        ) : (
+                          <Link to={child.path!} onClick={() => setIsMenuOpen(false)}>
+                            {child.name}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>

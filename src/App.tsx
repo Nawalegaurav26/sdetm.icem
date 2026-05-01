@@ -33,14 +33,13 @@ function App() {
             <Route path="/about/theme" element={<ComingSoon title="Conference Theme" />} />
 
             {/* Committee Routes */}
-            <Route path="/committee/chief-patron" element={<Committee />} />
-            <Route path="/committee/patron" element={<Committee />} />
-            <Route path="/committee/chair" element={<Committee />} />
-            <Route path="/committee/convenor" element={<Committee />} />
-            <Route path="/committee/collegeadvisory" element={<Committee />} />
-            <Route path="/committee/international_advisory_committee" element={<Committee />} />
-            <Route path="/committee/national_advisory_committee" element={<Committee />} />
+            <Route path="/committee/patrons" element={<Committee />} />
+            <Route path="/committee/core-team" element={<Committee />} />
+            <Route path="/committee/college-advisory" element={<Committee />} />
+            <Route path="/committee/international-advisory" element={<Committee />} />
+            <Route path="/committee/national-advisory" element={<Committee />} />
             <Route path="/committee/organizing" element={<Committee />} />
+            <Route path="/committee/student" element={<Committee />} />
 
             {/* Call for Papers — single page (all tracks) */}
             <Route path="/call-for-papers/tracks" element={<ConferenceTracks />} />

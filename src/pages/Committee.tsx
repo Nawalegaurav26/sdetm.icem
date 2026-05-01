@@ -32,10 +32,12 @@ const Committee = () => {
   const path = location.pathname;
 
   const renderSection = () => {
-    if (path.includes('/chief-patron')) {
+    if (path.includes('/patrons')) {
       return (
         <section className="committee-section">
-          <h2 className="section-title text-center">Chief Patron</h2>
+          <h2 className="section-title text-center">Patrons</h2>
+          
+          <h3 className="dept-title" style={{ marginTop: '2rem' }}>Chief Patron</h3>
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Tarita Shankar" 
@@ -43,14 +45,8 @@ const Committee = () => {
               org="Chairperson & Chief Mentor – Indira Group of Institutions" 
             />
           </div>
-        </section>
-      );
-    }
 
-    if (path.includes('/patron')) {
-      return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Patrons</h2>
+          <h3 className="dept-title" style={{ marginTop: '3rem' }}>Patrons</h3>
           <div className="committee-grid">
             <MemberCard 
               name="Mr. Chetan Wakalkar" 
@@ -72,10 +68,12 @@ const Committee = () => {
       );
     }
 
-    if (path.includes('/chair')) {
+    if (path.includes('/core-team')) {
       return (
         <section className="committee-section">
-          <h2 className="section-title text-center">Conference Chair</h2>
+          <h2 className="section-title text-center">Core Team</h2>
+          
+          <h3 className="dept-title" style={{ marginTop: '2rem' }}>Conference Chair</h3>
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Nilesh Uke" 
@@ -83,14 +81,8 @@ const Committee = () => {
               org="Principal, Indira College of Engineering and Management" 
             />
           </div>
-        </section>
-      );
-    }
 
-    if (path.includes('/convenor')) {
-      return (
-        <section className="committee-section">
-          <h2 className="section-title text-center">Convenors</h2>
+          <h3 className="dept-title" style={{ marginTop: '3rem' }}>Convenors</h3>
           <div className="committee-grid">
             <MemberCard 
               name="Dr. Saurabh Gupta" 
@@ -109,7 +101,7 @@ const Committee = () => {
       );
     }
 
-    if (path.includes('/collegeadvisory')) {
+    if (path.includes('/college-advisory')) {
       return (
         <section className="committee-section">
           <h2 className="section-title text-center">College Advisory Committee</h2>
@@ -138,7 +130,7 @@ const Committee = () => {
       );
     }
 
-    if (path.includes('/international_advisory_committee')) {
+    if (path.includes('/international-advisory')) {
       return (
         <section className="committee-section">
           <h2 className="section-title text-center">International Advisory Committee</h2>
@@ -177,7 +169,7 @@ const Committee = () => {
       );
     }
 
-    if (path.includes('/national_advisory_committee')) {
+    if (path.includes('/national-advisory')) {
       return (
         <section className="committee-section">
           <h2 className="section-title text-center">National Advisory Committee</h2>
@@ -268,6 +260,21 @@ const Committee = () => {
                 />
               ))}
             </div>
+          </div>
+        </section>
+      );
+    }
+
+    if (path.includes('/student')) {
+      return (
+        <section className="committee-section">
+          <h2 className="section-title text-center">Student Committee</h2>
+          <div className="committee-grid">
+            <MemberCard 
+              name="Student Volunteers" 
+              role="Coordinators" 
+              org="Various Departments, ICEM" 
+            />
           </div>
         </section>
       );

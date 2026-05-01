@@ -31,7 +31,7 @@ const Footer = () => {
             <ul>
               <li><Link to="/about/conference">About Conference</Link></li>
               <li><Link to="/call-for-papers/tracks">Technical Tracks</Link></li>
-              <li><Link to="/submission/guidelines">Submission Guidelines</Link></li>
+              <li><Link to="/submission">Submission Guidelines</Link></li>
               <li><Link to="/dates">Important Dates</Link></li>
               <li><Link to="/registration">Registration</Link></li>
               <li><Link to="/venue">Venue</Link></li>
@@ -42,13 +42,13 @@ const Footer = () => {
           <div className="footer-col">
             <h3>Committee</h3>
             <ul>
-              <li><Link to="/committee/chief-patron">Chief Patron</Link></li>
-              <li><Link to="/committee/patron">Patron</Link></li>
-              <li><Link to="/committee/chair">Conference Chair</Link></li>
-              <li><Link to="/committee/convenor">Convenor &amp; Co-Convenor</Link></li>
-              <li><Link to="/committee/collegeadvisory">College Advisory Committee</Link></li>
-              <li><Link to="/committee/international_advisory_committee">International Advisory Committee</Link></li>
-              <li><Link to="/committee/national_advisory_committee">National Advisory Committee</Link></li>
+              <li><Link to="/committee/patrons">Patrons</Link></li>
+              <li><Link to="/committee/core-team">Core Team</Link></li>
+              <li><Link to="/committee/college-advisory">College Advisory</Link></li>
+              <li><Link to="/committee/international-advisory">International Advisory</Link></li>
+              <li><Link to="/committee/national-advisory">National Advisory</Link></li>
+              <li><Link to="/committee/organizing">Organizing Committee</Link></li>
+              <li><Link to="/committee/student">Student Committee</Link></li>
             </ul>
           </div>
 
