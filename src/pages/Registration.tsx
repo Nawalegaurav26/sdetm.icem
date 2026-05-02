@@ -93,7 +93,7 @@ const Registration = () => {
               <div className="terminal-dots"><span></span><span></span><span></span></div>
             </div>
 
-            <div className="reg-step" style={{ padding: '2rem' }}>
+            <div className="reg-step reg-step-padding">
               <div className="step-indicator">REGISTRATION PROCESS</div>
               <h2 className="hud-form-title">Registration Steps</h2>
               <p className="reg-description">Follow these steps to complete your conference registration.</p>
@@ -130,15 +130,15 @@ const Registration = () => {
               </ol>
 
               {/* Registration Link Button */}
-              <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-                <a href="https://forms.gle/c9gtHqSeiwB8kGsM6" target="_blank" rel="noopener noreferrer" className="hud-submit-btn" style={{ display: 'inline-flex', padding: '12px 32px', background: 'rgba(0, 229, 255, 0.1)', border: '1px solid #00e5ff', color: '#00e5ff', textDecoration: 'none', fontWeight: 'bold', borderRadius: '4px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              <div className="reg-btn-container">
+                <a href="https://forms.gle/c9gtHqSeiwB8kGsM6" target="_blank" rel="noopener noreferrer" className="hud-submit-btn reg-hud-submit-btn">
                   Complete Registration Form
                 </a>
               </div>
 
               {/* Contact convenors */}
               <div className="convenor-contact-box">
-                <h3 className="hud-card-title" style={{ marginBottom: '1rem' }}>CONTACT CONVENORS</h3>
+                <h3 className="hud-card-title reg-contact-title">CONTACT CONVENORS</h3>
                 <div className="convenor-item">
                   <strong>Dr. Saurabh Gupta</strong>
                   <span>Convenor | HOD Mechanical</span>
