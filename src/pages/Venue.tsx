@@ -81,12 +81,12 @@ const Venue = () => {
               transition={{ delay: 0.2 }}
               className="venue-glass-card"
             >
-              <div className="venue-card-header" style={{ marginBottom: '16px' }}>
-                <div className="venue-icon-box" style={{ width: '40px', height: '40px' }}>
+              <div className="venue-card-header venue-card-header-mb">
+                <div className="venue-icon-box venue-icon-box-small">
                   <Clock size={18} />
                 </div>
                 <div>
-                  <h3 className="venue-card-title" style={{ fontSize: '1.1rem' }}>Registration Desk</h3>
+                  <h3 className="venue-card-title venue-card-title-small">Registration Desk</h3>
                 </div>
               </div>
               <p className="venue-desk-text">
