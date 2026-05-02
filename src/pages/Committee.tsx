@@ -6,14 +6,15 @@ interface MemberProps {
   name: string;
   role: string;
   org: string;
+  image?: string;
   email?: string;
   linkedin?: string;
 }
 
-const MemberCard: React.FC<MemberProps> = ({ name, role, org, email, linkedin }) => (
+const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, linkedin }) => (
   <div className="profile-card">
     <div className="profile-image-container">
-      <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} alt={name} />
+      <img src={image || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} alt={name} />
     </div>
     <div className="profile-info">
       <span className="role">{role}</span>
@@ -42,7 +43,8 @@ const Committee = () => {
             <MemberCard 
               name="Dr. Tarita Shankar" 
               role="Chief Patron" 
-              org="Chairperson & Chief Mentor – Indira Group of Institutions" 
+              org={"President - Indira University\nChairperson & Chief Mentor – Indira Group of Institutions"} 
+              image="/01%20Chief%20Patron,%2002%20Patron/01_dr_tarita_shankar.png"
             />
           </div>
 
@@ -52,16 +54,19 @@ const Committee = () => {
               name="Mr. Chetan Wakalkar" 
               role="Patron" 
               org="Chief Marketing Officer - IU & Managing Trustee - IGI" 
+              image="/01%20Chief%20Patron,%2002%20Patron/02_prof_chetan_wakalkar.png"
             />
             <MemberCard 
               name="Mr. Sahil Tarita Shankar" 
               role="Joint Secretary - IU" 
               org="Indira Group of Institutes" 
+              image="/01%20Chief%20Patron,%2002%20Patron/03_mr_sahil_tarita_shankar.png"
             />
             <MemberCard 
               name="Mr. Shaan Tarita Shankar" 
               role="Trustee Member - IU" 
               org="Indira Group of Institutes" 
+              image="/01%20Chief%20Patron,%2002%20Patron/04_mr_shaan_tarita_shankar.png"
             />
           </div>
         </section>
@@ -79,6 +84,7 @@ const Committee = () => {
               name="Dr. Nilesh Uke" 
               role="Conference Chair" 
               org="Principal, Indira College of Engineering and Management" 
+              image="/Core%20Team/Conference%20Chair/01_dr_nilesh_uke.png"
             />
           </div>
 
@@ -89,12 +95,14 @@ const Committee = () => {
               role="Convenor" 
               org="HOD Mechanical, ICEM" 
               email="saurabhgupta@indiraicem.ac.in"
+              image="/Core%20Team/Convenor/01_dr_saurabh_gupta.png"
             />
             <MemberCard 
               name="Dr. Manjusha Tatiya" 
               role="Co-Convenor" 
               org="HOD AI-DS, ICEM" 
               email="manjusha.tatiya@indiraicem.ac.in"
+              image="/Core%20Team/Convenor/02_dr_manjusha_tatiya.png"
             />
           </div>
         </section>
@@ -107,22 +115,23 @@ const Committee = () => {
           <h2 className="section-title text-center">College Advisory Committee</h2>
           <div className="committee-grid">
             {[
-              { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans" },
-              { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer" },
-              { name: "Dr. Mahesh Bhong", role: "Dean, R&D" },
-              { name: "Prof. Meenakshi Patil", role: "HOD, ENTC" },
-              { name: "Dr. Kirav Devade", role: "HOD, FE" },
-              { name: "Dr. Priyanka Pawar", role: "HOD, MBA" },
-              { name: "Dr. Vikas Nandgaonkar", role: "HOD, IT" },
-              { name: "Prof. Savita Jangale", role: "HOD, Civil" },
-              { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA" },
-              { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)" }
+              { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans", image: "/College%20Advisory%20Committee/01_dr_soumitra_das.png" },
+              { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png" },
+              { name: "Dr. Mahesh Bhong", role: "Dean, R&D", image: "/College%20Advisory%20Committee/03_dr_mahesh_bhong.png" },
+              { name: "Prof. Meenakshi Patil", role: "HOD, ENTC", image: "/College%20Advisory%20Committee/04_prof_meenakshi_patil.png" },
+              { name: "Dr. Kirav Devade", role: "HOD, FE", image: "/College%20Advisory%20Committee/05_dr_kirav_devade.png" },
+              { name: "Dr. Priyanka Pawar", role: "HOD, MBA", image: "/College%20Advisory%20Committee/06_dr_priyanka_pawar.png" },
+              { name: "Dr. Vikas Nandgaonkar", role: "HOD, IT", image: "/College%20Advisory%20Committee/07_dr_vikas_nandgaonkar.png" },
+              { name: "Prof. Savita Jangale", role: "HOD, Civil", image: "/College%20Advisory%20Committee/08_prof_savita_jangale.png" },
+              { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA", image: "/College%20Advisory%20Committee/09_dr_avantika_bijawe.png" },
+              { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png" }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
                 name={member.name} 
                 role="College Advisory Member" 
-                org={member.role} 
+                org={member.role}
+                image={member.image} 
               />
             ))}
           </div>
@@ -139,29 +148,40 @@ const Committee = () => {
               { 
                 name: "Dr Celestino Ruivo", 
                 role: "Professor in Mechanical Engineering", 
-                org: "University of Algarve, Portugal" 
+                org: "University of Algarve, Portugal",
+                image: "/International%20Advisory%20Committee/01_dr_celestino_ruivo.png"
               },
               { 
                 name: "Prof. Md. Zahir Uddin Arif", 
                 role: "Professor", 
-                org: "Jagannath University, Dhaka, Bangladesh" 
+                org: "Jagannath University, Dhaka, Bangladesh",
+                image: "/International%20Advisory%20Committee/02_prof_md_zahir_uddin_arif.png"
               },
               { 
                 name: "Dr. Md. Rahat Khan", 
                 role: "Faculty Member & MBA Program Coordinator", 
-                org: "Army Institute of Business Administration, Savar, Bangladesh University of Professionals, Dhaka, Bangladesh" 
+                org: "Army Institute of Business Administration, Savar, Bangladesh",
+                image: "/International%20Advisory%20Committee/03_dr_md_rahat_khan.png"
               },
               { 
                 name: "Dr. Sonali Bhadoria", 
                 role: "Senior Data Analyst", 
-                org: "NC DIT, Raleigh, NC" 
+                org: "NC DIT, Raleigh, NC",
+                image: "/International%20Advisory%20Committee/04_dr_sonali_bhadoria.png"
+              },
+              {
+                name: "Dr. R. L. Bhatia",
+                role: "Founder",
+                org: "World CSR Day & World Sustainability",
+                image: "/International%20Advisory%20Committee/05_dr_r_l_bhatia.png"
               }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
                 name={member.name} 
                 role={member.role} 
-                org={member.org} 
+                org={member.org}
+                image={member.image} 
               />
             ))}
           </div>
@@ -175,33 +195,34 @@ const Committee = () => {
           <h2 className="section-title text-center">National Advisory Committee</h2>
           <div className="committee-grid">
             {[
-              { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune" },
-              { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune" },
-              { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune" },
-              { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune" },
-              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune" },
-              { name: "Dr. Anil Sahu", role: "Dean (PhD)", org: "GHRCEM, Pune" },
-              { name: "Dr. Pendyala Srinivas", role: "HoD (Mechanical)", org: "GITAM University, Hyderabad" },
-              { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor (CSE)", org: "Dayanand Sagar University, Bangalore" },
-              { name: "Dr. Sridaran Rajagopal", role: "Dean Executive", org: "Ganpat University, Mehsana" },
-              { name: "Dr. Kavitha Venkatachari", role: "Dean AI & ML", org: "Universal AI University, Karjat, Mumbai" },
-              { name: "Dr. M Karthikeyan", role: "Chief Scientist", org: "NCL, Pune" },
-              { name: "Dr Prashant Kumbharkar", role: "Professor & Dean", org: "ADYPU, Pune" },
-              { name: "Dr Anand Bewoor", role: "Dean-Academics", org: "Cummins College of Engineering, Pune" },
-              { name: "Dr Vikas Mathe", role: "Professor", org: "Pune" },
-              { name: "Dr Vahida Attar", role: "HoD (Computer)", org: "COEP Technological University, Pune" },
-              { name: "Dr Neha Sharma", role: "TCS", org: "Pune" },
-              { name: "Dr Rahul Mapari", role: "HoD (E&TC)", org: "PCCOER, Pune" },
-              { name: "Dr Meghana Bhilare", role: "Director", org: "Dr.D.Y.Patil Institute, Pune" },
-              { name: "Dr Santosh Deshpande", role: "Director", org: "IMCC, Pune" },
+              { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune", image: "/National%20Advisory%20Committee/01_dr_r_k_jain.png" },
+              { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune", image: "/National%20Advisory%20Committee/02_dr_suresh_shirbahadurkar.png" },
+              { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune", image: "/National%20Advisory%20Committee/03_dr_mahesh_abale.png" },
+              { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune", image: "/National%20Advisory%20Committee/04_dr_sangita_jagtap.png" },
+              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune", image: "/National%20Advisory%20Committee/05_dr_s_s_ohol.png" },
+              { name: "Dr. Anil Sahu", role: "Dean (PhD)", org: "GHRCEM, Pune", image: "/National%20Advisory%20Committee/06_dr_anil_sahu.png" },
+              { name: "Dr. Pendyala Srinivas", role: "HoD (Mechanical)", org: "GITAM University, Hyderabad", image: "/National%20Advisory%20Committee/07_dr_pendyala_srinivas.png" },
+              { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor (CSE)", org: "Dayanand Sagar University, Bangalore", image: "/National%20Advisory%20Committee/08_dr_dilip_kumar_jang_bahadur_saini.png" },
+              { name: "Dr. Sridaran Rajagopal", role: "Dean Executive", org: "Ganpat University, Mehsana", image: "/National%20Advisory%20Committee/09_dr_sridaran_rajagopal.png" },
+              { name: "Dr. Kavitha Venkatachari", role: "Dean AI & ML", org: "Universal AI University, Karjat, Mumbai", image: "/National%20Advisory%20Committee/10_dr_kavitha_venkatachari.png" },
+              { name: "Dr. M Karthikeyan", role: "Chief Scientist", org: "NCL, Pune", image: "/National%20Advisory%20Committee/11_dr_m_karthikeyan.png" },
+              { name: "Dr Prashant Kumbharkar", role: "Professor & Dean", org: "ADYPU, Pune", image: "/National%20Advisory%20Committee/12_dr_prashant_kumbharkar.png" },
+              { name: "Dr Anand Bewoor", role: "Dean-Academics", org: "Cummins College of Engineering, Pune", image: "/National%20Advisory%20Committee/13_dr_anand_bewoor.png" },
+              { name: "Dr Vikas Mathe", role: "Professor", org: "Pune", image: "/National%20Advisory%20Committee/14_dr_vikas_mathe.png" },
+              { name: "Dr Vahida Attar", role: "HoD (Computer)", org: "COEP Technological University, Pune", image: "/National%20Advisory%20Committee/15_dr_vahida_attar.png" },
+              { name: "Dr Neha Sharma", role: "TCS", org: "Pune", image: "/National%20Advisory%20Committee/16_dr_neha_sharma.png" },
+              { name: "Dr Rahul Mapari", role: "HoD (E&TC)", org: "PCCOER, Pune", image: "/National%20Advisory%20Committee/17_dr_rahul_mapari.png" },
+              { name: "Dr Meghana Bhilare", role: "Director", org: "Dr.D.Y.Patil Institute, Pune", image: "/National%20Advisory%20Committee/18_dr_meghana_bhilare.png" },
+              { name: "Dr Santosh Deshpande", role: "Director", org: "IMCC, Pune", image: "/National%20Advisory%20Committee/19_dr_santosh_deshpande.png" },
               { name: "Prof. Mohan Patel", role: "Professor of Practice", org: "Pune" },
-              { name: "Prof. Ashok Saraf", role: "Professor of Practice", org: "Pune" }
+              { name: "Prof. Ashok Saraf", role: "Professor of Practice", org: "Pune", image: "/National%20Advisory%20Committee/21_prof_ashok_saraf.png" }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
                 name={member.name} 
                 role={member.role} 
                 org={member.org} 
+                image={member.image}
               />
             ))}
           </div>
@@ -218,22 +239,23 @@ const Committee = () => {
             <h3 className="dept-title">Mechanical Engineering</h3>
             <div className="committee-grid">
               {[
-                { name: "Dr. Mahesh Bhong", role: "Associate Professor" },
-                { name: "Mr. Hemant Darokarm", role: "Assistant Professor" },
-                { name: "Mr. Sushil Chopade", role: "Assistant Professor" },
-                { name: "Mr. Sagar Chirade", role: "Assistant Professor" },
-                { name: "Mr. Amit Narwade", role: "Assistant Professor" },
-                { name: "Mr. Pravin Charde", role: "Assistant Professor" },
-                { name: "Ms. Pranali Khatke", role: "Assistant Professor" },
-                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor" },
-                { name: "Ms. Ashwini Admane", role: "Assistant Professor" },
-                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor" }
+                { name: "Dr. Mahesh Bhong", role: "Associate Professor", image: "/Organizing%20Committee/01_dr_mahesh_bhong.png" },
+                { name: "Mr. Hemant Darokar", role: "Assistant Professor", image: "/Organizing%20Committee/02_mr_hemant_darokarm.png" },
+                { name: "Mr. Sushil Chopade", role: "Assistant Professor", image: "/Organizing%20Committee/03_mr_sushil_chopade.png" },
+                { name: "Mr. Sagar Chirade", role: "Assistant Professor", image: "/Organizing%20Committee/04_mr_sagar_chirade.png" },
+                { name: "Mr. Amit Narwade", role: "Assistant Professor", image: "/Organizing%20Committee/05_mr_amit_narwade.png" },
+                { name: "Mr. Pravin Charde", role: "Assistant Professor", image: "/Organizing%20Committee/06_mr_pravin_charde.png" },
+                { name: "Ms. Pranali Khatke", role: "Assistant Professor", image: "/Organizing%20Committee/07_ms_pranali_khatke.png" },
+                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png" },
+                { name: "Ms. Ashwini Admane", role: "Assistant Professor", image: "/Organizing%20Committee/09_ms_ashwini_admane.png" },
+                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png" }
               ].map((member, idx) => (
                 <MemberCard 
                   key={idx} 
                   name={member.name} 
                   role={member.role} 
                   org="Mechanical Department, ICEM" 
+                  image={member.image}
                 />
               ))}
             </div>
@@ -243,12 +265,12 @@ const Committee = () => {
             <h3 className="dept-title">AI & Data Science</h3>
             <div className="committee-grid">
               {[
-                { name: "Ms. Deepa Padwal", role: "Assistant Professor" },
-                { name: "Ms. Pallavi Chavan", role: "Assistant Professor" },
-                { name: "Ms. Monika Patil", role: "Assistant Professor" },
-                { name: "Ms. Kavita Sharma", role: "Assistant Professor" },
-                { name: "Mr. Vivek Kumar", role: "Assistant Professor" },
-                { name: "Ms. Vidya Dhoke", role: "Assistant Professor" },
+                { name: "Ms. Deepa Padwal", role: "Assistant Professor", image: "/Organizing%20Committee/11_ms_deepa_padwal.png" },
+                { name: "Ms. Pallavi Chavan", role: "Assistant Professor", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png" },
+                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png" },
+                { name: "Ms. Kavita Sharma", role: "Assistant Professor", image: "/Organizing%20Committee/14_ms_kavita_sharma.png" },
+                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png" },
+                { name: "Ms. Vidya Dhoke", role: "Assistant Professor", image: "/Organizing%20Committee/16_ms_vidya_dhoke.png" },
                 { name: "Mr. Tushar Mahore", role: "Assistant Professor" },
                 { name: "Ms. Tanuja Pande", role: "Assistant Professor" }
               ].map((member, idx) => (
@@ -257,6 +279,7 @@ const Committee = () => {
                   name={member.name} 
                   role={member.role} 
                   org="AI-DS Department, ICEM" 
+                  image={member.image}
                 />
               ))}
             </div>
@@ -271,9 +294,20 @@ const Committee = () => {
           <h2 className="section-title text-center">Student Committee</h2>
           <div className="committee-grid">
             <MemberCard 
-              name="Student Volunteers" 
-              role="Coordinators" 
-              org="Various Departments, ICEM" 
+              name="Gaurav Raju Nawale" 
+              role="Technical Secretary" 
+              org="Founder of CertiOwn" 
+              email="gaurav.nawale@indiraicem.ac.in"
+              linkedin="https://www.linkedin.com/in/nawalegaurav26/"
+              image="/Students%20Organizing%20Committee/01_Mr_Gaurav_Raju_Nawale.png"
+            />
+            <MemberCard 
+              name="Vaishnavi Patare" 
+              role="Student" 
+              org="Indira College of Engineering and Management" 
+              email="vaishnavi.paratre@indiraicem.ac.in"
+              linkedin="https://www.linkedin.com/in/vaishnavi-patare-99a4ab379/"
+              image="/Students%20Organizing%20Committee/02_ms_vaishnavi_patare.png"
             />
           </div>
         </section>
