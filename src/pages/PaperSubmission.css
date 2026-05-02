@@ -209,6 +209,10 @@
   gap: 14px;
 }
 
+.sub-section-title-center {
+  justify-content: center;
+}
+
 .sub-accent-bar {
   display: inline-block;
   width: 4px;

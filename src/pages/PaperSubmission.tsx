@@ -232,7 +232,7 @@ const PaperSubmission = () => {
       {/* ── FAQ ── */}
       <section className="sub-faq-section">
         <div className="sub-container">
-          <h2 className="sub-section-title" style={{ justifyContent: 'center' }}>
+          <h2 className="sub-section-title sub-section-title-center">
             <span className="sub-accent-bar"></span>
             Frequently Asked Questions
           </h2>
