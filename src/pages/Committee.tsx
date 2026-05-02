@@ -45,6 +45,7 @@ const Committee = () => {
               role="Chief Patron" 
               org={"President - Indira University\nChairperson & Chief Mentor – Indira Group of Institutions"} 
               image="/01%20Chief%20Patron,%2002%20Patron/01_dr_tarita_shankar.png"
+              linkedin="https://www.linkedin.com/in/tarita-shankar-a1901489/"
             />
           </div>
 
@@ -55,6 +56,7 @@ const Committee = () => {
               role="Patron" 
               org="Chief Marketing Officer - IU & Managing Trustee - IGI" 
               image="/01%20Chief%20Patron,%2002%20Patron/02_prof_chetan_wakalkar.png"
+              linkedin="https://www.linkedin.com/in/chetan-wakalkar-142655b/"
             />
             <MemberCard 
               name="Mr. Sahil Tarita Shankar" 
@@ -149,31 +151,36 @@ const Committee = () => {
                 name: "Dr Celestino Ruivo", 
                 role: "Professor in Mechanical Engineering", 
                 org: "University of Algarve, Portugal",
-                image: "/International%20Advisory%20Committee/01_dr_celestino_ruivo.png"
+                image: "/International%20Advisory%20Committee/01_dr_celestino_ruivo.png",
+                linkedin: "https://www.researchgate.net/profile/Celestino-Ruivo"
               },
               { 
                 name: "Prof. Md. Zahir Uddin Arif", 
                 role: "Professor", 
                 org: "Jagannath University, Dhaka, Bangladesh",
-                image: "/International%20Advisory%20Committee/02_prof_md_zahir_uddin_arif.png"
+                image: "/International%20Advisory%20Committee/02_prof_md_zahir_uddin_arif.png",
+                linkedin: "https://www.linkedin.com/in/professor-md-zahir-uddin-arif-95b69413/"
               },
               { 
                 name: "Dr. Md. Rahat Khan", 
                 role: "Faculty Member & MBA Program Coordinator", 
                 org: "Army Institute of Business Administration, Savar, Bangladesh",
-                image: "/International%20Advisory%20Committee/03_dr_md_rahat_khan.png"
+                image: "/International%20Advisory%20Committee/03_dr_md_rahat_khan.png",
+                linkedin: "https://www.linkedin.com/in/dr-md-rahat-khan-mba-mbs-16690b53/"
               },
               { 
                 name: "Dr. Sonali Bhadoria", 
                 role: "Senior Data Analyst", 
                 org: "NC DIT, Raleigh, NC",
-                image: "/International%20Advisory%20Committee/04_dr_sonali_bhadoria.png"
+                image: "/International%20Advisory%20Committee/04_dr_sonali_bhadoria.png",
+                linkedin: "https://www.linkedin.com/in/sonali-bhadoria/"
               },
               {
                 name: "Dr. R. L. Bhatia",
                 role: "Founder",
                 org: "World CSR Day & World Sustainability",
-                image: "/International%20Advisory%20Committee/05_dr_r_l_bhatia.png"
+                image: "/International%20Advisory%20Committee/05_dr_r_l_bhatia.png",
+                linkedin: "https://www.linkedin.com/in/drrlbhatia/"
               }
             ].map((member, idx) => (
               <MemberCard 
@@ -181,6 +188,7 @@ const Committee = () => {
                 name={member.name} 
                 role={member.role} 
                 org={member.org}
+                linkedin={member.linkedin}
                 image={member.image} 
               />
             ))}
@@ -195,11 +203,11 @@ const Committee = () => {
           <h2 className="section-title text-center">National Advisory Committee</h2>
           <div className="committee-grid">
             {[
-              { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune", image: "/National%20Advisory%20Committee/01_dr_r_k_jain.png" },
-              { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune", image: "/National%20Advisory%20Committee/02_dr_suresh_shirbahadurkar.png" },
-              { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune", image: "/National%20Advisory%20Committee/03_dr_mahesh_abale.png" },
-              { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune", image: "/National%20Advisory%20Committee/04_dr_sangita_jagtap.png" },
-              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune", image: "/National%20Advisory%20Committee/05_dr_s_s_ohol.png" },
+              { name: "Dr. R K Jain", role: "Vice Chancellor", org: "ADYPU, Pune", image: "/National%20Advisory%20Committee/01_dr_r_k_jain.png", linkedin: "https://scholar.google.com/citations?user=x_4w4O8AAAAJ&hl=en" },
+              { name: "Dr. Suresh Shirbahadurkar", role: "Principal", org: "D Y Patil Technical Campus, Pune", image: "/National%20Advisory%20Committee/02_dr_suresh_shirbahadurkar.png", linkedin: "https://www.researchgate.net/profile/Suresh-Shirbahadurkar-2" },
+              { name: "Dr Mahesh Abale", role: "Director", org: "Prin. N.G. Naralkar Institute, Pune", image: "/National%20Advisory%20Committee/03_dr_mahesh_abale.png", linkedin: "https://www.researchgate.net/profile/Mahesh-Abale" },
+              { name: "Dr. Sangita Jagtap", role: "Principal", org: "Baburaoji Gholap College, Pune", image: "/National%20Advisory%20Committee/04_dr_sangita_jagtap.png", linkedin: "https://www.researchgate.net/profile/Sangeeta-Jagtap" },
+              { name: "Dr. S. S. Ohol", role: "Asso Professor (Mechanical)", org: "COEP Technological University, Pune", image: "/National%20Advisory%20Committee/05_dr_s_s_ohol.png", linkedin: "https://www.researchgate.net/profile/Shantipal-Ohol" },
               { name: "Dr. Anil Sahu", role: "Dean (PhD)", org: "GHRCEM, Pune", image: "/National%20Advisory%20Committee/06_dr_anil_sahu.png" },
               { name: "Dr. Pendyala Srinivas", role: "HoD (Mechanical)", org: "GITAM University, Hyderabad", image: "/National%20Advisory%20Committee/07_dr_pendyala_srinivas.png" },
               { name: "Dr. Dilip Kumar Jang Bahadur Saini", role: "Asso Professor (CSE)", org: "Dayanand Sagar University, Bangalore", image: "/National%20Advisory%20Committee/08_dr_dilip_kumar_jang_bahadur_saini.png" },
@@ -222,6 +230,7 @@ const Committee = () => {
                 name={member.name} 
                 role={member.role} 
                 org={member.org} 
+                linkedin={member.linkedin}
                 image={member.image}
               />
             ))}
