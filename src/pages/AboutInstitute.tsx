@@ -104,22 +104,11 @@ const AboutInstitute: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            style={{ position: 'relative', height: '100%', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            className="about-graphic-container"
           >
              {/* A subtle glowing geometric representation */}
-             <div style={{
-               width: '250px', height: '250px', borderRadius: '50%',
-               background: 'conic-gradient(from 180deg at 50% 50%, rgba(0,229,255,0.1) 0deg, rgba(0,229,255,0.02) 360deg)',
-               border: '1px solid rgba(0,229,255,0.2)',
-               boxShadow: '0 0 40px rgba(0,229,255,0.05)',
-               display: 'flex', alignItems: 'center', justifyContent: 'center',
-               position: 'relative'
-             }}>
-                <div style={{
-                  width: '150px', height: '150px', borderRadius: '50%',
-                  border: '1px solid rgba(0,229,255,0.4)',
-                  boxShadow: 'inset 0 0 20px rgba(0,229,255,0.2)'
-                }}></div>
+             <div className="about-graphic-outer">
+                <div className="about-graphic-inner"></div>
              </div>
           </motion.div>
         </div>
