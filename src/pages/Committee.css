@@ -105,6 +105,7 @@
   color: var(--text-muted);
   margin-bottom: 1.5rem;
   display: block;
+  white-space: pre-line;
 }
 
 .profile-social {
