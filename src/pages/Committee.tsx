@@ -12,18 +12,22 @@ interface MemberProps {
 }
 
 const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, linkedin }) => (
-  <div className="profile-card">
+  <div className="profile-card" itemScope itemType="http://schema.org/Person">
     <div className="profile-image-container">
-      <img src={image || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} alt={name} />
+      <img 
+        itemProp="image" 
+        src={image || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} 
+        alt={name} 
+      />
     </div>
     <div className="profile-info">
-      <span className="role">{role}</span>
-      <h3>{name}</h3>
-      <span className="org">{org}</span>
+      <span className="role" itemProp="jobTitle">{role}</span>
+      <h3 itemProp="name">{name}</h3>
+      <span className="org" itemProp="affiliation">{org}</span>
     </div>
     <div className="profile-social">
-      <a href={`mailto:${email || 'sdetm.icem@indiraicem.ac.in'}`} title="Email"><Mail size={18} /></a>
-      <a href={linkedin || "#"} target="_blank" rel="noopener noreferrer" title="LinkedIn"><Linkedin size={18} /></a>
+      <a href={`mailto:${email || 'sdetm.icem@indiraicem.ac.in'}`} title="Email" itemProp="email"><Mail size={18} /></a>
+      <a href={linkedin || "#"} target="_blank" rel="noopener noreferrer" title="LinkedIn" itemProp="url"><Linkedin size={18} /></a>
     </div>
   </div>
 );
