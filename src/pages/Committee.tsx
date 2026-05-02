@@ -164,7 +164,7 @@ const Committee = () => {
               },
               { 
                 name: "Prof. Md. Zahir Uddin Arif", 
-                role: "Professor", 
+                role: "Professor of Marketing", 
                 org: "Jagannath University, Dhaka, Bangladesh",
                 image: "/International%20Advisory%20Committee/02_prof_md_zahir_uddin_arif.png",
                 linkedin: "https://www.linkedin.com/in/professor-md-zahir-uddin-arif-95b69413/"
