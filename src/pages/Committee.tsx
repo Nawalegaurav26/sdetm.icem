@@ -91,6 +91,7 @@ const Committee = () => {
               role="Conference Chair" 
               org="Principal, Indira College of Engineering and Management" 
               image="/Core%20Team/Conference%20Chair/01_dr_nilesh_uke.png"
+              linkedin="https://www.linkedin.com/in/dr-nilesh-uke-96104819/"
             />
           </div>
 
@@ -102,6 +103,7 @@ const Committee = () => {
               org="HOD Mechanical, ICEM" 
               email="saurabhgupta@indiraicem.ac.in"
               image="/Core%20Team/Convenor/01_dr_saurabh_gupta.png"
+              linkedin="https://www.linkedin.com/in/dr-saurabh-gupta-434b7a70/"
             />
             <MemberCard 
               name="Dr. Manjusha Tatiya" 
@@ -109,6 +111,7 @@ const Committee = () => {
               org="HOD AI-DS, ICEM" 
               email="manjusha.tatiya@indiraicem.ac.in"
               image="/Core%20Team/Convenor/02_dr_manjusha_tatiya.png"
+              linkedin="https://www.linkedin.com/in/dr-manjusha-tatiya-2228b421/"
             />
           </div>
         </section>
