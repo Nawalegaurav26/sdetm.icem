@@ -26,8 +26,8 @@ const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, link
       <span className="org" itemProp="affiliation">{org}</span>
     </div>
     <div className="profile-social">
-      <a href={`mailto:${email || 'sdetm.icem@indiraicem.ac.in'}`} title="Email" itemProp="email"><Mail size={18} /></a>
-      <a href={linkedin || "#"} target="_blank" rel="noopener noreferrer" title="LinkedIn" itemProp="url"><Linkedin size={18} /></a>
+      {email && <a href={`mailto:${email}`} title="Email" itemProp="email"><Mail size={18} /></a>}
+      {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" itemProp="url"><Linkedin size={18} /></a>}
     </div>
   </div>
 );
@@ -121,16 +121,16 @@ const Committee = () => {
           <h2 className="section-title text-center">College Advisory Committee</h2>
           <div className="committee-grid">
             {[
-              { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans", image: "/College%20Advisory%20Committee/01_dr_soumitra_das.png" },
-              { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png" },
-              { name: "Dr. Mahesh Bhong", role: "Dean, R&D", image: "/College%20Advisory%20Committee/03_dr_mahesh_bhong.png" },
-              { name: "Prof. Meenakshi Patil", role: "HOD, ENTC", image: "/College%20Advisory%20Committee/04_prof_meenakshi_patil.png" },
-              { name: "Dr. Kirav Devade", role: "HOD, FE", image: "/College%20Advisory%20Committee/05_dr_kirav_devade.png" },
-              { name: "Dr. Priyanka Pawar", role: "HOD, MBA", image: "/College%20Advisory%20Committee/06_dr_priyanka_pawar.png" },
-              { name: "Dr. Vikas Nandgaonkar", role: "HOD, IT", image: "/College%20Advisory%20Committee/07_dr_vikas_nandgaonkar.png" },
-              { name: "Prof. Savita Jangale", role: "HOD, Civil", image: "/College%20Advisory%20Committee/08_prof_savita_jangale.png" },
+              { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans", image: "/College%20Advisory%20Committee/01_dr_soumitra_das.png", linkedin: "https://www.linkedin.com/in/dr-soumitra-das-a6415341/" },
+              { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png", linkedin: "https://www.linkedin.com/in/poornashankar10/" },
+              { name: "Dr. Mahesh Bhong", role: "Dean, R&D", image: "/College%20Advisory%20Committee/03_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
+              { name: "Prof. Meenakshi Patil", role: "HOD, ENTC", image: "/College%20Advisory%20Committee/04_prof_meenakshi_patil.png", linkedin: "https://www.linkedin.com/in/meenakshi-patil-003402a8/" },
+              { name: "Dr. Kirav Devade", role: "HOD, FE", image: "/College%20Advisory%20Committee/05_dr_kirav_devade.png", linkedin: "https://www.linkedin.com/in/kiran-devade-377b0857/" },
+              { name: "Dr. Priyanka Pawar", role: "HOD, MBA", image: "/College%20Advisory%20Committee/06_dr_priyanka_pawar.png", linkedin: "https://www.linkedin.com/in/dr-priyanka-pawar-863b1218/" },
+              { name: "Dr. Vikas Nandgaonkar", role: "HOD, IT", image: "/College%20Advisory%20Committee/07_dr_vikas_nandgaonkar.png", linkedin: "https://www.linkedin.com/in/vikas-nandgaonkar-b256b933/" },
+              { name: "Prof. Savita Jangale", role: "HOD, Civil", image: "/College%20Advisory%20Committee/08_prof_savita_jangale.png", linkedin: "https://www.linkedin.com/in/savita-jangale-0b3726170/" },
               { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA", image: "/College%20Advisory%20Committee/09_dr_avantika_bijawe.png" },
-              { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png" }
+              { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png", linkedin: "https://www.linkedin.com/in/dr-deepa-jamnik-51baa2217/" }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
@@ -138,6 +138,7 @@ const Committee = () => {
                 role="College Advisory Member" 
                 org={member.role}
                 image={member.image} 
+                linkedin={member.linkedin}
               />
             ))}
           </div>
@@ -252,16 +253,16 @@ const Committee = () => {
             <h3 className="dept-title">Mechanical Engineering</h3>
             <div className="committee-grid">
               {[
-                { name: "Dr. Mahesh Bhong", role: "Associate Professor", image: "/Organizing%20Committee/01_dr_mahesh_bhong.png" },
-                { name: "Mr. Hemant Darokar", role: "Assistant Professor", image: "/Organizing%20Committee/02_mr_hemant_darokarm.png" },
-                { name: "Mr. Sushil Chopade", role: "Assistant Professor", image: "/Organizing%20Committee/03_mr_sushil_chopade.png" },
-                { name: "Mr. Sagar Chirade", role: "Assistant Professor", image: "/Organizing%20Committee/04_mr_sagar_chirade.png" },
-                { name: "Mr. Amit Narwade", role: "Assistant Professor", image: "/Organizing%20Committee/05_mr_amit_narwade.png" },
-                { name: "Mr. Pravin Charde", role: "Assistant Professor", image: "/Organizing%20Committee/06_mr_pravin_charde.png" },
-                { name: "Ms. Pranali Khatke", role: "Assistant Professor", image: "/Organizing%20Committee/07_ms_pranali_khatke.png" },
-                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png" },
-                { name: "Ms. Ashwini Admane", role: "Assistant Professor", image: "/Organizing%20Committee/09_ms_ashwini_admane.png" },
-                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png" }
+                { name: "Dr. Mahesh Bhong", role: "Associate Professor", image: "/Organizing%20Committee/01_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
+                { name: "Mr. Hemant Darokar", role: "Assistant Professor", image: "/Organizing%20Committee/02_mr_hemant_darokarm.png", linkedin: "https://www.linkedin.com/in/hemant-darokar-48a61743/" },
+                { name: "Mr. Sushil Chopade", role: "Assistant Professor", image: "/Organizing%20Committee/03_mr_sushil_chopade.png", linkedin: "https://www.linkedin.com/in/sushil-chopade-2a2539310/" },
+                { name: "Mr. Sagar Chirade", role: "Assistant Professor", image: "/Organizing%20Committee/04_mr_sagar_chirade.png", linkedin: "https://www.linkedin.com/in/sagar-chirade-17570316/" },
+                { name: "Mr. Amit Narwade", role: "Assistant Professor", image: "/Organizing%20Committee/05_mr_amit_narwade.png", linkedin: "https://www.linkedin.com/in/amit-narwade-359488b9/" },
+                { name: "Mr. Pravin Charde", role: "Assistant Professor", image: "/Organizing%20Committee/06_mr_pravin_charde.png", linkedin: "https://www.linkedin.com/in/pravin-charde-42290a161/" },
+                { name: "Ms. Pranali Khatke", role: "Assistant Professor", image: "/Organizing%20Committee/07_ms_pranali_khatke.png", linkedin: "https://www.linkedin.com/in/pranali-khatake-313204a9/" },
+                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png", linkedin: "https://www.linkedin.com/in/ashwini-gaikwad-534a74218/" },
+                { name: "Ms. Ashwini Admane", role: "Assistant Professor", image: "/Organizing%20Committee/09_ms_ashwini_admane.png", linkedin: "https://www.linkedin.com/in/ashwini-admane-38328a151/" },
+                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png", linkedin: "https://www.linkedin.com/in/shubhangi-manwatkar-33b66a3b1/" }
               ].map((member, idx) => (
                 <MemberCard 
                   key={idx} 
@@ -269,6 +270,7 @@ const Committee = () => {
                   role={member.role} 
                   org="Mechanical Department, ICEM" 
                   image={member.image}
+                  linkedin={member.linkedin}
                 />
               ))}
             </div>
@@ -278,12 +280,12 @@ const Committee = () => {
             <h3 className="dept-title">AI & Data Science</h3>
             <div className="committee-grid">
               {[
-                { name: "Ms. Deepa Padwal", role: "Assistant Professor", image: "/Organizing%20Committee/11_ms_deepa_padwal.png" },
-                { name: "Ms. Pallavi Chavan", role: "Assistant Professor", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png" },
-                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png" },
-                { name: "Ms. Kavita Sharma", role: "Assistant Professor", image: "/Organizing%20Committee/14_ms_kavita_sharma.png" },
-                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png" },
-                { name: "Ms. Vidya Dhoke", role: "Assistant Professor", image: "/Organizing%20Committee/16_ms_vidya_dhoke.png" },
+                { name: "Ms. Deepa Padwal", role: "Assistant Professor", image: "/Organizing%20Committee/11_ms_deepa_padwal.png", linkedin: "https://www.linkedin.com/in/deepa-padwal/" },
+                { name: "Ms. Pallavi Chavan", role: "Assistant Professor", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png", linkedin: "https://www.linkedin.com/in/pallavi-chavan1731/" },
+                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monika-patil-7b198822a/" },
+                { name: "Ms. Kavita Sharma", role: "Assistant Professor", image: "/Organizing%20Committee/14_ms_kavita_sharma.png", linkedin: "https://www.linkedin.com/in/kavita-sharma-1405/" },
+                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-7a5b3b1a/" },
+                { name: "Ms. Vidya Dhoke", role: "Assistant Professor", image: "/Organizing%20Committee/16_ms_vidya_dhoke.png", linkedin: "https://www.linkedin.com/in/vidya-dhoke-4a1b3b1a/" },
                 { name: "Mr. Tushar Mahore", role: "Assistant Professor" },
                 { name: "Ms. Tanuja Pande", role: "Assistant Professor" }
               ].map((member, idx) => (
@@ -293,6 +295,7 @@ const Committee = () => {
                   role={member.role} 
                   org="AI-DS Department, ICEM" 
                   image={member.image}
+                  linkedin={member.linkedin}
                 />
               ))}
             </div>
