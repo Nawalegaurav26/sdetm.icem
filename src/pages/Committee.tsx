@@ -38,7 +38,7 @@ const Committee = () => {
         <section className="committee-section">
           <h2 className="section-title text-center">Patrons</h2>
           
-          <h3 className="dept-title" style={{ marginTop: '2rem' }}>Chief Patron</h3>
+          <h3 className="dept-title dept-title-mt2">Chief Patron</h3>
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Tarita Shankar" 
@@ -48,7 +48,7 @@ const Committee = () => {
             />
           </div>
 
-          <h3 className="dept-title" style={{ marginTop: '3rem' }}>Patrons</h3>
+          <h3 className="dept-title dept-title-mt3">Patrons</h3>
           <div className="committee-grid">
             <MemberCard 
               name="Mr. Chetan Wakalkar" 
@@ -78,7 +78,7 @@ const Committee = () => {
         <section className="committee-section">
           <h2 className="section-title text-center">Core Team</h2>
           
-          <h3 className="dept-title" style={{ marginTop: '2rem' }}>Conference Chair</h3>
+          <h3 className="dept-title dept-title-mt2">Conference Chair</h3>
           <div className="committee-grid centered">
             <MemberCard 
               name="Dr. Nilesh Uke" 
@@ -88,7 +88,7 @@ const Committee = () => {
             />
           </div>
 
-          <h3 className="dept-title" style={{ marginTop: '3rem' }}>Convenors</h3>
+          <h3 className="dept-title dept-title-mt3">Convenors</h3>
           <div className="committee-grid">
             <MemberCard 
               name="Dr. Saurabh Gupta" 
