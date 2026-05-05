@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Users, BookOpen, Globe, Star } from 'lucide-react';
+import SEO from '../components/SEO';
 import './AboutConference.css';
 
 const AboutConference = () => {
@@ -13,6 +14,10 @@ const AboutConference = () => {
 
   return (
     <div className="about-conf-page">
+      <SEO 
+        title="About ICSDETM 2026" 
+        description="Learn more about the International Conference on Sustainable Developments in Engineering, Technology & Management. Discover our objectives, highlights, and Scopus indexed publication opportunities." 
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
