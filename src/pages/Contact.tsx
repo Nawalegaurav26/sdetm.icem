@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Globe } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Contact.css';
 
 const Contact = () => {
   return (
     <div className="contact-page">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with the ICEM 2026 organizing team. Contact our convenors for inquiries regarding paper submission, registration, and conference details." 
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
