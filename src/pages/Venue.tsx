@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { MapPin, Zap, Globe, Compass, Clock, Bus } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Venue.css';
 
 const Venue = () => {
   return (
     <div className="venue-page relative">
+      <SEO 
+        title="Conference Venue & Location" 
+        description="Visit the ICEM 2026 conference at Indira College of Engineering and Management, Pune. Find detailed location coordinates, maps, and travel information." 
+      />
       {/* Background Ambience */}
       <div className="venue-ambient-glow"></div>
       <div className="venue-ambient-glow-2"></div>
