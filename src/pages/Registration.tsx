@@ -1,9 +1,15 @@
 import { CreditCard, Info, Mail, Phone } from 'lucide-react';
+import SEO from '../components/SEO';
 import './Registration.css';
 
 const Registration = () => {
   return (
     <div className="registration-page">
+      <SEO 
+        title="Registration & Fees" 
+        description="Register for ICEM 2026. View registration fees for students, academicians, and industry professionals. Secure your spot at the International Conference on Sustainable Developments in Engineering, Technology & Management in Pune."
+        ogImage="/icemlogo2.png"
+      />
       <div className="neural-background"></div>
       <div className="container registration-grid">
 
