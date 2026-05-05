@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { PenTool, BrainCircuit, Monitor, RadioTower, Zap, TrendingUp, Leaf } from 'lucide-react';
+import SEO from '../components/SEO';
 import './ConferenceTracks.css';
 
 const ConferenceTracks = () => {
@@ -50,6 +51,10 @@ const ConferenceTracks = () => {
 
   return (
     <div className="tracks-page">
+      <SEO 
+        title="Conference Tracks & Research Domains" 
+        description="Explore the multidisciplinary research tracks of ICEM 2026. From AI and Machine Learning to Sustainable Practices and Business Innovation. View our technical domains." 
+      />
       {/* Background Ambience */}
       <div className="tracks-ambient-glow"></div>
 
