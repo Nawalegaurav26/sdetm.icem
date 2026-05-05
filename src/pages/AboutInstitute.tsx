@@ -1,11 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Target, Award, Users, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import './AboutInstitute.css';
 
 const AboutInstitute: React.FC = () => {
   return (
     <div className="about-page">
+      <SEO 
+        title="About Indira College of Engineering & Management (ICEM)" 
+        description="Learn about ICEM Pune, a premier engineering institute under the Indira Group of Institutes. Explore our vision, mission, academic departments, and legacy of excellence." 
+      />
       {/* Background Ambience */}
       <div className="about-ambient-glow"></div>
       <div className="about-ambient-glow-2"></div>
