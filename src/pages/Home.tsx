@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Calendar, MapPin, Award, Zap, Users, Globe, BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
 import { trackEvent } from '../components/Analytics';
 import './Home.css';
 
 const Home = () => {
-  const navigate = useNavigate();
 
   const handleRegisterClick = () => {
     trackEvent('click', 'Engagement', 'Register Now Button - Hero');
