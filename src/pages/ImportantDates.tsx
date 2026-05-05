@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, CheckCircle, AlertCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 import './ImportantDates.css';
 
 const dates = [
@@ -44,6 +45,10 @@ const dates = [
 const ImportantDates = () => {
   return (
     <div className="dates-page">
+      <SEO 
+        title="Important Dates & Deadlines" 
+        description="Stay updated with ICEM 2026 deadlines. Key dates for paper submission, notification of acceptance, camera-ready submission, and conference registration." 
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
