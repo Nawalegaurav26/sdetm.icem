@@ -1,9 +1,29 @@
-import { ArrowRight, Calendar, MapPin, Award } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Calendar, MapPin, Award, Zap, Users, Globe, BookOpen } from 'lucide-react';
+import SEO from '../components/SEO';
+import { trackEvent } from '../components/Analytics';
 import './Home.css';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    trackEvent('click', 'Engagement', 'Register Now Button - Hero');
+    window.location.href = 'https://sdetm-icem.vercel.app/registration';
+  };
+
+  const handleSubmitClick = () => {
+    trackEvent('click', 'Engagement', 'Submit Paper Button - Hero');
+    window.location.href = 'https://sdetm-icem.vercel.app/submission';
+  };
+
   return (
     <div className="home-page">
+      <SEO 
+        title="Home"
+        description="Welcome to ICEM 2026, the premier International Conference on Sustainable Developments in Engineering, Technology & Management. Join global pioneers in Pune to explore Next-Gen Technology, AI, and Sustainable Innovation."
+        ogImage="/sdetm-logo.png"
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container hero-container">
@@ -30,10 +50,16 @@ const Home = () => {
             </div>
 
             <div className="hero-actions">
-              <button className="premium-btn premium-btn-primary">
+              <button 
+                className="premium-btn premium-btn-primary"
+                onClick={handleRegisterClick}
+              >
                 Register Now <ArrowRight size={18} />
               </button>
-              <button className="premium-btn premium-btn-secondary">
+              <button 
+                className="premium-btn premium-btn-secondary"
+                onClick={handleSubmitClick}
+              >
                 Submit Paper
               </button>
             </div>
@@ -59,6 +85,35 @@ const Home = () => {
                   <p>(In process not done yet) Proposal send)</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Attend Section - New Marketing Addition */}
+      <section className="why-attend-section section-padding">
+        <div className="container">
+          <h2 className="section-title text-center mb-8">Why Join <span className="premium-gradient">ICEM 2026?</span></h2>
+          <div className="grid-4">
+            <div className="feature-card glass">
+              <div className="feature-icon"><BookOpen size={24} /></div>
+              <h3>Global Publication</h3>
+              <p>Accepted papers will be published in Scopus Indexed and prestigious international journals.</p>
+            </div>
+            <div className="feature-card glass">
+              <div className="feature-icon"><Users size={24} /></div>
+              <h3>Elite Networking</h3>
+              <p>Connect with 500+ researchers, industry leaders, and academic pioneers from 10+ countries.</p>
+            </div>
+            <div className="feature-card glass">
+              <div className="feature-icon"><Globe size={24} /></div>
+              <h3>Hybrid Platform</h3>
+              <p>Flexibility to present and participate either in-person at our Pune campus or virtually.</p>
+            </div>
+            <div className="feature-card glass">
+              <div className="feature-icon"><Zap size={24} /></div>
+              <h3>Innovation Hub</h3>
+              <p>Exclusive access to workshops on AI, Quantum Computing, and Sustainable Engineering.</p>
             </div>
           </div>
         </div>
