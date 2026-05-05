@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FloatingCTA from './components/FloatingCTA';
+import Analytics from './components/Analytics';
 import Home from './pages/Home';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import Venue from './pages/Venue';
@@ -20,8 +22,10 @@ function App() {
   return (
     <Router>
       <div className="app-wrapper">
+        <Analytics />
         <BackgroundAnimation />
         <Header />
+        <FloatingCTA />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
