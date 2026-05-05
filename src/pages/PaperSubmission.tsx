@@ -1,5 +1,6 @@
 import { FileText, Shield, Globe, CheckCircle, ChevronRight, Calendar, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 import './PaperSubmission.css';
 
 /*
@@ -40,9 +41,15 @@ const faqs = [
   { q: 'Is there a submission fee?', a: 'There is no fee for submitting a paper. Registration fees apply only after acceptance of your paper.' },
 ];
 
+
+
 const PaperSubmission = () => {
   return (
     <div className="sub-page">
+      <SEO 
+        title="Call for Papers"
+        description="Submit your research to ICEM SDETM 2026. Peer-reviewed publication in Scopus-indexed proceedings. Guidelines for Mechanical, AI, IT, and Management tracks."
+      />
 
       {/* ── Hero ── */}
       <section className="sub-hero">
