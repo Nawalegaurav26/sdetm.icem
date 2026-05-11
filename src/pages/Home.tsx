@@ -80,7 +80,7 @@ const Home = () => {
                 <Award size={32} />
                 <div className="status-text">
                   <h3>Scopus Indexed</h3>
-                  <p>(In process not done yet) Proposal send)</p>
+                  <p>Quality Conference Papers will be published in Springer Nature proceedings and Future Technology Journal)</p>
                 </div>
               </div>
             </div>
