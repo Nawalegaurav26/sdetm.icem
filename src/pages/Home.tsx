@@ -79,7 +79,7 @@ const Home = () => {
               <div className="status-item">
                 <Award size={32} />
                 <div className="status-text">
-                  <h3>*Scopus Indexed</h3>
+                  <h3>Scopus Indexed</h3>
                   <p>(In process not done yet) Proposal send)</p>
                 </div>
               </div>
