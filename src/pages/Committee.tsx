@@ -142,7 +142,7 @@ const Committee = () => {
               { name: "Prof. Savita Jangale", role: "HOD, Civil", image: "/College%20Advisory%20Committee/08_prof_savita_jangale.png", linkedin: "https://www.linkedin.com/in/savita-jangale-0b3726170/" },
               { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA", image: "/College%20Advisory%20Committee/09_dr_avantika_bijawe.png" },
               { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png", linkedin: "https://www.linkedin.com/in/dr-deepa-jamnik-51baa2217/" },
-              { name: "Dr. Archana Savle", role: "Dean Entrepreneurship Development", image: "/College%20Advisory%20Committee/11_dr_archana_salve.png", linkedin: "https://www.linkedin.com/in/dr-archana-salve-3468592b/" }
+              { name: "Dr. Archana Savle", role: "Dean Entrepreneurship Development", image: "/College%20Advisory%20Committee/12_archana_salve.png", linkedin: "https://www.linkedin.com/in/dr-archana-salve-3468592b/" }
             ].map((member, idx) => (
               <MemberCard 
                 key={idx} 
