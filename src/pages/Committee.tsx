@@ -131,6 +131,7 @@ const Committee = () => {
           <h2 className="section-title text-center">College Advisory Committee</h2>
           <div className="committee-grid">
             {[
+              { name: "Mr. Anup Vaidya", role: "Campus Director - ICEM", image: "/College%20Advisory%20Committee/11_anup_vaidya.png", linkedin: "https://www.linkedin.com/in/anup-vaidya-377795236/" },
               { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans", image: "/College%20Advisory%20Committee/01_dr_soumitra_das.png", linkedin: "https://www.linkedin.com/in/dr-soumitra-das-a6415341/" },
               { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png", linkedin: "https://www.linkedin.com/in/poornashankar10/" },
               { name: "Dr. Mahesh Bhong", role: "Dean, R&D", image: "/College%20Advisory%20Committee/03_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
