@@ -66,6 +66,7 @@ const Committee = () => {
               name="Mr. Shardul Gangal" 
               role="Executive Director – IU" 
               org="Trustee – Shree Chanakya Education Society (SCES)" 
+              image="/01%20Chief%20Patron,%2002%20Patron/05_mr_shardul_gangal.png"
               linkedin="https://www.linkedin.com/in/shardulgangal/"
             />
             <MemberCard 
