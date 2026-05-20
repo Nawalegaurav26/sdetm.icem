@@ -7,12 +7,12 @@ const Home = () => {
 
   const handleRegisterClick = () => {
     trackEvent('click', 'Engagement', 'Register Now Button - Hero');
-    window.location.href = 'https://sdetm-icem.vercel.app/registration';
+    window.location.href = 'https://sdetm.indiraicem.ac.in/registration';
   };
 
   const handleSubmitClick = () => {
     trackEvent('click', 'Engagement', 'Submit Paper Button - Hero');
-    window.location.href = 'https://sdetm-icem.vercel.app/submission';
+    window.location.href = 'https://sdetm.indiraicem.ac.in/submission';
   };
 
   return (

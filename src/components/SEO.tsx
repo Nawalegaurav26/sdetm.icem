@@ -18,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const location = useLocation();
   const baseTitle = "ICEM 2026 | International Conference | Pune";
-  const baseUrl = "https://sdetm-icem.vercel.app";
+  const baseUrl = "https://sdetm.indiraicem.ac.in";
   const fullTitle = title ? `${title} | ${baseTitle}` : baseTitle;
 
   useEffect(() => {
