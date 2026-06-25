@@ -74,11 +74,16 @@ const SEO: React.FC<SEOProps> = ({
         "name": "Indira College of Engineering and Management",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Gat No. 276, Parandwadi, Tal. Maval",
+          "streetAddress": "Gat No. 276, Parandwadi, Tal. Maval, Pune",
           "addressLocality": "Pune",
           "postalCode": "410506",
           "addressRegion": "Maharashtra",
           "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.6656,
+          "longitude": 73.6669
         }
       },
       "image": [
