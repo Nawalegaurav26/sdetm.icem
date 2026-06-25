@@ -127,6 +127,31 @@
   justify-content: center;
 }
 
+.sub-cmt-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #43ccd1;
+  border: 1px solid #43ccd1;
+  border-radius: 12px;
+  padding: 14px 24px;
+  color: #060f1e;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: 100%;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 15px rgba(67, 204, 209, 0.15);
+}
+
+.sub-cmt-btn:hover {
+  background: transparent;
+  color: #43ccd1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(67, 204, 209, 0.3);
+}
+
 .sub-cmt-hint {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.4);
