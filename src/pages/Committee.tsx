@@ -275,7 +275,7 @@ const Committee = () => {
                 { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png", linkedin: "https://www.linkedin.com/in/ashwini-gaikwad-534a74218/" },
                 { name: "Ms. Ashwini Admane", role: "Assistant Professor", image: "/Organizing%20Committee/09_ms_ashwini_admane.png", linkedin: "https://www.linkedin.com/in/ashwini-admane-38328a151/" },
                 { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png", linkedin: "https://www.linkedin.com/in/shubhangi-manwatkar-33b66a3b1/" },
-                { name: "Prof. Vishal Abhiman Meshram", role: "Assistant Professor", image: "/Organizing%20Committee/17_prof_vishal_abhiman_meshram.jpg" }
+                { name: "Prof. Vishal Abhiman Meshram", role: "Assistant Professor", image: "/Organizing%20Committee/17_prof_vishal_abhiman_meshram.jpg", linkedin: "https://www.linkedin.com/in/vishal-a-meshram-ba17b618/" }
               ].map((member, idx) => (
                 <MemberCard 
                   key={idx} 
