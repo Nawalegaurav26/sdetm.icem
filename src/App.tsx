@@ -57,12 +57,6 @@ function App() {
             <Route path="/venue" element={<Venue />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* More / Misc */}
-            <Route path="/program" element={<ComingSoon title="Conference Program" />} />
-            <Route path="/partners" element={<ComingSoon title="Technical Partners & Sponsors" />} />
-            <Route path="/downloads" element={<ComingSoon title="Brochure & Forms" />} />
-            <Route path="/faq" element={<ComingSoon title="Frequently Asked Questions" />} />
-            <Route path="/policies" element={<ComingSoon title="Policies" />} />
           </Routes>
         </main>
         <Footer />
