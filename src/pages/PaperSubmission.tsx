@@ -83,19 +83,23 @@ const PaperSubmission = () => {
               <span className="sub-cmt-badge">Where to Submit</span>
               <h2 className="sub-cmt-title">Submission via Microsoft CMT</h2>
               <p className="sub-cmt-desc">
-                Submission will be done through Microsoft CMT. The submission link will be
-                available soon. Please check back closer to the submission deadline.
+                Please submit your research paper using the official Microsoft CMT portal. Click the button to get started.
               </p>
             </div>
             <div className="sub-cmt-right">
-              <div className="sub-cmt-coming-soon">
+              <a 
+                href="https://cmt3.research.microsoft.com/SDETM2026" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="sub-cmt-btn"
+              >
                 <Globe size={22} />
-                <span>CMT Link — Coming Soon</span>
-              </div>
+                <span>Submit Paper via Microsoft CMT</span>
+              </a>
               <p className="sub-cmt-hint">
                 Visit{' '}
-                <a href="https://cmt3.research.microsoft.com/" target="_blank" rel="noopener noreferrer">
-                  cmt3.research.microsoft.com
+                <a href="https://cmt3.research.microsoft.com/SDETM2026" target="_blank" rel="noopener noreferrer">
+                  cmt3.research.microsoft.com/SDETM2026
                 </a>{' '}
                 for more information.
               </p>
