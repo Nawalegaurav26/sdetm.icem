@@ -85,7 +85,7 @@ const Footer = () => {
         <div className="container footer-bottom-inner">
           <div className="footer-credits">
             <p>© {new Date().getFullYear()} Indira College of Engineering and Management — All Rights Reserved.</p>
-            <p className="designed-by">Designed &amp; Developed by <a href="https://lifetime-learner26.netlify.app/about" target="_blank" rel="noopener noreferrer" className="certiown-link">CertiOwn team</a></p>
+            <p className="designed-by">Designed &amp; Developed by <a href="https://www.gauravnawale.in/" target="_blank" rel="noopener noreferrer" className="certiown-link">Gaurav Raju Nawale (CertiOwn team )</a></p>
           </div>
           <div className="policy-links">
             <a href="https://www.indiraicem.ac.in/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
