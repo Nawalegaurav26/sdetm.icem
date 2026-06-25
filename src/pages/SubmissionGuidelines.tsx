@@ -88,7 +88,7 @@ const SubmissionGuidelines = () => {
 
               <button 
                 className="premium-btn premium-btn-primary full-width"
-                onClick={() => window.open('https://cmt3.research.microsoft.com/', '_blank')}
+                onClick={() => window.open('https://cmt3.research.microsoft.com/SDETM2026', '_blank')}
               >
                 Go to Microsoft CMT
               </button>
