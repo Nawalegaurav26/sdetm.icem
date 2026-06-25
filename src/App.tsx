@@ -6,9 +6,9 @@ import Analytics from './components/Analytics';
 import Home from './pages/Home';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import Venue from './pages/Venue';
-import ComingSoon from './pages/ComingSoon';
 import Registration from './pages/Registration';
 import Committee from './pages/Committee';
+import ScrollToTop from './components/ScrollToTop';
 
 import Contact from './pages/Contact';
 import ImportantDates from './pages/ImportantDates';
@@ -21,6 +21,7 @@ import './index.css';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-wrapper">
         <Analytics />
         <BackgroundAnimation />
