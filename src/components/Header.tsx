@@ -36,15 +36,6 @@ const Header = () => {
     { title: 'DATES', path: '/dates' },
     { title: 'REGISTRATION', path: '/registration' },
     { title: 'VENUE', path: '/venue' },
-    {
-      title: 'MORE', children: [
-        { name: 'Program', path: '/program' },
-        { name: 'Partners', path: '/partners' },
-        { name: 'Downloads', path: '/downloads' },
-        { name: 'FAQ', path: '/faq' },
-        { name: 'Policies', path: '/policies' }
-      ]
-    },
     { title: 'CONTACT', path: '/contact' },
   ];
 
