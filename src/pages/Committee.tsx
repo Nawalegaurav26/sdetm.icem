@@ -325,7 +325,7 @@ const Committee = () => {
             <MemberCard 
               name="Gaurav Raju Nawale" 
               role="Technical Secretary" 
-              org="Founder of CertiOwn" 
+              org={"Student at ICEM, Pune\nFounder of CertiOwn; www.gauravnawale.in"} 
               email="gaurav.nawale@indiraicem.ac.in"
               linkedin="https://www.linkedin.com/in/nawalegaurav26/"
               image="/Students%20Organizing%20Committee/01_Mr_Gaurav_Raju_Nawale.png"
