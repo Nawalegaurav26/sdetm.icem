@@ -268,10 +268,9 @@ const PaperSubmission = () => {
       {/* ── FINAL NOTE ── */}
       <section className="sub-final-cta">
         <div className="sub-container sub-cta-inner">
-          <h3 className="sub-final-title">Submission Portal Opening Soon</h3>
+          <h3 className="sub-final-title">Submit Your Research Paper</h3>
           <p className="sub-cta-note">
-            The Microsoft CMT submission link will be activated before the deadline.
-            Prepare your manuscript as per the guidelines above.
+            The Microsoft CMT submission portal is now active. Please use the link above to submit your manuscript for review.
           </p>
         </div>
       </section>
