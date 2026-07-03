@@ -348,6 +348,7 @@ const Committee = () => {
               name="Jay Goureeshankar Gupta" 
               role="TY AIDS" 
               org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/jay-gupta-a1876841b"
               image="/Students%20Organizing%20Committee/0_Jay_Goureeshankar_Gupta.jpeg"
             />
           </div>
