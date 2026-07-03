@@ -112,6 +112,15 @@
   min-width: 220px;
 }
 
+.sub-cmt-right-grouped {
+  gap: 15px;
+}
+
+.sub-cmt-btn-register {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+}
+
 .sub-cmt-coming-soon {
   display: flex;
   align-items: center;

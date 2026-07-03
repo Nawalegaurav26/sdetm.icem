@@ -86,7 +86,16 @@ const PaperSubmission = () => {
                 Please submit your research paper using the official Microsoft CMT portal. Click the button to get started.
               </p>
             </div>
-            <div className="sub-cmt-right">
+            <div className="sub-cmt-right sub-cmt-right-grouped">
+              <a 
+                href="https://forms.gle/c9gtHqSeiwB8kGsM6" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="sub-cmt-btn sub-cmt-btn-register"
+              >
+                <FileText size={22} />
+                <span>Register for Conference</span>
+              </a>
               <a 
                 href="https://cmt3.research.microsoft.com/SDETM2026" 
                 target="_blank" 

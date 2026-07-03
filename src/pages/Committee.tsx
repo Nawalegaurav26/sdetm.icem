@@ -293,14 +293,13 @@ const Committee = () => {
             <h3 className="dept-title">AI & Data Science</h3>
             <div className="committee-grid">
               {[
+                { name: "Dr. Sachin Babar", role: "Professor", image: "/Organizing%20Committee/dr_sachin_babar.jpeg", linkedin: "https://www.linkedin.com/in/dr-sachin-babar-42214516/" },
                 { name: "Ms. Deepa Padwal", role: "Assistant Professor", image: "/Organizing%20Committee/11_ms_deepa_padwal.png", linkedin: "https://www.linkedin.com/in/deepa-padwal/" },
                 { name: "Ms. Pallavi Chavan", role: "Assistant Professor", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png", linkedin: "https://www.linkedin.com/in/pallavi-chavan1731/" },
-                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monika-patil-7b198822a/" },
-                { name: "Ms. Kavita Sharma", role: "Assistant Professor", image: "/Organizing%20Committee/14_ms_kavita_sharma.png", linkedin: "https://www.linkedin.com/in/kavita-sharma-1405/" },
-                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-7a5b3b1a/" },
-                { name: "Ms. Vidya Dhoke", role: "Assistant Professor", image: "/Organizing%20Committee/16_ms_vidya_dhoke.png", linkedin: "https://www.linkedin.com/in/vidya-dhoke-4a1b3b1a/" },
-                { name: "Mr. Tushar Mahore", role: "Assistant Professor" },
-                { name: "Ms. Tanuja Pande", role: "Assistant Professor" }
+                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monikapatil/" },
+                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-166258296/" },
+                { name: "Mr. Tushar Mahore", role: "Assistant Professor", image: "/Organizing%20Committee/Prof_Tushar_Mahore.jpg", linkedin: "https://www.linkedin.com/in/tushar-mahore-643037a3/" },
+                { name: "Ms. Tanuja Pande", role: "Assistant Professor", image: "/Organizing%20Committee/Ms_Tanuja_Pande.jpeg", linkedin: "https://www.linkedin.com/in/tanuja-lanjewar-206418360" }
               ].map((member, idx) => (
                 <MemberCard 
                   key={idx} 
@@ -328,7 +327,7 @@ const Committee = () => {
               org={"Student at ICEM, Pune\nFounder of CertiOwn; www.gauravnawale.in"} 
               email="gaurav.nawale@indiraicem.ac.in"
               linkedin="https://www.linkedin.com/in/nawalegaurav26/"
-              image="/Students%20Organizing%20Committee/01_Mr_Gaurav_Raju_Nawale.png"
+              image="/Students%20Organizing%20Committee/01_Mr_Gaurav_Raju_Nawale_updated.jpg"
             />
             <MemberCard 
               name="Vaishnavi Patare" 
@@ -337,6 +336,19 @@ const Committee = () => {
               email="vaishnavi.paratre@indiraicem.ac.in"
               linkedin="https://www.linkedin.com/in/vaishnavi-patare-99a4ab379/"
               image="/Students%20Organizing%20Committee/02_ms_vaishnavi_patare.png"
+            />
+            <MemberCard 
+              name="Vedant Vijay Padmawar" 
+              role="TY AIDS" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/vedant-padmawar-99550532b/"
+              image="/Students%20Organizing%20Committee/05_vedant.jpeg"
+            />
+            <MemberCard 
+              name="Jay Goureeshankar Gupta" 
+              role="TY AIDS" 
+              org="Student at ICEM, Pune" 
+              image="/Students%20Organizing%20Committee/0_Jay_Goureeshankar_Gupta.jpeg"
             />
           </div>
         </section>
