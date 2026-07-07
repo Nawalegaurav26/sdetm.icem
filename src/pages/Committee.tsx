@@ -351,6 +351,20 @@ const Committee = () => {
               linkedin="https://www.linkedin.com/in/jay-gupta-a1876841b"
               image="/Students%20Organizing%20Committee/0_Jay_Goureeshankar_Gupta.jpeg"
             />
+            <MemberCard 
+              name="Aditya Anil Jathar" 
+              role="SY AIDS" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/aditya-jathar-a51538386?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/03_aditya_jathar.jpeg"
+            />
+            <MemberCard 
+              name="Rushikesh Vijay Mahanor" 
+              role="SE Computer Engineering" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/rushikesh-m-909966386?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/04_rushikesh_vijay.jpeg"
+            />
           </div>
         </section>
       );
