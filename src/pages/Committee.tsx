@@ -198,6 +198,13 @@ const Committee = () => {
                 org: "World CSR Day & World Sustainability",
                 image: "/International%20Advisory%20Committee/05_dr_r_l_bhatia.png",
                 linkedin: "https://www.linkedin.com/in/drrlbhatia/"
+              },
+              {
+                name: "Yoshitaka Taguchi",
+                role: "Chairman, President, and CEO",
+                org: "Seino Holdings Co., Ltd",
+                image: "/International%20Advisory%20Committee/Yoshitaka%20Taguchi.jpeg",
+                linkedin: "https://www.linkedin.com/company/seino-holdings-co-ltd/posts/?feedView=all"
               }
             ].map((member, idx) => (
               <MemberCard 
