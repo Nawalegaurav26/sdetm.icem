@@ -11,6 +11,36 @@ interface MemberProps {
   linkedin?: string;
 }
 
+const renderOrg = (text: string) => {
+  return text.split('\n').map((line, i) => {
+    if (line.includes('www.') || line.includes('http://') || line.includes('https://')) {
+      const words = line.split(' ');
+      return (
+        <span key={i} style={{ display: 'block' }}>
+          {words.map((word, wIdx) => {
+            if (word.startsWith('www.') || word.startsWith('http://') || word.startsWith('https://')) {
+              const href = word.startsWith('http') ? word : `https://${word}`;
+              const cleanHref = href.endsWith(';') ? href.slice(0, -1) : href;
+              const cleanWord = word.endsWith(';') ? word.slice(0, -1) : word;
+              const suffix = word.endsWith(';') ? ';' : '';
+              return (
+                <span key={wIdx}>
+                  <a href={cleanHref} target="_blank" rel="noopener noreferrer" style={{ color: '#43ccd1', textDecoration: 'underline' }}>
+                    {cleanWord}
+                  </a>
+                  {suffix}{' '}
+                </span>
+              );
+            }
+            return word + ' ';
+          })}
+        </span>
+      );
+    }
+    return <span key={i} style={{ display: 'block' }}>{line}</span>;
+  });
+};
+
 const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, linkedin }) => (
   <div className="profile-card" itemScope itemType="http://schema.org/Person">
     <div className="profile-image-container">
@@ -23,7 +53,9 @@ const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, link
     <div className="profile-info">
       <span className="role" itemProp="jobTitle">{role}</span>
       <h3 itemProp="name">{name}</h3>
-      <span className="org" itemProp="affiliation">{org}</span>
+      <span className="org" itemProp="affiliation">
+        {renderOrg(org)}
+      </span>
     </div>
     <div className="profile-social">
       {email && <a href={`mailto:${email}`} title="Email" itemProp="email"><Mail size={18} /></a>}
