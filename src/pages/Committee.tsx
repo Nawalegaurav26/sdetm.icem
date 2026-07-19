@@ -330,7 +330,7 @@ const Committee = () => {
           <div className="committee-grid">
             <MemberCard 
               name="Gaurav Raju Nawale" 
-              role="International Conference Student Organise Committee's Head" 
+              role="Student Organise Committee's Head" 
               org={"Student at ICEM, Pune\nFounder of CertiOwn\nwww.gauravnawale.in"} 
               email="gaurav.nawale@indiraicem.ac.in"
               linkedin="https://www.linkedin.com/in/nawalegaurav26/"
