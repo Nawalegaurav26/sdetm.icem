@@ -351,6 +351,27 @@ const Committee = () => {
               ))}
             </div>
           </div>
+
+          <div className="dept-group dept-group-mt">
+            <h3 className="dept-title">Other Departments</h3>
+            <div className="committee-grid">
+              {[
+                { name: "Dr. Shwetkranti Taware", role: "Assistant Professor", image: "/Organizing%20Committee/Dr.Shwetkranti%20Taware.jpeg", linkedin: "https://www.linkedin.com/in/dr-shwetkranti-taware-gaikwad-46102a75", email: "shweta.tawhare@indiraicem.ac.in", org: "Computer Department, ICEM" },
+                { name: "Prof. S. R. Satpute", role: "Assistant Professor", image: "/Organizing%20Committee/Prof.%20Shreyas%20Satpute.jpg", linkedin: "https://www.linkedin.com/in/shreyas-satpute-3857a031/", email: "shreyas.satpute@indiraicem.ac.in", org: "Civil Department, ICEM" },
+                { name: "Dr. Dhanashree Patil", role: "Assistant Professor", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250", email: "dhanashree.pisal@indiraicem.ac.in", org: "MCA Department, ICEM" }
+              ].map((member, idx) => (
+                <MemberCard 
+                  key={idx} 
+                  name={member.name} 
+                  role={member.role} 
+                  org={member.org} 
+                  image={member.image}
+                  linkedin={member.linkedin}
+                  email={member.email}
+                />
+              ))}
+            </div>
+          </div>
         </section>
       );
     }

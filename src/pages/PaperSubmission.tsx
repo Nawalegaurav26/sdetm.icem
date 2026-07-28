@@ -1,4 +1,4 @@
-import { FileText, Shield, Globe, CheckCircle, ChevronRight, Calendar, AlertCircle } from 'lucide-react';
+import { FileText, Shield, Globe, CheckCircle, ChevronRight, Calendar, AlertCircle, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import './PaperSubmission.css';
@@ -104,6 +104,14 @@ const PaperSubmission = () => {
               >
                 <Globe size={22} />
                 <span>Submit Paper via Microsoft CMT</span>
+              </a>
+              <a 
+                href="/conference-template-a4.docx" 
+                download="conference-template-a4.docx"
+                className="sub-cmt-btn sub-cmt-btn-outline"
+              >
+                <Download size={22} />
+                <span>Download IEEE Template</span>
               </a>
               <p className="sub-cmt-hint">
                 Visit{' '}

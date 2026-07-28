@@ -161,6 +161,18 @@
   box-shadow: 0 4px 20px rgba(67, 204, 209, 0.3);
 }
 
+.sub-cmt-btn-outline {
+  background: transparent;
+  border-color: #43ccd1;
+  color: #43ccd1;
+  box-shadow: none;
+}
+
+.sub-cmt-btn-outline:hover {
+  background: rgba(67, 204, 209, 0.1);
+  color: #43ccd1;
+}
+
 .sub-cmt-hint {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.4);
