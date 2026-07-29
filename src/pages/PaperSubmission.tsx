@@ -29,7 +29,7 @@ const submissionGuidelines = [
 ];
 
 const importantDates = [
-  { label: 'Paper Submission Deadline', date: '31 July 2026', icon: <Calendar size={20} /> },
+  { label: 'Paper Submission Deadline', date: '14 August 2026', icon: <Calendar size={20} /> },
   { label: 'Acceptance Notification', date: '15 September 2026', icon: <CheckCircle size={20} /> },
   { label: 'Registration Deadline', date: '30 September 2026', icon: <AlertCircle size={20} /> },
 ];
@@ -48,7 +48,7 @@ const PaperSubmission = () => {
     <div className="sub-page">
       <SEO 
         title="Call for Papers"
-        description="Submit your research to ICEM SDETM 2026. Peer-reviewed publication in Scopus-indexed proceedings. Guidelines for Mechanical, AI, IT, and Management tracks."
+        description="Submit your research to ICEM SDETM 2026. Peer-reviewed publication. Guidelines for Mechanical, AI, IT, and Management tracks."
       />
 
       {/* ── Hero ── */}
@@ -65,7 +65,7 @@ const PaperSubmission = () => {
           </h1>
           <p className="sub-hero-desc">
             ICEM SDETM 2026 invites researchers, academicians and industry professionals to submit
-            original work for review and publication in SCOPUS-indexed proceedings.
+            original work for review and publication in proceedings published by Springer Nature ( Atlantic Press ) and Future Publishing LLC.
           </p>
         </motion.div>
       </section>

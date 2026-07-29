@@ -6,7 +6,7 @@ import './ImportantDates.css';
 const dates = [
   {
     label: 'Full Paper Submission',
-    date: '31st July 2026',
+    date: '14th August 2026',
     deadline: true,
     status: 'open',
     note: 'Submit via Microsoft CMT portal'

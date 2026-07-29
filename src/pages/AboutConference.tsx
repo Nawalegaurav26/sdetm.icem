@@ -6,7 +6,7 @@ import './AboutConference.css';
 const AboutConference = () => {
   const highlights = [
     { icon: <Globe size={28} />, title: 'International Scope', desc: 'Researchers from across India and abroad presenting cutting-edge work.' },
-    { icon: <BookOpen size={28} />, title: 'Scopus Indexed', desc: 'Accepted papers published in Springer Nature proceedings, Scopus indexed.' },
+    { icon: <BookOpen size={28} />, title: 'Publication', desc: 'Accepted papers published in Springer Nature ( Atlantic Press ) & Future Publishing LLC.' },
     { icon: <Users size={28} />, title: '500+ Delegates', desc: 'Academics, industry professionals, students, and researchers under one roof.' },
     { icon: <Award size={28} />, title: 'Double-Blind Review', desc: 'Rigorous peer-review ensuring only the best research is accepted.' },
     { icon: <Star size={28} />, title: 'Second SDETM Edition', desc: 'Building on the success of the first SDETM conference with greater scope.' },
@@ -16,7 +16,7 @@ const AboutConference = () => {
     <div className="about-conf-page">
       <SEO 
         title="About ICSDETM 2026" 
-        description="Learn more about the International Conference on Sustainable Developments in Engineering, Technology & Management. Discover our objectives, highlights, and Scopus indexed publication opportunities." 
+        description="Learn more about the International Conference on Sustainable Developments in Engineering, Technology & Management. Discover our objectives, highlights, and publication opportunities." 
       />
       <div className="container">
         <motion.div
@@ -47,7 +47,7 @@ const AboutConference = () => {
             </p>
             <h2 className="about-conf-objective-title">Objective</h2>
             <p>
-              The conference aims to provide a global platform for publishing and disseminating original research, creating networking opportunities for academics and industry leaders, and inspiring the next generation of engineers and innovators. Accepted papers will be published in conference proceedings indexed by <strong>SCOPUS</strong>, published by <strong>Springer Nature – Future Technology</strong>.
+              The conference aims to provide a global platform for publishing and disseminating original research, creating networking opportunities for academics and industry leaders, and inspiring the next generation of engineers and innovators. Accepted papers will be published in conference proceedings published by <strong>Springer Nature ( Atlantic Press )</strong> and <strong>Future Publishing LLC</strong>.
             </p>
           </motion.div>
 

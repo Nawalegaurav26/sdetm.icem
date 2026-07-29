@@ -79,8 +79,8 @@ const Home = () => {
               <div className="status-item">
                 <Award size={32} />
                 <div className="status-text">
-                  <h3>Scopus Indexed</h3>
-                  <p>Quality Conference Papers will be published in Springer Nature proceedings and Future Technology Journal)</p>
+                  <h3>Publication</h3>
+                  <p>Quality Conference Papers will be published in Springer Nature ( Atlantic Press )<br /><strong>Future Publishing LLC</strong></p>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ const Home = () => {
             <div className="feature-card glass">
               <div className="feature-icon"><BookOpen size={24} /></div>
               <h3>Global Publication</h3>
-              <p>Accepted papers will be published in Scopus Indexed and prestigious international journals.</p>
+              <p>Accepted papers will be published in prestigious international journals.</p>
             </div>
             <div className="feature-card glass">
               <div className="feature-icon"><Users size={24} /></div>
@@ -210,7 +210,7 @@ const Home = () => {
             <div className="timeline-item glass">
               <div className="date-icon"><Calendar size={24} /></div>
               <div className="date-content">
-                <h3>31st July, 2026</h3>
+                <h3>14th August, 2026</h3>
                 <p>Submission of Full Length Paper</p>
               </div>
             </div>

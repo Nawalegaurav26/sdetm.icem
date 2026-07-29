@@ -66,7 +66,7 @@ const Contact = () => {
               <div>
                 <h3>Conference Date</h3>
                 <p>4–5 November 2026</p>
-                <p className="muted">Paper Submission Deadline: 31st July 2026</p>
+                <p className="muted">Paper Submission Deadline: 14th August 2026</p>
               </div>
             </motion.div>
           </div>

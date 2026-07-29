@@ -46,13 +46,13 @@ const SubmissionGuidelines = () => {
             </section>
 
             <section className="guide-section">
-              <h2 className="guide-title"><Globe size={24} /> Publication & Indexing</h2>
+              <h2 className="guide-title"><Globe size={24} /> Publication</h2>
               <div className="guide-card accent">
                 <p>
-                  Accepted papers will be published in the conference proceedings, indexed by <strong>SCOPUS</strong>.
+                  Accepted papers will be published in the conference proceedings.
                 </p>
                 <p className="publication-note">
-                  Published by: SPRINGER NATURE, FUTURE TECHNOLOGY (Approval is in process).
+                  Published by: Springer Nature ( Atlantic Press ) &amp; Future Publishing LLC (Approval is in process).
                 </p>
               </div>
             </section>

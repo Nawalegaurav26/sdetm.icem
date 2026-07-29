@@ -296,81 +296,45 @@ const Committee = () => {
     }
 
     if (path.includes('/organizing')) {
+      const organizingMembers = [
+        { name: "Dr. Mahesh Bhong", role: "Associate Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/01_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
+        { name: "Mr. Hemant Darokar", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/02_mr_hemant_darokarm.png", linkedin: "https://www.linkedin.com/in/hemant-darokar-48a61743/" },
+        { name: "Mr. Sushil Chopade", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/03_mr_sushil_chopade.png", linkedin: "https://www.linkedin.com/in/sushil-chopade-2a2539310/" },
+        { name: "Mr. Sagar Chirade", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/04_mr_sagar_chirade.png", linkedin: "https://www.linkedin.com/in/sagar-chirade-17570316/" },
+        { name: "Mr. Amit Narwade", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/05_mr_amit_narwade.png", linkedin: "https://www.linkedin.com/in/amit-narwade-359488b9/" },
+        { name: "Mr. Pravin Charde", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/06_mr_pravin_charde.png", linkedin: "https://www.linkedin.com/in/pravin-charde-42290a161/" },
+        { name: "Ms. Pranali Khatke", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/07_ms_pranali_khatke.png", linkedin: "https://www.linkedin.com/in/pranali-khatake-313204a9/" },
+        { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png", linkedin: "https://www.linkedin.com/in/ashwini-gaikwad-534a74218/" },
+        { name: "Ms. Ashwini Admane", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/09_ms_ashwini_admane.png", linkedin: "https://www.linkedin.com/in/ashwini-admane-38328a151/" },
+        { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png", linkedin: "https://www.linkedin.com/in/shubhangi-manwatkar-33b66a3b1/" },
+        { name: "Prof. Vishal Abhiman Meshram", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/17_prof_vishal_abhiman_meshram.jpg", linkedin: "https://www.linkedin.com/in/vishal-a-meshram-ba17b618/" },
+        { name: "Dr. Sachin Babar", role: "Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/dr_sachin_babar.jpeg", linkedin: "https://www.linkedin.com/in/dr-sachin-babar-42214516/" },
+        { name: "Ms. Deepa Padwal", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/11_ms_deepa_padwal.png", linkedin: "https://www.linkedin.com/in/deepa-padwal/" },
+        { name: "Ms. Pallavi Chavan", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png", linkedin: "https://www.linkedin.com/in/pallavi-chavan1731/" },
+        { name: "Ms. Monika Patil", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monikapatil/" },
+        { name: "Mr. Vivek Kumar", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-166258296/" },
+        { name: "Mr. Tushar Mahore", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/Prof_Tushar_Mahore.jpg", linkedin: "https://www.linkedin.com/in/tushar-mahore-643037a3/" },
+        { name: "Ms. Tanuja Pande", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/Ms_Tanuja_Pande.jpeg", linkedin: "https://www.linkedin.com/in/tanuja-lanjewar-206418360" },
+        { name: "Dr. Shwetkranti Taware", role: "Assistant Professor", org: "Computer Department, ICEM", image: "/Organizing%20Committee/Dr.Shwetkranti%20Taware.jpeg", linkedin: "https://www.linkedin.com/in/dr-shwetkranti-taware-gaikwad-46102a75", email: "shweta.tawhare@indiraicem.ac.in" },
+        { name: "Prof. S. R. Satpute", role: "Assistant Professor", org: "Civil Department, ICEM", image: "/Organizing%20Committee/Prof.%20Shreyas%20Satpute.jpg", linkedin: "https://www.linkedin.com/in/shreyas-satpute-3857a031/", email: "shreyas.satpute@indiraicem.ac.in" },
+        { name: "Dr. Dhanashree Patil", role: "Assistant Professor", org: "MCA Department, ICEM", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250", email: "dhanashree.pisal@indiraicem.ac.in" }
+      ];
+
       return (
         <section className="committee-section">
           <h2 className="section-title text-center">Organizing Committee</h2>
-          
-          <div className="dept-group">
-            <h3 className="dept-title">Mechanical Engineering</h3>
-            <div className="committee-grid">
-              {[
-                { name: "Dr. Mahesh Bhong", role: "Associate Professor", image: "/Organizing%20Committee/01_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
-                { name: "Mr. Hemant Darokar", role: "Assistant Professor", image: "/Organizing%20Committee/02_mr_hemant_darokarm.png", linkedin: "https://www.linkedin.com/in/hemant-darokar-48a61743/" },
-                { name: "Mr. Sushil Chopade", role: "Assistant Professor", image: "/Organizing%20Committee/03_mr_sushil_chopade.png", linkedin: "https://www.linkedin.com/in/sushil-chopade-2a2539310/" },
-                { name: "Mr. Sagar Chirade", role: "Assistant Professor", image: "/Organizing%20Committee/04_mr_sagar_chirade.png", linkedin: "https://www.linkedin.com/in/sagar-chirade-17570316/" },
-                { name: "Mr. Amit Narwade", role: "Assistant Professor", image: "/Organizing%20Committee/05_mr_amit_narwade.png", linkedin: "https://www.linkedin.com/in/amit-narwade-359488b9/" },
-                { name: "Mr. Pravin Charde", role: "Assistant Professor", image: "/Organizing%20Committee/06_mr_pravin_charde.png", linkedin: "https://www.linkedin.com/in/pravin-charde-42290a161/" },
-                { name: "Ms. Pranali Khatke", role: "Assistant Professor", image: "/Organizing%20Committee/07_ms_pranali_khatke.png", linkedin: "https://www.linkedin.com/in/pranali-khatake-313204a9/" },
-                { name: "Ms. Ashwini Gaikwad", role: "Assistant Professor", image: "/Organizing%20Committee/08_ms_ashwini_gaikwad.png", linkedin: "https://www.linkedin.com/in/ashwini-gaikwad-534a74218/" },
-                { name: "Ms. Ashwini Admane", role: "Assistant Professor", image: "/Organizing%20Committee/09_ms_ashwini_admane.png", linkedin: "https://www.linkedin.com/in/ashwini-admane-38328a151/" },
-                { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png", linkedin: "https://www.linkedin.com/in/shubhangi-manwatkar-33b66a3b1/" },
-                { name: "Prof. Vishal Abhiman Meshram", role: "Assistant Professor", image: "/Organizing%20Committee/17_prof_vishal_abhiman_meshram.jpg", linkedin: "https://www.linkedin.com/in/vishal-a-meshram-ba17b618/" }
-              ].map((member, idx) => (
-                <MemberCard 
-                  key={idx} 
-                  name={member.name} 
-                  role={member.role} 
-                  org="Mechanical Department, ICEM" 
-                  image={member.image}
-                  linkedin={member.linkedin}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="dept-group dept-group-mt">
-            <h3 className="dept-title">AI & Data Science</h3>
-            <div className="committee-grid">
-              {[
-                { name: "Dr. Sachin Babar", role: "Professor", image: "/Organizing%20Committee/dr_sachin_babar.jpeg", linkedin: "https://www.linkedin.com/in/dr-sachin-babar-42214516/" },
-                { name: "Ms. Deepa Padwal", role: "Assistant Professor", image: "/Organizing%20Committee/11_ms_deepa_padwal.png", linkedin: "https://www.linkedin.com/in/deepa-padwal/" },
-                { name: "Ms. Pallavi Chavan", role: "Assistant Professor", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png", linkedin: "https://www.linkedin.com/in/pallavi-chavan1731/" },
-                { name: "Ms. Monika Patil", role: "Assistant Professor", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monikapatil/" },
-                { name: "Mr. Vivek Kumar", role: "Assistant Professor", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-166258296/" },
-                { name: "Mr. Tushar Mahore", role: "Assistant Professor", image: "/Organizing%20Committee/Prof_Tushar_Mahore.jpg", linkedin: "https://www.linkedin.com/in/tushar-mahore-643037a3/" },
-                { name: "Ms. Tanuja Pande", role: "Assistant Professor", image: "/Organizing%20Committee/Ms_Tanuja_Pande.jpeg", linkedin: "https://www.linkedin.com/in/tanuja-lanjewar-206418360" }
-              ].map((member, idx) => (
-                <MemberCard 
-                  key={idx} 
-                  name={member.name} 
-                  role={member.role} 
-                  org="AI-DS Department, ICEM" 
-                  image={member.image}
-                  linkedin={member.linkedin}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="dept-group dept-group-mt">
-            <h3 className="dept-title">Other Departments</h3>
-            <div className="committee-grid">
-              {[
-                { name: "Dr. Shwetkranti Taware", role: "Assistant Professor", image: "/Organizing%20Committee/Dr.Shwetkranti%20Taware.jpeg", linkedin: "https://www.linkedin.com/in/dr-shwetkranti-taware-gaikwad-46102a75", email: "shweta.tawhare@indiraicem.ac.in", org: "Computer Department, ICEM" },
-                { name: "Prof. S. R. Satpute", role: "Assistant Professor", image: "/Organizing%20Committee/Prof.%20Shreyas%20Satpute.jpg", linkedin: "https://www.linkedin.com/in/shreyas-satpute-3857a031/", email: "shreyas.satpute@indiraicem.ac.in", org: "Civil Department, ICEM" },
-                { name: "Dr. Dhanashree Patil", role: "Assistant Professor", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250", email: "dhanashree.pisal@indiraicem.ac.in", org: "MCA Department, ICEM" }
-              ].map((member, idx) => (
-                <MemberCard 
-                  key={idx} 
-                  name={member.name} 
-                  role={member.role} 
-                  org={member.org} 
-                  image={member.image}
-                  linkedin={member.linkedin}
-                  email={member.email}
-                />
-              ))}
-            </div>
+          <div className="committee-grid">
+            {organizingMembers.map((member, idx) => (
+              <MemberCard 
+                key={idx} 
+                name={member.name} 
+                role={member.role} 
+                org={member.org} 
+                image={member.image}
+                linkedin={member.linkedin}
+                email={member.email}
+              />
+            ))}
           </div>
         </section>
       );

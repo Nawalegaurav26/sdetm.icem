@@ -54,7 +54,7 @@ const Registration = () => {
                 </tbody>
               </table>
               <div className="hud-divider"></div>
-              <p className="fee-note">** Additional fee will be applicable for SCOPUS publication (T&amp;C Apply)</p>
+              <p className="fee-note">** Additional fee will be applicable for publication (T&amp;C Apply)</p>
             </div>
           </section>
 
