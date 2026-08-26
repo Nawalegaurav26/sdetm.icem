@@ -342,7 +342,7 @@ const Committee = () => {
         { name: "Dr. Dhanashree Patil", role: "Assistant Professor", org: "MCA Department, ICEM", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250" },
         { name: "Dr. Shrikant Mahindrakar", role: "Assistant Professor", org: "IT Department, ICEM", image: "/Organizing%20Committee/Dr.%20Shrikant%20Manikrao%20Mahindrakar.jpg", linkedin: "https://www.linkedin.com/in/dr-shrikant-mahindrakar-853ab1220/" },
         { name: "Prof. Nitin Kanade", role: "Assistant Professor", org: "MBA Department, ICEM", image: "/Organizing%20Committee/Prof.%20Nitin%20Kanade.jpg", linkedin: "https://www.linkedin.com/in/nitin-kanade-56298320/" },
-        { name: "Dr. Kalyan Bamane", role: "Assistant Professor", org: "ICEM, Pune", image: "/Organizing%20Committee/dr_kalyan%20Bamane.jpg", linkedin: "https://www.linkedin.com/in/kalyan-bamane-811b9515/" }
+        { name: "Dr. Kalyan Bamane", role: "Assistant Professor", org: "Computer Engg. Department, ICEM", image: "/Organizing%20Committee/dr_kalyan%20Bamane.jpg", linkedin: "https://www.linkedin.com/in/kalyan-bamane-811b9515/" }
       ];
 
       return (
