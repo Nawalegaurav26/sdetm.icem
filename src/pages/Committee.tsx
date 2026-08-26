@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin, Phone, GraduationCap, BookOpen, UserCircle } from 'lucide-react';
 import './Committee.css';
 
 interface MemberProps {
@@ -9,6 +9,10 @@ interface MemberProps {
   image?: string;
   email?: string;
   linkedin?: string;
+  contact?: string;
+  scopus?: string;
+  orcid?: string;
+  scholar?: string;
 }
 
 const renderOrg = (text: string) => {
@@ -41,13 +45,17 @@ const renderOrg = (text: string) => {
   });
 };
 
-const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, linkedin }) => (
+const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, linkedin, contact, scopus, orcid, scholar }) => (
   <div className="profile-card" itemScope itemType="http://schema.org/Person">
+    <meta itemProp="url" content={`https://sdetm.indiraicem.ac.in/committee`} />
+    <meta itemProp="memberOf" content="SDETM ICEM 2026 Committee" />
     <div className="profile-image-container">
       <img 
         itemProp="image" 
         src={image || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=003c84&color=fff&size=200`} 
-        alt={name} 
+        alt={`Profile photo of ${name} - ${role} at SDETM ICEM 2026`} 
+        title={`${name} - ${role} | SDETM ICEM 2026`}
+        loading="lazy"
       />
     </div>
     <div className="profile-info">
@@ -58,8 +66,12 @@ const MemberCard: React.FC<MemberProps> = ({ name, role, org, image, email, link
       </span>
     </div>
     <div className="profile-social">
+      {contact && <a href={`tel:${contact}`} title="Contact" itemProp="telephone"><Phone size={18} /></a>}
       {email && <a href={`mailto:${email}`} title="Email" itemProp="email"><Mail size={18} /></a>}
       {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn" itemProp="url"><Linkedin size={18} /></a>}
+      {scholar && <a href={scholar} target="_blank" rel="noopener noreferrer" title="Google Scholar" itemProp="url"><GraduationCap size={18} /></a>}
+      {scopus && <a href={scopus} target="_blank" rel="noopener noreferrer" title="Scopus" itemProp="url"><BookOpen size={18} /></a>}
+      {orcid && <a href={orcid} target="_blank" rel="noopener noreferrer" title="ORCID" itemProp="url"><UserCircle size={18} /></a>}
     </div>
   </div>
 );
@@ -165,17 +177,24 @@ const Committee = () => {
             {[
               { name: "Mr. Anup Vaidya", role: "Campus Director - ICEM", image: "/College%20Advisory%20Committee/11_anup_vaidya.png", linkedin: "https://www.linkedin.com/in/anup-vaidya-377795236/" },
               { name: "Dr. Soumitra Das", role: "Vice Principal & Head of Deans", image: "/College%20Advisory%20Committee/01_dr_soumitra_das.png", linkedin: "https://www.linkedin.com/in/dr-soumitra-das-a6415341/" },
-              { name: "Dr. Poorna Shankar", role: "Dean AI & HOD-Computer", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png", linkedin: "https://www.linkedin.com/in/poornashankar10/" },
+              { name: "Dr. Poorna Shankar", role: "Dean AI", image: "/College%20Advisory%20Committee/02_dr_poorna_shankar.png", linkedin: "https://www.linkedin.com/in/poornashankar10/" },
               { name: "Dr. Mahesh Bhong", role: "Dean, R&D", image: "/College%20Advisory%20Committee/03_dr_mahesh_bhong.png", linkedin: "https://www.linkedin.com/in/mahesh-bhong-3052ba50/" },
+              { name: "Dr. Archana Savle", role: "Dean Entrepreneurship Development", image: "/College%20Advisory%20Committee/12_archana_salve.png", linkedin: "https://www.linkedin.com/in/dr-archana-salve-3468592b/" },
+              { name: "Dr. Deepa Jamnik", role: "Dean of Events", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png", linkedin: "https://www.linkedin.com/in/dr-deepa-jamnik-51baa2217/" },
+              { name: "Dr. Priyanka Pawar", role: "Dean of Learning & Development", image: "/College%20Advisory%20Committee/06_dr_priyanka_pawar.png", linkedin: "https://www.linkedin.com/in/dr-priyanka-pawar-863b1218/" },
+              { name: "Lt Col ( Dr.) Prashant Sunil Borde (Retd)", role: "HoD of MBA", image: "/College%20Advisory%20Committee/lt_col_Dr_prshant_sunil_borde.png", linkedin: "https://www.linkedin.com/in/prashant-sunil-borde/" },
+              { 
+                name: "Dr Vivek V. Jog", 
+                role: "Professor & Head, Department of Computer Engineering", 
+                image: "/College%20Advisory%20Committee/13_dr_vivek_jog.png", 
+                linkedin: "https://www.linkedin.com/in/vivek-jog-b78a57106/"
+              },
               { name: "Prof. Meenakshi Patil", role: "HOD, ENTC", image: "/College%20Advisory%20Committee/04_prof_meenakshi_patil.png", linkedin: "https://www.linkedin.com/in/meenakshi-patil-003402a8/" },
-              { name: "Dr. Kirav Devade", role: "HOD, FE", image: "/College%20Advisory%20Committee/05_dr_kirav_devade.png", linkedin: "https://www.linkedin.com/in/kiran-devade-377b0857/" },
-              { name: "Dr. Priyanka Pawar", role: "HOD, MBA", image: "/College%20Advisory%20Committee/06_dr_priyanka_pawar.png", linkedin: "https://www.linkedin.com/in/dr-priyanka-pawar-863b1218/" },
+              { name: "Dr. Kiran Devade", role: "HOD, FE", image: "/College%20Advisory%20Committee/05_dr_kirav_devade.png", linkedin: "https://www.linkedin.com/in/kiran-devade-377b0857/" },
               { name: "Dr. Vikas Nandgaonkar", role: "HOD, IT", image: "/College%20Advisory%20Committee/07_dr_vikas_nandgaonkar.png", linkedin: "https://www.linkedin.com/in/vikas-nandgaonkar-b256b933/" },
               { name: "Prof. Savita Jangale", role: "HOD, Civil", image: "/College%20Advisory%20Committee/08_prof_savita_jangale.png", linkedin: "https://www.linkedin.com/in/savita-jangale-0b3726170/" },
-              { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA", image: "/College%20Advisory%20Committee/09_dr_avantika_bijawe.png" },
-              { name: "Dr. Deepa Jamnik", role: "HOD, BBA-MBA(Integrated)", image: "/College%20Advisory%20Committee/10_dr_deepa_jamnik.png", linkedin: "https://www.linkedin.com/in/dr-deepa-jamnik-51baa2217/" },
-              { name: "Dr. Archana Savle", role: "Dean Entrepreneurship Development", image: "/College%20Advisory%20Committee/12_archana_salve.png", linkedin: "https://www.linkedin.com/in/dr-archana-salve-3468592b/" }
-            ].map((member, idx) => (
+              { name: "Dr. Avantika Bijawe", role: "HOD, MCA & BCA", image: "/College%20Advisory%20Committee/09_dr_avantika_bijawe.png" }
+            ].map((member: any, idx) => (
               <MemberCard 
                 key={idx} 
                 name={member.name} 
@@ -308,20 +327,22 @@ const Committee = () => {
         { name: "Ms. Ashwini Admane", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/09_ms_ashwini_admane.png", linkedin: "https://www.linkedin.com/in/ashwini-admane-38328a151/" },
         { name: "Ms. Shubangi Manwatkar", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/10_ms_shubangi_manwatkar.png", linkedin: "https://www.linkedin.com/in/shubhangi-manwatkar-33b66a3b1/" },
         { name: "Prof. Vishal Abhiman Meshram", role: "Assistant Professor", org: "Mechanical Department, ICEM", image: "/Organizing%20Committee/17_prof_vishal_abhiman_meshram.jpg", linkedin: "https://www.linkedin.com/in/vishal-a-meshram-ba17b618/" },
-        { name: "Dr. Sachin Dilip Babar", role: "Professor", org: "AIDS Department, ICEM", image: "/Organizing%20Committee/Dr.%20Sachin%20Dilip%20Babar.png", linkedin: "https://www.linkedin.com/in/dr-sachin-babar-42214516/", email: "sachin.babar@indiraicem.ac.in" },
+        { name: "Dr. Sachin Dilip Babar", role: "Professor", org: "AIDS Department, ICEM", image: "/Organizing%20Committee/Dr.%20Sachin%20Dilip%20Babar.png", linkedin: "https://www.linkedin.com/in/dr-sachin-babar-42214516/" },
         { name: "Ms. Deepa Padwal", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/11_ms_deepa_padwal.png", linkedin: "https://www.linkedin.com/in/deepa-padwal/" },
         { name: "Ms. Pallavi Chavan", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/12_ms_pallavi_chavan.png", linkedin: "https://www.linkedin.com/in/pallavi-chavan1731/" },
         { name: "Ms. Monika Patil", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/13_ms_monika_patil.png", linkedin: "https://www.linkedin.com/in/monikapatil/" },
-        { name: "Mr. Vivek Kumar", role: "Assistant Professor", org: "AI-DS Department, ICEM", image: "/Organizing%20Committee/15_mr_vivek_kumar.png", linkedin: "https://www.linkedin.com/in/vivek-kumar-166258296/" },
-        { name: "Mr. Tushar R. Mahore", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Mr.%20Tushar%20R.%20Mahore.webp", linkedin: "https://www.linkedin.com/in/tushar-mahore", email: "tushar.mahore@indiraicem.ac.in" },
-        { name: "Mrs. Tanuja Sagar Pande", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Mrs.Tanuja%20Pande.png", linkedin: "https://www.linkedin.com/in/tanuja-lanjewar-206418360/", email: "tanuja.pande@indiraicem.ac.in" },
-        { name: "Mr. Tandale Balu Chatrbhuj", role: "Assistant Professor", org: "E&TC Department, ICEM", image: "/Organizing%20Committee/Prof.%20Balasaheb%20Tandale.JPG", email: "balu.tandale@indiraicem.ac.in" },
-        { name: "Prof. Amit Kumar", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Prof_Amit_Kumar.png", email: "amit.kumar@indiraicem.ac.in" },
-        { name: "Mr. Ankush V. Dahat", role: "Assistant Professor", org: "IT Department, ICEM", image: "/Organizing%20Committee/Prof.%20Ankush%20Vasant%20Dahat.jpg", linkedin: "https://www.linkedin.com/in/ankush-vasant-dahat-63785b311", email: "ankush.dahat@indiraicem.ac.in" },
-        { name: "Prof. Trupti Bhagat", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Prof_Trupti_Bhagat.jpeg", linkedin: "https://www.linkedin.com/in/trupti-b-550aa9200", email: "trupti.bhagat@indiraicem.ac.in" },
-        { name: "Dr. Shwetkranti Taware", role: "Assistant Professor", org: "Computer Engg. Department, ICEM", image: "/Organizing%20Committee/Dr.Shwetkranti%20Taware.jpeg", linkedin: "https://www.linkedin.com/in/dr-shwetkranti-taware-gaikwad-46102a75", email: "shweta.tawhare@indiraicem.ac.in" },
-        { name: "Prof. S. R. Satpute", role: "Assistant Professor", org: "Civil Engineering Department, ICEM", image: "/Organizing%20Committee/Prof.%20Shreyas%20Satpute.jpg", linkedin: "https://www.linkedin.com/in/shreyas-satpute-3857a031/", email: "shreyas.satpute@indiraicem.ac.in" },
-        { name: "Dr. Dhanashree Patil", role: "Assistant Professor", org: "MCA Department, ICEM", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250", email: "dhanashree.pisal@indiraicem.ac.in" }
+        { name: "Mr. Tushar R. Mahore", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Mr.%20Tushar%20R.%20Mahore.webp", linkedin: "https://www.linkedin.com/in/tushar-mahore" },
+        { name: "Mrs. Tanuja Sagar Pande", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Mrs.Tanuja%20Pande.png", linkedin: "https://www.linkedin.com/in/tanuja-lanjewar-206418360/" },
+        { name: "Mr. Tandale Balu Chatrbhuj", role: "Assistant Professor", org: "E&TC Department, ICEM", image: "/Organizing%20Committee/Prof.%20Balasaheb%20Tandale.JPG" },
+        { name: "Prof. Amit Kumar", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Prof_Amit_Kumar.png" },
+        { name: "Mr. Ankush V. Dahat", role: "Assistant Professor", org: "IT Department, ICEM", image: "/Organizing%20Committee/Prof.%20Ankush%20Vasant%20Dahat.jpg", linkedin: "https://www.linkedin.com/in/ankush-vasant-dahat-63785b311" },
+        { name: "Prof. Trupti Bhagat", role: "Assistant Professor", org: "AI&DS Department, ICEM", image: "/Organizing%20Committee/Prof_Trupti_Bhagat.jpeg", linkedin: "https://www.linkedin.com/in/trupti-b-550aa9200" },
+        { name: "Dr. Shwetkranti Taware", role: "Assistant Professor", org: "Computer Engg. Department, ICEM", image: "/Organizing%20Committee/Dr.Shwetkranti%20Taware.jpeg", linkedin: "https://www.linkedin.com/in/dr-shwetkranti-taware-gaikwad-46102a75" },
+        { name: "Prof. S. R. Satpute", role: "Assistant Professor", org: "Civil Engineering Department, ICEM", image: "/Organizing%20Committee/Prof.%20Shreyas%20Satpute.jpg", linkedin: "https://www.linkedin.com/in/shreyas-satpute-3857a031/" },
+        { name: "Dr. Dhanashree Patil", role: "Assistant Professor", org: "MCA Department, ICEM", image: "/Organizing%20Committee/Dr.%20Dhanashree%20Patil.jpg", linkedin: "https://in.linkedin.com/in/dr-dhanashree-patil-a1a637250" },
+        { name: "Dr. Shrikant Mahindrakar", role: "Assistant Professor", org: "IT Department, ICEM", image: "/Organizing%20Committee/Dr.%20Shrikant%20Manikrao%20Mahindrakar.jpg", linkedin: "https://www.linkedin.com/in/dr-shrikant-mahindrakar-853ab1220/" },
+        { name: "Prof. Nitin Kanade", role: "Assistant Professor", org: "MBA Department, ICEM", image: "/Organizing%20Committee/Prof.%20Nitin%20Kanade.jpg", linkedin: "https://www.linkedin.com/in/nitin-kanade-56298320/" },
+        { name: "Dr. Kalyan Bamane", role: "Assistant Professor", org: "ICEM, Pune", image: "/Organizing%20Committee/dr_kalyan%20Bamane.jpg", linkedin: "https://www.linkedin.com/in/kalyan-bamane-811b9515/" }
       ];
 
       return (
@@ -336,7 +357,6 @@ const Committee = () => {
                 org={member.org} 
                 image={member.image}
                 linkedin={member.linkedin}
-                email={member.email}
               />
             ))}
           </div>
@@ -359,11 +379,25 @@ const Committee = () => {
             />
             <MemberCard 
               name="Vaishnavi Patare" 
-              role="Student" 
+              role="Organising team Committee Co-Head" 
               org="Indira College of Engineering and Management" 
               email="vaishnavi.paratre@indiraicem.ac.in"
               linkedin="https://www.linkedin.com/in/vaishnavi-patare-99a4ab379/"
               image="/Students%20Organizing%20Committee/02_ms_vaishnavi_patare.png"
+            />
+            <MemberCard 
+              name="Anshika Angarwar" 
+              role="TY Computer Engineering" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/anshika-angarwar-2794b9384/"
+              image="/Students%20Organizing%20Committee/02Anshika_profile.jpeg"
+            />
+            <MemberCard 
+              name="Anurag Rambahal Gupta" 
+              role="BE Civil Engineering" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/anurag-gupta-642183429?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/anurag_gupta.jpeg"
             />
             <MemberCard 
               name="Vedant Vijay Padmawar" 
@@ -378,6 +412,27 @@ const Committee = () => {
               org="Student at ICEM, Pune" 
               linkedin="https://www.linkedin.com/in/jay-gupta-a1876841b"
               image="/Students%20Organizing%20Committee/0_Jay_Goureeshankar_Gupta.jpeg"
+            />
+            <MemberCard 
+              name="Shubham Vitthal kakad" 
+              role="T Y Mechanical engineering" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/shubham-kakad-b4795a37b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/shubhamkakad.jpg"
+            />
+            <MemberCard 
+              name="Dharmesh Bhatt" 
+              role="TY Information Technology" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/dharmesh-bhatt-15a9732a8?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/Dharmesh%20bhatt_it.png"
+            />
+            <MemberCard 
+              name="Yashashree Korde" 
+              role="TY Information Technology" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/yashashree-korde-b93a902b5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/Yashashree%20Korde.png"
             />
             <MemberCard 
               name="Aditya Anil Jathar" 
