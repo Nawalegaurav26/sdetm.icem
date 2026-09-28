@@ -137,7 +137,7 @@ const Registration = () => {
 
               {/* Registration Link Button */}
               <div className="reg-btn-container">
-                <a href="https://forms.gle/c9gtHqSeiwB8kGsM6" target="_blank" rel="noopener noreferrer" className="hud-submit-btn reg-hud-submit-btn">
+                <a href="https://forms.gle/xGyiLwdwiqaGLf6x9" target="_blank" rel="noopener noreferrer" className="hud-submit-btn reg-hud-submit-btn">
                   Complete Registration Form
                 </a>
               </div>

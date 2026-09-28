@@ -39,7 +39,7 @@ const Home = () => {
             <div className="hero-info-pills">
               <div className="info-pill glass">
                 <Calendar size={18} />
-                <span>4-5 November 2026</span>
+                <span>2nd &amp; 3rd November 2026</span>
               </div>
               <div className="info-pill glass">
                 <MapPin size={18} />

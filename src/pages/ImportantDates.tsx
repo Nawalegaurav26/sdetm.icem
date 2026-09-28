@@ -34,7 +34,7 @@ const dates = [
   },
   {
     label: 'Conference Date',
-    date: '4–5 November 2026',
+    date: '2nd & 3rd November 2026',
     deadline: false,
     status: 'conference',
     note: 'Indira College of Engineering and Management, Pune'

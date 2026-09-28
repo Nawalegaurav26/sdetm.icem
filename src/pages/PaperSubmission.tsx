@@ -88,7 +88,7 @@ const PaperSubmission = () => {
             </div>
             <div className="sub-cmt-right sub-cmt-right-grouped">
               <a 
-                href="https://forms.gle/c9gtHqSeiwB8kGsM6" 
+                href="https://forms.gle/xGyiLwdwiqaGLf6x9" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="sub-cmt-btn sub-cmt-btn-register"
