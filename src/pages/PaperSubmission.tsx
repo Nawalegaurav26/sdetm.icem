@@ -31,7 +31,7 @@ const submissionGuidelines = [
 const importantDates = [
   { label: 'Paper Submission Deadline', date: '14 August 2026', icon: <Calendar size={20} /> },
   { label: 'Acceptance Notification', date: '15 September 2026', icon: <CheckCircle size={20} /> },
-  { label: 'Registration Deadline', date: '30 September 2026', icon: <AlertCircle size={20} /> },
+  { label: 'Registration Deadline', date: '3 October 2026', icon: <AlertCircle size={20} /> },
 ];
 
 const faqs = [

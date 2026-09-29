@@ -27,7 +27,7 @@ const dates = [
   },
   {
     label: 'Conference Registration (Last Date)',
-    date: '30th September 2026',
+    date: '3rd October 2026',
     deadline: true,
     status: 'upcoming',
     note: 'Fees non-refundable after registration'
