@@ -50,8 +50,8 @@ const Contact = () => {
               <div className="info-icon"><Globe size={28} /></div>
               <div>
                 <h3>Conference Website</h3>
-                <a href="https://www.indiraicem.ac.in" target="_blank" rel="noopener noreferrer">
-                  www.indiraicem.ac.in
+                <a href="https://sdetm.indiraicem.ac.in" target="_blank" rel="noopener noreferrer">
+                  sdetm.indiraicem.ac.in
                 </a>
               </div>
             </motion.div>
@@ -82,7 +82,7 @@ const Contact = () => {
                 className="convenor-card glass"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=Saurabh+Gupta&background=003c84&color=fff&size=200"
+                  src="/Core Team/Convenor/01_dr_saurabh_gupta.png"
                   alt="Dr. Saurabh Gupta"
                 />
                 <div className="convenor-details">
@@ -107,7 +107,7 @@ const Contact = () => {
                 className="convenor-card glass"
               >
                 <img
-                  src="https://ui-avatars.com/api/?name=Manjusha+Tatiya&background=43ccd1&color=003c84&size=200"
+                  src="/Core Team/Convenor/02_dr_manjusha_tatiya.png"
                   alt="Dr. Manjusha Tatiya"
                 />
                 <div className="convenor-details">
