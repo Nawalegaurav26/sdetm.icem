@@ -247,12 +247,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-  filter: invert(100%) hue-rotate(180deg) contrast(120%) brightness(80%); /* Tech dark mode map trick */
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-
-.venue-map-wrapper:hover .venue-map-iframe {
   opacity: 1;
 }
 
