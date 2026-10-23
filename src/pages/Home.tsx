@@ -121,7 +121,7 @@ const Home = () => {
       <section className="highlights-section section-padding">
         <div className="container grid-3">
           <div className="stat-card glass">
-            <h2>40+</h2>
+            <h2>06</h2>
             <p>Technical Tracks</p>
           </div>
           <div className="stat-card glass">
@@ -153,17 +153,16 @@ const Home = () => {
           <h2 className="section-title text-center mb-4">Conference Tracks</h2>
           <div className="tracks-grid">
             {[
-              { id: 1, title: 'Mechanical Engineering', desc: 'Emerging trends in thermal, design, and manufacturing.', icon: '🔧' },
-              { id: 2, title: 'AI & Machine Learning', desc: 'Revolutionizing industries with intelligent algorithms.', icon: '🤖' },
-              { id: 3, title: 'Information Technology', desc: 'Cloud, Cybersecurity, and Modern Dev Architectures.', icon: '💻' },
-              { id: 4, title: 'Electronics & Telecom', desc: '5G, IoT, and Next-Gen Signal Processing.', icon: '📡' },
-              { id: 5, title: 'Advanced Computing', desc: 'Quantum and High-Performance Computation.', icon: '⚡' },
-              { id: 6, title: 'Business Innovation', desc: 'Evolving management practices in the digital age.', icon: '📈' },
-              { id: 7, title: 'Sustainable Practices', desc: 'Green technology and eco-friendly engineering.', icon: '🌿' },
+              { id: 1, title: 'AI & Machine Learning', desc: 'Intelligent systems, neural architectures, deep learning, NLP, and vision.', icon: '🤖', img: '/track-2.png' },
+              { id: 2, title: 'Advanced Computing & IT', desc: 'Cloud, Cybersecurity, quantum computation, and modern dev architectures.', icon: '💻', img: '/track-3.png' },
+              { id: 3, title: 'Mechanical & Sustainability', desc: 'Advanced manufacturing, thermal engineering, green tech, and eco-friendly systems.', icon: '🌿', img: '/track-7.png' },
+              { id: 4, title: 'Electrical & Electronics', desc: '5G, IoT ecosystems, embedded hardware, and Next-Gen Signal Processing.', icon: '📡', img: '/track-4.png' },
+              { id: 5, title: 'Management & Innovation', desc: 'Digital transformation, technology policy, and modern business analytics.', icon: '📈', img: '/track-6.png' },
+              { id: 6, title: 'Business Innovation & Entrepreneurship', desc: 'Startup ecosystems, venture creation, fintech, and agile growth models.', icon: '⚡', img: '/track-5.png' },
             ].map(track => (
               <div key={track.id} className="track-card glass-glow">
                 <div className="track-image-container">
-                  <img src={`/track-${track.id}.png`} alt={track.title} onError={(e) => (e.currentTarget as HTMLImageElement).src = '/icons.svg'} />
+                  <img src={track.img} alt={track.title} onError={(e) => (e.currentTarget as HTMLImageElement).src = '/icons.svg'} />
                 </div>
                 <div className="track-content">
                   <span className="track-icon">{track.icon}</span>

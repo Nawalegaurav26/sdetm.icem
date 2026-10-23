@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PenTool, BrainCircuit, Monitor, RadioTower, Zap, TrendingUp, Leaf } from 'lucide-react';
+import { BrainCircuit, Monitor, Leaf, RadioTower, TrendingUp, Lightbulb, Zap } from 'lucide-react';
 import SEO from '../components/SEO';
 import './ConferenceTracks.css';
 
@@ -7,45 +7,39 @@ const ConferenceTracks = () => {
   const tracks = [
     {
       id: 1,
-      title: "Mechanical Engineering",
-      icon: <PenTool size={28} strokeWidth={1.5} />,
-      description: "Emerging trends in thermal, design, and manufacturing.",
+      title: "AI & Machine Learning",
+      icon: <BrainCircuit size={28} strokeWidth={1.5} />,
+      description: "Intelligent systems, deep learning architectures, neural networks, natural language processing, and computer vision for next-generation intelligence.",
     },
     {
       id: 2,
-      title: "AI & Machine Learning",
-      icon: <BrainCircuit size={28} strokeWidth={1.5} />,
-      description: "Revolutionizing industries with intelligent algorithms and neural networks.",
+      title: "Advanced Computing & IT",
+      icon: <Monitor size={28} strokeWidth={1.5} />,
+      description: "Cloud and edge computing, cybersecurity, distributed systems, quantum computing, big data analytics, and modern software architectures.",
     },
     {
       id: 3,
-      title: "Information Technology",
-      icon: <Monitor size={28} strokeWidth={1.5} />,
-      description: "Cloud infrastructure, Cybersecurity, and Modern Dev Architectures.",
+      title: "Mechanical & Sustainability",
+      icon: <Leaf size={28} strokeWidth={1.5} />,
+      description: "Advanced manufacturing, smart materials, thermal & fluid dynamics, renewable energy, eco-friendly systems, and circular engineering solutions.",
     },
     {
       id: 4,
-      title: "Electronics & Telecom",
+      title: "Electrical & Electronics",
       icon: <RadioTower size={28} strokeWidth={1.5} />,
-      description: "5G integration, IoT ecosystems, and Next-Gen Signal Processing.",
+      description: "5G/6G communication, IoT & embedded sensors, VLSI design, smart grid technologies, robotics, and next-generation signal processing.",
     },
     {
       id: 5,
-      title: "Advanced Computing",
-      icon: <Zap size={28} strokeWidth={1.5} />,
-      description: "Quantum computation and High-Performance scalable architectures.",
+      title: "Management & Innovation",
+      icon: <TrendingUp size={28} strokeWidth={1.5} />,
+      description: "Digital transformation, sustainable operations management, technology policy, data-driven decision making, and strategic leadership.",
     },
     {
       id: 6,
-      title: "Business Innovation",
-      icon: <TrendingUp size={28} strokeWidth={1.5} />,
-      description: "Evolving management practices and analytics in the digital age.",
-    },
-    {
-      id: 7,
-      title: "Sustainable Practices",
-      icon: <Leaf size={28} strokeWidth={1.5} />,
-      description: "Green technology, sustainable energy, and eco-friendly engineering solutions.",
+      title: "Business Innovation & Entrepreneurship",
+      icon: <Lightbulb size={28} strokeWidth={1.5} />,
+      description: "Startup ecosystems, venture creation, fintech, agile business models, entrepreneurial strategies, and emerging market disruptions.",
     }
   ];
 
@@ -53,7 +47,7 @@ const ConferenceTracks = () => {
     <div className="tracks-page">
       <SEO 
         title="Conference Tracks & Research Domains" 
-        description="Explore the multidisciplinary research tracks of ICEM 2026. From AI and Machine Learning to Sustainable Practices and Business Innovation. View our technical domains." 
+        description="Explore the 6 multidisciplinary research tracks of ICEM SDETM 2026: AI & Machine Learning, Advanced Computing & IT, Mechanical & Sustainability, Electrical & Electronics, Management & Innovation, and Business Innovation & Entrepreneurship." 
       />
       {/* Background Ambience */}
       <div className="tracks-ambient-glow"></div>

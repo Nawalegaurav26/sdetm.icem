@@ -34,3 +34,16 @@ This document outlines the modifications made to resolve the user request for th
 
 - **Dropdown Removal**: Removed the `MORE` menu dropdown containing placeholder links (Technical Partners, Policies, Downloads, FAQs, Program) from [Header.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/components/Header.tsx).
 - **Route Removal**: Cleaned up the unused routes in [App.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/App.tsx) and removed the unused `ComingSoon` page component import.
+
+## 6. Student Committee & Tracks Overhaul
+
+- **Student Committee Addition**: Added **Ashish Dange** (Third Year Computer Engineering) at 4th position in [Committee.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/pages/Committee.tsx) with photo asset `/Students%20Organizing%20Committee/003ashish_dange.png`.
+- **SEO & Schema Integration**: Added Ashish Dange to keywords in [SEO.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/components/SEO.tsx) and [index.html](file:///d:/my_%20Projects/SDETM_ICEM/index.html) as well as the JSON-LD Person schema.
+- **Updated 6 Conference Tracks**: Replaced all previous tracks across [ConferenceTracks.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/pages/ConferenceTracks.tsx), [PaperSubmission.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/pages/PaperSubmission.tsx), and [Home.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/pages/Home.tsx):
+  - Track 01: AI & Machine Learning
+  - Track 02: Advanced Computing & IT
+  - Track 03: Mechanical & Sustainability
+  - Track 04: Electrical & Electronics
+  - Track 05: Management & Innovation
+  - Track 06: Business Innovation & Entrepreneurship
+- **Link Fix**: Cleaned up the submission portal link in [Registration.tsx](file:///d:/my_%20Projects/SDETM_ICEM/src/pages/Registration.tsx) to point directly to `/submission`.

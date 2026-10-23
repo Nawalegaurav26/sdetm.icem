@@ -393,6 +393,12 @@ const Committee = () => {
               image="/Students%20Organizing%20Committee/02Anshika_profile.jpeg"
             />
             <MemberCard 
+              name="Ashish Dange" 
+              role="Third Year Computer Engineering" 
+              org="Student at ICEM, Pune" 
+              image="/Students%20Organizing%20Committee/003ashish_dange.png"
+            />
+            <MemberCard 
               name="Anurag Rambahal Gupta" 
               role="BE Civil Engineering" 
               org="Student at ICEM, Pune" 

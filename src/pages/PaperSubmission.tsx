@@ -48,7 +48,7 @@ const PaperSubmission = () => {
     <div className="sub-page">
       <SEO 
         title="Call for Papers"
-        description="Submit your research to ICEM SDETM 2026. Peer-reviewed publication. Guidelines for Mechanical, AI, IT, and Management tracks."
+        description="Submit your research to ICEM SDETM 2026. Peer-reviewed publication. Guidelines for AI & ML, Advanced Computing, Mechanical & Sustainability, Electrical, and Management tracks."
       />
 
       {/* ── Hero ── */}
@@ -222,13 +222,12 @@ const PaperSubmission = () => {
           </h2>
           <div className="sub-tracks-grid">
             {[
-              { num: '01', title: 'Mechanical Engineering & Future Mobility', icon: <FileText size={20} /> },
-              { num: '02', title: 'Artificial Intelligence & Machine Learning', icon: <FileText size={20} /> },
-              { num: '03', title: 'Information Technology & Computing', icon: <FileText size={20} /> },
-              { num: '04', title: 'Electronics & Telecommunication Engineering', icon: <FileText size={20} /> },
-              { num: '05', title: 'Advanced Computing & Data Science', icon: <FileText size={20} /> },
-              { num: '06', title: 'Business Innovation & Management', icon: <FileText size={20} /> },
-              { num: '07', title: 'Sustainable Practices & Green Technology', icon: <Globe size={20} /> },
+              { num: '01', title: 'AI & Machine Learning', icon: <FileText size={20} /> },
+              { num: '02', title: 'Advanced Computing & IT', icon: <FileText size={20} /> },
+              { num: '03', title: 'Mechanical & Sustainability', icon: <Globe size={20} /> },
+              { num: '04', title: 'Electrical & Electronics', icon: <FileText size={20} /> },
+              { num: '05', title: 'Management & Innovation', icon: <FileText size={20} /> },
+              { num: '06', title: 'Business Innovation & Entrepreneurship', icon: <FileText size={20} /> },
             ].map((t, i) => (
               <motion.div
                 key={i}

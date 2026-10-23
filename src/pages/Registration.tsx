@@ -109,7 +109,7 @@ const Registration = () => {
                   <span className="step-num">01</span>
                   <div>
                     <strong>Submit Your Paper</strong>
-                    <p>First submit your manuscript via our <a href="/submission/submit" className="highlight-link">Submission Portal</a>.</p>
+                    <p>First submit your manuscript via our <a href="/submission" className="highlight-link">Submission Portal</a>.</p>
                   </div>
                 </li>
                 <li>
