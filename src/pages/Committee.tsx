@@ -396,6 +396,7 @@ const Committee = () => {
               name="Ashish Dange" 
               role="Third Year Computer Engineering" 
               org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/duddleashish/"
               image="/Students%20Organizing%20Committee/003ashish_dange.png"
             />
             <MemberCard 
