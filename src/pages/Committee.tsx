@@ -428,6 +428,13 @@ const Committee = () => {
               image="/Students%20Organizing%20Committee/shubhamkakad.jpg"
             />
             <MemberCard 
+              name="Vijay Adhav" 
+              role="Third Year BBA" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/vijay-adhav-9175b233b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              image="/Students%20Organizing%20Committee/Vijay_adhav.jpeg"
+            />
+            <MemberCard 
               name="Dharmesh Bhatt" 
               role="TY Information Technology" 
               org="Student at ICEM, Pune" 
@@ -447,6 +454,13 @@ const Committee = () => {
               org="Student at ICEM, Pune" 
               linkedin="https://www.linkedin.com/in/aditya-jathar-a51538386?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               image="/Students%20Organizing%20Committee/03_aditya_jathar.jpeg"
+            />
+            <MemberCard 
+              name="Prarthana Akhare" 
+              role="SY AI & DS" 
+              org="Student at ICEM, Pune" 
+              linkedin="https://www.linkedin.com/in/prarthana-akhare"
+              image="/Students%20Organizing%20Committee/prathana_akhare.jpeg"
             />
             <MemberCard 
               name="Rushikesh Vijay Mahanor" 
