@@ -1,12 +1,24 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, CalendarDays } from 'lucide-react';
 import './Header.css';
+
+interface NavItem {
+  title: string;
+  path?: string;
+  isAction?: boolean;
+  actionType?: string;
+  children?: {
+    name: string;
+    path?: string;
+    isGroupHeader?: boolean;
+  }[];
+}
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { title: 'HOME', path: '/' },
     {
       title: 'ABOUT',
@@ -34,10 +46,16 @@ const Header = () => {
     { title: 'CALL FOR PAPERS', path: '/call-for-papers/tracks' },
     { title: 'SUBMISSION', path: '/submission' },
     { title: 'DATES', path: '/dates' },
+    { title: 'AGENDA', isAction: true, actionType: 'agenda' },
     { title: 'REGISTRATION', path: '/registration' },
     { title: 'VENUE', path: '/venue' },
     { title: 'CONTACT', path: '/contact' },
   ];
+
+  const handleAgendaClick = () => {
+    setIsMenuOpen(false);
+    window.dispatchEvent(new CustomEvent('open-agenda-modal'));
+  };
 
   return (
     <header className="main-header">
@@ -71,7 +89,18 @@ const Header = () => {
           <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
             {navItems.map((item, idx) => (
               <li key={idx} className={item.children ? 'has-children' : ''}>
-                {item.path ? (
+                {item.isAction ? (
+                  <button 
+                    type="button" 
+                    className="nav-agenda-btn"
+                    onClick={handleAgendaClick}
+                    title="View Detailed Conference Agenda"
+                  >
+                    <CalendarDays size={13} className="mr-1 text-cyan-300" />
+                    <span>{item.title}</span>
+                    <span className="nav-agenda-badge">New</span>
+                  </button>
+                ) : item.path ? (
                   <Link to={item.path} onClick={() => setIsMenuOpen(false)}>
                     {item.title}
                   </Link>

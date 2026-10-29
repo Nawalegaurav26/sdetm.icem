@@ -1,0 +1,919 @@
+/* =========================================================
+   SDETM 2026 — OFFICIAL CONFERENCE AGENDA BANNER
+   Theme: ICEM Navy (#003c84, #002a6b) | ICEM Cyan (#43ccd1) | Gold (#f5a623)
+   Clean Academic Institutional Design • Zero Text Overflow
+   ========================================================= */
+
+/* Floating Quick Access Pill */
+.icem-agenda-pill {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: #002a6b;
+  border: 1px solid #43ccd1;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 42, 107, 0.5), 0 0 15px rgba(67, 204, 209, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.icem-agenda-pill:hover {
+  transform: translateY(-2px);
+  background: #003c84;
+  box-shadow: 0 14px 30px rgba(0, 60, 132, 0.6), 0 0 20px rgba(67, 204, 209, 0.4);
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #43ccd1;
+  box-shadow: 0 0 0 0 rgba(67, 204, 209, 0.7);
+  animation: icem-pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  flex-shrink: 0;
+}
+
+@keyframes icem-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(67, 204, 209, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(67, 204, 209, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(67, 204, 209, 0); }
+}
+
+.pill-title {
+  white-space: nowrap;
+}
+
+.pill-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(67, 204, 209, 0.2);
+  color: #43ccd1;
+  padding: 2px 7px;
+  border-radius: 12px;
+  border: 1px solid rgba(67, 204, 209, 0.35);
+}
+
+/* Modal Overlay & Backdrop */
+.icem-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 2.5vw, 24px);
+  background: rgba(4, 12, 26, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+
+/* Window Container */
+.icem-agenda-window {
+  position: relative;
+  width: 100%;
+  max-width: min(96vw, 1080px);
+  max-height: min(92vh, 900px);
+  display: flex;
+  flex-direction: column;
+  background: #060f1e;
+  border: 1.5px solid rgba(67, 204, 209, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.85),
+              0 0 30px rgba(0, 60, 132, 0.35);
+  color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header Section with Official Logos */
+.icem-modal-header {
+  position: relative;
+  background: linear-gradient(135deg, #002a6b 0%, #003c84 100%);
+  border-bottom: 2px solid #43ccd1;
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+
+.header-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.inst-brand-left, .inst-brand-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-logo-icem {
+  height: 60px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-logo-sdetm {
+  height: 62px;
+  width: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #43ccd1;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inst-title-center {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+.inst-college-label {
+  display: block;
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #6edde1;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  overflow-wrap: break-word;
+}
+
+.modal-main-title {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.highlight-cyan {
+  color: #43ccd1;
+}
+
+.inst-conference-name {
+  font-size: clamp(0.74rem, 1vw, 0.82rem);
+  color: #b8cce8;
+  margin: 4px 0 6px 0;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+}
+
+.header-meta-chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(0, 42, 107, 0.7);
+  border: 1px solid rgba(67, 204, 209, 0.35);
+  color: #ffffff;
+}
+
+/* Header Controls */
+.header-action-controls {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.modal-ctrl-btn:hover {
+  background: #43ccd1;
+  color: #002a6b;
+  border-color: #43ccd1;
+}
+
+.modal-ctrl-btn.close-ctrl {
+  padding: 6px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+}
+
+.modal-ctrl-btn.close-ctrl:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+/* Speakers Strip */
+.icem-speakers-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  padding: 12px 24px;
+  background: #0a1628;
+  border-bottom: 1px solid rgba(67, 204, 209, 0.18);
+  flex-shrink: 0;
+}
+
+.speaker-box {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #0f1e38;
+  border: 1px solid rgba(67, 204, 209, 0.25);
+  min-width: 0;
+}
+
+.chief-guest-box {
+  border-left: 3px solid #f5a623;
+}
+
+.keynote-box {
+  border-left: 3px solid #43ccd1;
+}
+
+.speaker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.gold-badge {
+  background: rgba(245, 166, 35, 0.15);
+  color: #f5a623;
+}
+
+.cyan-badge {
+  background: rgba(67, 204, 209, 0.15);
+  color: #43ccd1;
+}
+
+.speaker-name {
+  font-size: 0.96rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  overflow-wrap: break-word;
+}
+
+.speaker-desc {
+  font-size: 0.77rem;
+  color: #b8cce8;
+  margin: 2px 0 5px 0;
+  overflow-wrap: break-word;
+}
+
+.speaker-schedule-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6edde1;
+  overflow-wrap: break-word;
+}
+
+/* Tabs Navigation Bar (NO VERTICAL SCROLLBAR!) */
+.icem-tabs-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #002a6b;
+  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
+  flex-shrink: 0;
+  overflow: visible !important;
+}
+
+.icem-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(10, 22, 40, 0.6);
+  border: 1px solid rgba(67, 204, 209, 0.2);
+  color: #b8cce8;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 0;
+}
+
+.icem-tab-btn:hover {
+  background: rgba(0, 60, 132, 0.5);
+  color: #ffffff;
+  border-color: rgba(67, 204, 209, 0.4);
+}
+
+.icem-tab-btn.active {
+  background: #003c84;
+  border-color: #43ccd1;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 60, 132, 0.6);
+}
+
+.tab-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #43ccd1;
+  flex-shrink: 0;
+}
+
+.icem-tab-btn.active .tab-pill {
+  background: #43ccd1;
+  color: #002a6b;
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tab-text strong {
+  font-size: 0.84rem;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-text span {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal Body (THE ONLY SCROLLBAR) */
+.icem-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 18px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: #43ccd1 #060f1e;
+  box-sizing: border-box;
+}
+
+.icem-modal-body::-webkit-scrollbar {
+  width: 7px;
+}
+.icem-modal-body::-webkit-scrollbar-track {
+  background: #060f1e;
+}
+.icem-modal-body::-webkit-scrollbar-thumb {
+  background-color: #43ccd1;
+  border-radius: 4px;
+}
+
+/* Day Section */
+.day-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(67, 204, 209, 0.2);
+}
+
+.day-badge-primary {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.day-badge-primary::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #43ccd1;
+}
+
+.day-badge-secondary {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.day-badge-secondary::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f5a623;
+}
+
+.venue-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #43ccd1;
+  background: rgba(67, 204, 209, 0.1);
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(67, 204, 209, 0.25);
+}
+
+/* Tabular Schedule */
+.table-wrapper {
+  border: 1px solid rgba(67, 204, 209, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0a1628;
+}
+
+.icem-schedule-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.icem-schedule-table th {
+  background: #002a6b;
+  color: #43ccd1;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 10px 14px;
+  border-bottom: 1.5px solid rgba(67, 204, 209, 0.3);
+}
+
+.icem-schedule-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.icem-schedule-table tr:hover {
+  background: rgba(0, 60, 132, 0.15);
+}
+
+/* Column Width Allocations */
+.col-time {
+  width: 21%;
+}
+
+.col-event {
+  width: 32%;
+}
+
+.col-dignitary {
+  width: 29%;
+}
+
+.col-venue {
+  width: 18%;
+}
+
+/* Content Within Table Cells */
+.time-text {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.time-text.highlight-gold {
+  color: #f5a623;
+}
+
+.time-text.highlight-cyan {
+  color: #43ccd1;
+}
+
+.duration-pill {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #b8cce8;
+}
+
+.online-pill {
+  background: rgba(67, 204, 209, 0.18);
+  color: #43ccd1;
+  border: 1px solid rgba(67, 204, 209, 0.3);
+}
+
+.event-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.gold-text {
+  color: #f5a623;
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.badge-tag.cyan {
+  background: rgba(67, 204, 209, 0.18);
+  color: #43ccd1;
+}
+
+.badge-tag.gold {
+  background: rgba(245, 166, 35, 0.18);
+  color: #f5a623;
+}
+
+.badge-tag.green {
+  background: rgba(34, 197, 94, 0.18);
+  color: #4ade80;
+}
+
+.badge-tag.blue {
+  background: rgba(0, 60, 132, 0.4);
+  color: #93c5fd;
+  border: 1px solid rgba(67, 204, 209, 0.25);
+}
+
+.person-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.81rem;
+  color: #b8cce8;
+  line-height: 1.35;
+}
+
+.person-text svg {
+  color: #43ccd1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.venue-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #b8cce8;
+  line-height: 1.35;
+}
+
+.venue-text svg {
+  color: #43ccd1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Sub-Schedule Nested Table for Inauguration Breakdown */
+.row-inauguration-parent {
+  background: rgba(245, 166, 35, 0.05);
+}
+
+.row-subschedule-container {
+  background: #081324;
+}
+
+.cell-subschedule {
+  padding: 0 !important;
+}
+
+.subschedule-card {
+  padding: 12px 16px;
+  border-top: 1px dashed rgba(245, 166, 35, 0.3);
+  border-bottom: 1px dashed rgba(245, 166, 35, 0.3);
+  background: rgba(0, 42, 107, 0.25);
+}
+
+.subschedule-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f5a623;
+  margin-bottom: 8px;
+}
+
+.subschedule-table-wrap {
+  border: 1px solid rgba(245, 166, 35, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(6, 15, 30, 0.8);
+}
+
+.subschedule-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.subschedule-table th {
+  background: rgba(0, 42, 107, 0.6);
+  color: #f5a623;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.subschedule-table td {
+  padding: 7px 10px;
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.subrow-time {
+  font-weight: 700;
+  color: #6edde1;
+  white-space: nowrap;
+}
+
+.subrow-event {
+  color: #ffffff;
+}
+
+.subrow-person {
+  color: #b8cce8;
+}
+
+.keynote-subrow {
+  background: rgba(245, 166, 35, 0.1);
+}
+
+.keynote-subrow .subrow-time {
+  color: #f5a623;
+}
+
+.text-gold {
+  color: #f5a623;
+}
+
+/* Online Keynote Row Highlight */
+.row-online-keynote {
+  background: rgba(67, 204, 209, 0.05);
+}
+
+/* Footer Section */
+.icem-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #002a6b;
+  border-top: 1.5px solid rgba(67, 204, 209, 0.25);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.footer-notice {
+  font-size: 0.76rem;
+  color: #b8cce8;
+  max-width: 600px;
+}
+
+.footer-mail {
+  color: #43ccd1;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.footer-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icem-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-icem-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.btn-icem-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 6px;
+  background: #43ccd1;
+  border: 1px solid #43ccd1;
+  color: #002a6b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(67, 204, 209, 0.3);
+}
+
+.btn-icem-primary:hover {
+  background: #6edde1;
+  border-color: #6edde1;
+  transform: translateY(-1px);
+}
+
+/* Responsive Overrides (< 800px) */
+@media (max-width: 800px) {
+  .header-logos-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modal-logo-icem {
+    height: 48px;
+  }
+
+  .modal-logo-sdetm {
+    height: 48px;
+    width: 48px;
+  }
+
+  .header-action-controls {
+    position: static;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+
+  .icem-speakers-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .icem-tabs-nav {
+    flex-direction: column;
+  }
+
+  .tab-both {
+    display: none;
+  }
+}
+
+/* Mobile Layout (< 620px): Convert Table to Stacked Cards */
+@media (max-width: 620px) {
+  .icem-modal-overlay {
+    padding: 8px;
+  }
+
+  .icem-agenda-window {
+    max-height: 96vh;
+    border-radius: 12px;
+  }
+
+  .icem-modal-header {
+    padding: 12px 14px;
+  }
+
+  .icem-modal-body {
+    padding: 12px 14px;
+  }
+
+  .icem-schedule-table thead {
+    display: none;
+  }
+
+  .icem-schedule-table, 
+  .icem-schedule-table tbody, 
+  .icem-schedule-table tr, 
+  .icem-schedule-table td {
+    display: block;
+    width: 100% !important;
+  }
+
+  .icem-schedule-table tr {
+    border-bottom: 1px solid rgba(67, 204, 209, 0.2);
+    padding: 10px 0;
+  }
+
+  .col-time, .col-event, .col-dignitary, .col-venue {
+    padding: 4px 10px !important;
+  }
+
+  .subschedule-table th, .subschedule-table td {
+    padding: 5px 6px;
+    font-size: 0.72rem;
+  }
+
+  .subrow-time {
+    white-space: normal;
+  }
+
+  .icem-modal-footer {
+    padding: 10px 14px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-icem-secondary, .btn-icem-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
